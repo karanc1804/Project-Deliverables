@@ -22,15 +22,26 @@
 					"name": "Primary"
 				},
 				{
-					"slug": "secondary",
-					"color": "#ff0000",
-					"name": "Secondary"
+					"slug": "navy",
+					"color": "#1e293b",
+					"name": "Navy"
+				},
+				{
+					"slug": "royal",
+					"color": "#7c3aed",
+					"name": "Royal Purple"
+				},
+				{
+					"slug": "emerald",
+					"color": "#059669",
+					"name": "Emerald"
 				}
+
 			]
 		},
 		"layout": {
-			"contentSize": "700px",
-			"wideSize": "1100px"
+			"contentSize": "800px",
+			"wideSize": "1175px"
 		},
 		"spacing": {
 			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
@@ -53,5 +64,5 @@
 			"background": "var(--wp--preset--color--base)",
 			"text": "var(--wp--preset--color--contrast)"
 		}
-	}
-}
+    
+}}
