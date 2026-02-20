@@ -40,8 +40,8 @@
 			]
 		},
 		"layout": {
-			"contentSize": "800px",
-			"wideSize": "1175px"
+			"contentSize": "700px",
+			"wideSize": "1000px"
 		},
 		"spacing": {
 			"units": [ "px", "em", "rem", "vh", "vw", "%" ]
