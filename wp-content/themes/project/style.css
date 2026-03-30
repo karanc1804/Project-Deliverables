@@ -460,3 +460,164 @@ header{
     padding: 25px;
   }
 }
+
+
+
+
+/* =========================
+   SINGLE PRODUCT - DETAILS ONLY
+   (SAFE - does NOT affect related products)
+========================= */
+
+body.single-product .wp-block-columns.alignwide {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  gap: 40px;
+}
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+body.single-product .woocommerce-product-gallery {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body.single-product .woocommerce-product-gallery img {
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+body.single-product .woocommerce-product-gallery:hover img {
+  transform: scale(1.05);
+}
+
+/* Sale badge */
+body.single-product .onsale {
+  background: #000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  top: 15px;
+  left: 15px;
+}
+
+/* =========================
+   PRODUCT TITLE
+========================= */
+
+body.single-product .wp-block-post-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+body.single-product .wc-block-components-product-price {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+body.single-product ins {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+body.single-product del {
+  color: #999;
+  margin-right: 10px;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+body.single-product .wp-block-post-excerpt {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* =========================
+   QUANTITY + BUTTON
+========================= */
+
+body.single-product form.cart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Quantity input */
+body.single-product .quantity input {
+  width: 60px;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Add to cart button */
+body.single-product .single_add_to_cart_button {
+  background: #000;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+body.single-product .single_add_to_cart_button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   EXPRESS CHECKOUT (STRIPE)
+========================= */
+
+body.single-product #wc-stripe-express-checkout-element {
+  margin-top: 15px;
+}
+
+/* =========================
+   PRODUCT META
+========================= */
+
+body.single-product .wp-block-woocommerce-product-meta {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body.single-product .wp-block-columns.alignwide {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  body.single-product form.cart {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.single-product .single_add_to_cart_button {
+    width: 100%;
+  }
+}
