@@ -25,3 +25,171 @@ header{
 }
 
 
+/* ===== HEADER WRAPPER ===== */
+.wp-block-group.alignwide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 40px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+/* ===== LEFT SIDE (LOGO + TITLE) ===== */
+.wp-block-group.alignwide > .wp-block-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo */
+.wp-block-site-logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+/* Site Title */
+.wp-block-site-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.wp-block-site-title a {
+  text-decoration: none;
+  color: #111;
+}
+
+/* Tagline */
+.wp-block-site-tagline {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+/* Stack title + tagline */
+.wp-block-group.is-vertical {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+/* ===== NAVIGATION ===== */
+.wp-block-navigation {
+  display: flex;
+  align-items: center;
+}
+
+/* Menu list */
+.wp-block-navigation__container {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu links */
+.wp-block-navigation-item__content {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover underline effect */
+.wp-block-navigation-item__content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: 0.3s ease;
+}
+
+.wp-block-navigation-item__content:hover::after {
+  width: 100%;
+}
+
+/* Active menu */
+.current-menu-item .wp-block-navigation-item__content {
+  color: #000;
+  font-weight: 600;
+}
+
+/* ===== RIGHT ICONS (ACCOUNT + CART) ===== */
+.wp-block-woocommerce-customer-account,
+.wp-block-woocommerce-mini-cart {
+  display: flex;
+  align-items: center;
+  margin-left: 18px;
+}
+
+/* Icon style */
+.wc-block-customer-account__account-icon,
+.wc-block-mini-cart__icon {
+  width: 22px;
+  height: 22px;
+  color: #111;
+  transition: 0.3s ease;
+}
+
+.wc-block-customer-account__account-icon:hover,
+.wc-block-mini-cart__icon:hover {
+  color: #666;
+}
+
+/* Cart badge */
+.wc-block-mini-cart__badge {
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50px;
+  position: absolute;
+  top: -6px;
+  right: -8px;
+}
+
+/* Fix cart positioning */
+.wc-block-mini-cart__button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .wp-block-group.alignwide {
+    padding: 10px 20px;
+  }
+
+  .wp-block-navigation__container {
+    gap: 15px;
+  }
+
+  .wp-block-site-title {
+    font-size: 16px;
+  }
+
+  .wp-block-site-tagline {
+    display: none;
+  }
+}
+
+/* ===== HAMBURGER FIX ===== */
+.wp-block-navigation__responsive-container-open {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ===== CLEANUP ===== */
+.wp-block-group {
+  margin: 0;
+}
