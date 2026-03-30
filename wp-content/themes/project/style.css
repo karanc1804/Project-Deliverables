@@ -30,7 +30,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 40px;
+  padding: 12px 20px;
   border-bottom: 1px solid #eee;
   background: #fff;
 }
@@ -39,12 +39,12 @@ header{
 .wp-block-group.alignwide > .wp-block-group {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 /* Logo */
 .wp-block-site-logo img {
-  max-height: 50px;
+  max-height: 80px;
   width: auto;
 }
 
@@ -1192,3 +1192,6 @@ body.single-product .wp-block-woocommerce-product-meta {
     font-size: 22px;
   }
 }
+
+
+
