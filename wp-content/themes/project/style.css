@@ -639,3 +639,413 @@ header{
   opacity: 1;
   right: 12px;
 }
+
+
+
+/* =========================
+   SINGLE PRODUCT - DETAILS ONLY
+   (SAFE - does NOT affect related products)
+========================= */
+
+body.single-product .wp-block-columns.alignwide {
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  gap: 40px;
+}
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+body.single-product .woocommerce-product-gallery {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body.single-product .woocommerce-product-gallery img {
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+body.single-product .woocommerce-product-gallery:hover img {
+  transform: scale(1.05);
+}
+
+/* Sale badge */
+body.single-product .onsale {
+  background: #000;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  top: 15px;
+  left: 15px;
+}
+
+/* =========================
+   PRODUCT TITLE
+========================= */
+
+body.single-product .wp-block-post-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+body.single-product .wc-block-components-product-price {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+body.single-product ins {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+body.single-product del {
+  color: #999;
+  margin-right: 10px;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+body.single-product .wp-block-post-excerpt {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* =========================
+   QUANTITY + BUTTON
+========================= */
+
+body.single-product form.cart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Quantity input */
+body.single-product .quantity input {
+  width: 60px;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Add to cart button */
+body.single-product .single_add_to_cart_button {
+  background: #000;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+body.single-product .single_add_to_cart_button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   EXPRESS CHECKOUT (STRIPE)
+========================= */
+
+body.single-product #wc-stripe-express-checkout-element {
+  margin-top: 15px;
+}
+
+/* =========================
+   PRODUCT META
+========================= */
+
+body.single-product .wp-block-woocommerce-product-meta {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  body.single-product .wp-block-columns.alignwide {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  body.single-product form.cart {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  body.single-product .single_add_to_cart_button {
+    width: 100%;
+  }
+}
+
+
+
+/* ===== CLEAN EMPTY TITLE ===== */
+.wc-block-cart__empty-cart__title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+  margin: 100px auto 10px;
+  max-width: 480px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}
+
+/* ===== SUBTEXT ===== */
+.wc-block-cart__empty-cart__title::after {
+  content: "Your cart is empty. Start browsing to add items.";
+  display: block;
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* ===== CARD ===== */
+.wc-block-grid__product {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 22px; /* ↑ more inner space */
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* HOVER */
+.wc-block-grid__product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+/* ===== IMAGE ===== */
+.wc-block-grid__product-image {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 18px; /* ↑ space below image */
+}
+
+.wc-block-grid__product-image img {
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.wc-block-grid__product:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== TITLE ===== */
+.wc-block-grid__product-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px; /* ↑ spacing */
+  line-height: 1.4;
+}
+
+/* ===== PRICE ===== */
+.wc-block-grid__product-price {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 18px; /* ↑ more gap before button */
+}
+
+/* ===== BUTTON AREA ===== */
+.wc-block-grid__product-add-to-cart {
+  margin-top: auto;
+}
+
+/* BUTTON */
+.wc-block-grid__product-add-to-cart .wp-block-button__link {
+  width: 100%;
+  padding: 13px; /* ↑ taller button */
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+/* ===== GRID GAP (VERY IMPORTANT) ===== */
+.wc-block-grid__products {
+  gap: 40px !important; /* ↑ space between cards */
+}
+
+
+/* TARGET THIS BUTTON SPECIFICALLY */
+.wc-block-grid__product-add-to-cart .wp-block-button__link {
+  width: 100%;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  padding: 13px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  left: -10px;
+}
+
+/* HOVER */
+.wc-block-grid__product-add-to-cart .wp-block-button__link:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* CLICK */
+.wc-block-grid__product-add-to-cart .wp-block-button__link:active {
+  transform: scale(0.97);
+}
+
+/* ARROW SLIDE EFFECT */
+.wc-block-grid__product-add-to-cart .wp-block-button__link::after {
+  content: "→";
+  position: absolute;
+  right: 18px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* HOVER ANIMATION */
+.wc-block-grid__product-add-to-cart .wp-block-button__link:hover {
+  padding-right: 20px;
+}
+
+.wc-block-grid__product-add-to-cart .wp-block-button__link:hover::after {
+  opacity: 1;
+  right: 14px;
+}
+
+
+
+/* ===== MAIN WRAPPER ===== */
+.wp-block-columns {
+  max-width: 1200px;
+  margin: 80px auto;
+  gap: 60px;
+}
+
+/* ===== LEFT COLUMN (FEATURED POST) ===== */
+.wp-block-post-template > li {
+  list-style: none;
+}
+
+/* TITLE */
+.wp-block-post-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.wp-block-post-title a {
+  color: #111;
+  text-decoration: none;
+}
+
+/* IMAGE */
+.wp-block-post-featured-image img {
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* EXCERPT */
+.wp-block-post-excerpt__excerpt {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* DATE */
+.wp-block-post-date {
+  font-size: 13px;
+  color: #999;
+}
+
+/* DIVIDER */
+.wp-block-separator {
+  margin: 40px 0;
+  opacity: 0.2;
+}
+
+/* ===== RIGHT COLUMN (POST LIST) ===== */
+.wp-block-query.alignfull {
+  padding: 0;
+}
+
+/* EACH ITEM */
+.wp-block-query.alignfull .wp-block-post {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+/* DATE ROW */
+.wp-block-query.alignfull .wp-block-post-date {
+  font-size: 14px !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #999;
+}
+
+/* DATE FLEX FIX */
+.wp-block-query .wp-block-group.is-layout-flex {
+  border-bottom: none !important;
+  padding-bottom: 10px !important;
+}
+
+/* TITLE RIGHT SIDE */
+.wp-block-query.alignfull .wp-block-post-title {
+  font-size: 18px !important;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* REMOVE INLINE STYLES EFFECT */
+.wp-block-query.alignfull h2[style] {
+  padding-top: 0 !important;
+}
+
+/* ===== HOVER EFFECT ===== */
+.wp-block-post-title a:hover {
+  opacity: 0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .wp-block-columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
