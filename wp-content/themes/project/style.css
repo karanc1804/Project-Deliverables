@@ -19,3 +19,9 @@ Generated on fullsiteediting.com. No code version.
 header{
     display: flex;
 }
+
+.woocommerce ul.products li.product img {
+    transition: transform 0.4s ease;
+}
+
+

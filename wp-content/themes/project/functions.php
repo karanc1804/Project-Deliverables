@@ -1,8 +1,11 @@
 <?php
-function karan_enqueue_styles() {
+function mytheme_enqueue_styles() {
+
     wp_enqueue_style(
-        'karan-style', 
+        'main-style', 
         get_stylesheet_uri()
     );
+
 }
-add_action('wp_enqueue_scripts', 'karan_enqueue_styles');
+
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_styles');
