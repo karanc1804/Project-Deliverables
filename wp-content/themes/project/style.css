@@ -196,177 +196,111 @@ header{
 
 
 /* =========================
-   PAGE BACKGROUND
+   GLOBAL PRODUCT CARD DESIGN
 ========================= */
-body.woocommerce-order-received {
-  background: #f6f7f9;
+
+.wc-block-product {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
 }
 
-/* Main container */
-.wp-block-group.is-layout-constrained {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
+/* Hover effect (clean lift) */
+.wc-block-product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
 /* =========================
-   SUCCESS HEADER
+   IMAGE
 ========================= */
-.wc-block-order-confirmation-status {
-  background: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  margin-bottom: 30px;
+
+.wc-block-components-product-image img {
+  border-radius: 10px;
+  transition: transform 0.35s ease;
 }
 
-.wc-block-order-confirmation-status h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+/* Subtle zoom */
+.wc-block-product:hover .wc-block-components-product-image img {
+  transform: scale(1.05);
 }
 
-.wc-block-order-confirmation-status p {
+/* =========================
+   TITLE
+========================= */
+
+.wp-block-post-title {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.wp-block-post-title a {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.wp-block-post-title a:hover {
   color: #666;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.wc-block-components-product-price {
   font-size: 14px;
 }
 
-/* =========================
-   ORDER SUMMARY
-========================= */
-.wc-block-order-confirmation-summary {
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-  margin-bottom: 30px;
+.wc-block-components-product-price del {
+  color: #999;
+  margin-right: 5px;
 }
 
-.wc-block-order-confirmation-summary-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.wc-block-order-confirmation-summary-list-item {
-  display: flex;
-  flex-direction: column;
-  font-size: 13px;
-}
-
-.wc-block-order-confirmation-summary-list-item__key {
-  color: #888;
-  margin-bottom: 4px;
-}
-
-.wc-block-order-confirmation-summary-list-item__value {
-  font-weight: 600;
-  color: #111;
-}
-
-/* =========================
-   ORDER DETAILS TABLE
-========================= */
-.wc-block-order-confirmation-totals-wrapper {
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-  margin-bottom: 30px;
-}
-
-.wc-block-order-confirmation-totals-wrapper h2 {
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
-/* Table */
-.wc-block-order-confirmation-totals__table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.wc-block-order-confirmation-totals__table th,
-.wc-block-order-confirmation-totals__table td {
-  padding: 14px 10px;
-  text-align: left;
-}
-
-.wc-block-order-confirmation-totals__table thead {
-  border-bottom: 1px solid #eee;
-}
-
-.wc-block-order-confirmation-totals__table tbody tr {
-  border-bottom: 1px solid #f2f2f2;
-}
-
-.wc-block-order-confirmation-totals__table tfoot {
-  border-top: 2px solid #000;
-  font-weight: 600;
-}
-
-/* Product link */
-.wc-block-order-confirmation-totals__product a {
+.wc-block-components-product-price ins {
   text-decoration: none;
-  color: #111;
-  font-weight: 500;
+  font-weight: 600;
+  color: #000;
 }
 
 /* =========================
-   BILLING SECTION
+   BUTTON
 ========================= */
-.wc-block-order-confirmation-billing-wrapper {
-  background: #fff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-}
 
-.wc-block-order-confirmation-billing-wrapper h2 {
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.wc-block-order-confirmation-billing-address address {
-  font-style: normal;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* =========================
-   ADDITIONAL INFO
-========================= */
-.wc-block-order-confirmation-additional-information {
-  margin-top: 20px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 12px;
+.wc-block-components-product-button__button {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
   font-size: 13px;
-  color: #666;
-  text-align: center;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+/* Hover */
+.wc-block-components-product-button__button:hover {
+  background: #222;
+  transform: translateY(-1px);
+}
+
+/* Click */
+.wc-block-components-product-button__button:active {
+  transform: scale(0.97);
 }
 
 /* =========================
-   ADMIN BAR FIX (optional)
+   SALE BADGE
 ========================= */
-body.admin-bar .wp-block-group.alignwide {
-  top: 32px;
-}
 
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-
-  .wc-block-order-confirmation-summary-list {
-    grid-template-columns: 1fr;
-  }
-
-  .wp-block-group.is-layout-constrained {
-    margin: 30px auto;
-  }
-
-  .wc-block-order-confirmation-status {
-    padding: 25px;
-  }
+.wc-block-components-product-sale-badge {
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 7px;
+  border-radius: 50px;
 }
