@@ -16,8 +16,121 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Generated on fullsiteediting.com. No code version.
 */
 
-header{
-    display: flex;
+/* TARGET ONLY YOUR FOOTER */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large {
+    background: #f8f8f8;
+    color: #1a1a1a;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* CENTER + MAX WIDTH */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .alignwide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* CLEAN COLUMN SPACING */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-columns {
+    gap: 40px;
+}
+
+/* LOGO */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .custom-logo {
+    max-width: 140px;
+    height: auto;
+}
+
+/* HEADINGS */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large h5 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+/* TEXT */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large p {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* LINKS */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large a:hover {
+    color: #000;
+    opacity: 0.8;
+}
+
+/* SOCIAL ICONS */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-social-link a {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 50%;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-social-link a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0,0,0,0.2);
+}
+
+/* POLICY LINKS (RIGHT SIDE) */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-column p {
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+/* REMOVE RANDOM BACKGROUNDS (fix white boxes issue safely) */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-group,
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-column {
+    background: transparent !important;
+}
+
+/* BOTTOM BAR */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large > .wp-block-group.alignfull {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* SITE TITLE */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-site-title a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+/* POWERED TEXT */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-group.alignfull p {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+/* ALIGNMENT FIX FOR BOTTOM */
+.wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-group.alignfull {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-columns {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .wp-block-group.alignfull.wc-blocks-pattern-footer-large .wp-block-group.alignfull {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
 
 .woocommerce ul.products li.product img {
@@ -1055,7 +1168,7 @@ body.single-product .wp-block-woocommerce-product-meta {
 /* ===== TARGET ONLY THIS SECTION ===== */
 .wp-container-core-group-is-layout-9f8d7f30 {
   max-width: 1200px;
-  margin: 100px auto;
+  margin: 50px auto;
   padding-left: 30px !important;
   padding-right: 30px !important;
 }
@@ -1064,7 +1177,7 @@ body.single-product .wp-block-woocommerce-product-meta {
 .wp-container-core-group-is-layout-9f8d7f30 .wp-container-core-columns-is-layout-28f84493 {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 60px;
+  gap: 30px;
   align-items: center;
 }
 
@@ -1520,3 +1633,120 @@ body.single-product .wp-block-woocommerce-product-meta {
         grid-column: span 1 !important;
     }
 }
+
+
+
+/* ===== MAIN POST CONTAINER ===== */
+.wp-block-group.is-layout-grid {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* ===== IMAGE STYLING ===== */
+.wp-block-image {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wp-block-image img {
+    width: 100% !important;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+/* subtle premium hover */
+.wp-block-image img:hover {
+    transform: scale(1.02);
+}
+
+/* ===== TEXT CONTENT ===== */
+.wp-block-group.is-layout-grid p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+/* ===== ADD READING WIDTH CONTROL ===== */
+.wp-block-group.is-layout-grid p {
+    max-width: 720px;
+}
+
+/* ===== CENTER CONTENT CLEANLY ===== */
+.wp-block-group.is-layout-grid > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* ===== OPTIONAL: FIRST LETTER STYLE (PREMIUM LOOK) ===== */
+.wp-block-group.is-layout-grid p:first-of-type::first-letter {
+    font-size: 42px;
+    font-weight: 600;
+    float: left;
+    line-height: 1;
+    padding-right: 8px;
+}
+
+/* ===== SPACING IMPROVEMENT ===== */
+.wp-block-group.is-layout-grid figure {
+    margin-bottom: 10px;
+}
+
+
+/* ===== IMAGE CONTAINER ===== */
+.wp-block-image {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ===== FORCE SAME SIZE + CROP ===== */
+.wp-block-image img {
+    width: 100% !important;
+    height: 420px !important; /* fixed height */
+    object-fit: cover; /* crops nicely */
+    border-radius: 16px;
+    display: block;
+}
+
+/* ===== OPTIONAL: DIFFERENT STYLE (SQUARE) ===== */
+/* Uncomment if you prefer square images */
+/*
+.wp-block-image img {
+    height: 500px !important;
+}
+*/
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width: 768px) {
+    .wp-block-image img {
+        height: 260px !important;
+    }
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+    .wp-block-group.is-layout-grid {
+        margin: 40px auto;
+        gap: 20px;
+    }
+
+    .wp-block-group.is-layout-grid p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .wp-block-image img {
+        border-radius: 12px;
+    }
+}
+
