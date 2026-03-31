@@ -1308,3 +1308,215 @@ body.single-product .wp-block-woocommerce-product-meta {
 
 
 
+
+/* ===== MAIN WRAPPER ===== */
+.wc-block-checkout {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* ===== LAYOUT FIX (NO SQUISHING EVER) ===== */
+.wc-block-components-sidebar-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ===== LEFT / RIGHT ===== */
+.wc-block-checkout__main {
+    width: 100%;
+}
+
+.wc-block-checkout__sidebar {
+    width: 100%;
+    position: sticky;
+    top: 100px;
+}
+
+/* ===== CARD STYLE ===== */
+.wc-block-checkout__main,
+.wc-block-checkout__sidebar {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* ===== REMOVE ALL INTERNAL WIDTH LIMITS ===== */
+.wc-block-components-main,
+.wc-block-components-checkout-step__content,
+.wc-block-components-address-form,
+.wc-block-components-text-input,
+.wc-blocks-components-select {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* ===== FIX INPUT WRAPPERS ALIGNMENT ===== */
+.wc-block-components-address-form {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* ===== FORCE CLEAN FIELD STRUCTURE ===== */
+.wc-block-components-text-input,
+.wc-block-components-address-form > div,
+.wc-block-components-address-form > span {
+    width: 100% !important;
+}
+
+/* ===== FULL WIDTH FIELDS ===== */
+.wc-block-components-address-form__email,
+.wc-block-components-address-form__country,
+.wc-block-components-address-form__address_1,
+.wc-block-components-address-form__city,
+.wc-block-components-address-form__state,
+.wc-block-components-address-form__postcode,
+.wc-block-components-address-form__phone {
+    grid-column: span 2 !important;
+}
+
+/* ===== INPUT STYLE ===== */
+.wc-block-components-text-input input,
+.wc-blocks-components-select__select {
+    width: 100%;
+    border-radius: 12px !important;
+    border: 1px solid #e5e5e5 !important;
+    padding: 14px !important;
+    font-size: 14px;
+    background: #fafafa;
+    box-sizing: border-box;
+}
+
+.wc-block-components-text-input input:focus,
+.wc-blocks-components-select__select:focus {
+    border-color: #000 !important;
+    background: #fff;
+    outline: none;
+}
+
+/* ===== FIX LABEL POSITION ===== */
+.wc-block-components-text-input label,
+.wc-blocks-components-select__label {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #666;
+    position: static !important;
+    transform: none !important;
+}
+
+/* ===== REMOVE FLOATING LABEL BREAKING LAYOUT ===== */
+.wc-block-components-text-input {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== SECTION HEADINGS ===== */
+.wc-block-components-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* ===== EXPRESS CHECKOUT ===== */
+/* .wc-block-components-express-payment {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+} */
+
+/* ===== PAYMENT OPTIONS (FIX ALIGNMENT ISSUE) ===== */
+/* .wc-block-components-radio-control {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.wc-block-components-radio-control__option {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+} */
+
+/* .wc-block-components-radio-control__option-checked {
+    border-color: #000;
+    background: #f9f9f9;
+} */
+
+/* REMOVE WEIRD INNER FLEX BREAKING ALIGNMENT */
+.wc-block-components-radio-control__option-layout {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== ORDER SUMMARY ===== */
+.wc-block-components-order-summary-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* ===== TOTAL ===== */
+.wc-block-components-totals-footer-item {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ===== BUTTON ===== */
+.wc-block-components-checkout-place-order-button {
+    width: 100%;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    background: #000 !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.wc-block-components-checkout-place-order-button:hover {
+    background: #111 !important;
+}
+
+/* ===== CLEAN SMALL TEXT ===== */
+.wc-block-checkout__terms {
+    font-size: 13px;
+    color: #777;
+}
+
+/* ===== REMOVE CLUTTER ===== */
+.wc-block-components-notices,
+.wc-block-components-notices__snackbar {
+    display: none !important;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+    .wc-block-components-sidebar-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .wc-block-checkout__sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .wc-block-components-address-form {
+        grid-template-columns: 1fr;
+    }
+
+    .wc-block-components-address-form * {
+        grid-column: span 1 !important;
+    }
+}
