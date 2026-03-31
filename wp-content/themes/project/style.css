@@ -1864,7 +1864,7 @@ body.single-product .wp-block-woocommerce-product-meta {
 /* BUTTON */
 .wp-container-core-buttons-is-layout-27eaf71a .wp-block-button__link {
     padding: 12px 28px;
-    border-radius: 999px;
+    border-radius: 10px;
     background: #111;
     color: #fff;
     font-weight: 500;
