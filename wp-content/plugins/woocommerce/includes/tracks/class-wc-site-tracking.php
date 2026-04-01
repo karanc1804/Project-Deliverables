@@ -234,6 +234,7 @@ class WC_Site_Tracking {
 				call_user_func( $tracker_init_method );
 			}
 		}
+<<<<<<< HEAD
 
 		add_filter( 'pre_update_option_woocommerce_allow_tracking', array( __CLASS__, 'maybe_unschedule_deferred_tracks' ) );
 	}
@@ -252,6 +253,8 @@ class WC_Site_Tracking {
 			as_unschedule_all_actions( '', array(), 'woocommerce-tracks' );
 		}
 		return $new_option_value;
+=======
+>>>>>>> origin/main
 	}
 
 	/**

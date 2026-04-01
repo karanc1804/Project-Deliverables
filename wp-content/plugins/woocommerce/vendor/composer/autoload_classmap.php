@@ -616,7 +616,10 @@ return array(
     'Automattic\\WooCommerce\\Blocks\\Registry\\Container' => $baseDir . '/src/Blocks/Registry/Container.php',
     'Automattic\\WooCommerce\\Blocks\\Registry\\FactoryType' => $baseDir . '/src/Blocks/Registry/FactoryType.php',
     'Automattic\\WooCommerce\\Blocks\\Registry\\SharedType' => $baseDir . '/src/Blocks/Registry/SharedType.php',
+<<<<<<< HEAD
     'Automattic\\WooCommerce\\Blocks\\SharedStores\\ProductsStore' => $baseDir . '/src/Blocks/SharedStores/ProductsStore.php',
+=======
+>>>>>>> origin/main
     'Automattic\\WooCommerce\\Blocks\\Shipping\\PickupLocation' => $baseDir . '/src/Blocks/Shipping/PickupLocation.php',
     'Automattic\\WooCommerce\\Blocks\\Shipping\\ShippingController' => $baseDir . '/src/Blocks/Shipping/ShippingController.php',
     'Automattic\\WooCommerce\\Blocks\\TemplateOptions' => $baseDir . '/src/Blocks/TemplateOptions.php',
@@ -957,7 +960,13 @@ return array(
     'Automattic\\WooCommerce\\Internal\\AddressProvider\\AbstractAutomatticAddressProvider' => $baseDir . '/src/Internal/AddressProvider/AbstractAutomatticAddressProvider.php',
     'Automattic\\WooCommerce\\Internal\\AddressProvider\\AddressProviderController' => $baseDir . '/src/Internal/AddressProvider/AddressProviderController.php',
     'Automattic\\WooCommerce\\Internal\\Admin\\ActivityPanels' => $baseDir . '/src/Internal/Admin/ActivityPanels.php',
+<<<<<<< HEAD
     'Automattic\\WooCommerce\\Internal\\Admin\\Agentic\\AgenticController' => $baseDir . '/src/Internal/Admin/Agentic/AgenticController.php',
+=======
+    'Automattic\\WooCommerce\\Internal\\Admin\\Agentic\\AgenticCommerceIntegration' => $baseDir . '/src/Internal/Admin/Agentic/AgenticCommerceIntegration.php',
+    'Automattic\\WooCommerce\\Internal\\Admin\\Agentic\\AgenticController' => $baseDir . '/src/Internal/Admin/Agentic/AgenticController.php',
+    'Automattic\\WooCommerce\\Internal\\Admin\\Agentic\\AgenticSettingsPage' => $baseDir . '/src/Internal/Admin/Agentic/AgenticSettingsPage.php',
+>>>>>>> origin/main
     'Automattic\\WooCommerce\\Internal\\Admin\\Agentic\\AgenticWebhookManager' => $baseDir . '/src/Internal/Admin/Agentic/AgenticWebhookManager.php',
     'Automattic\\WooCommerce\\Internal\\Admin\\Agentic\\AgenticWebhookPayloadBuilder' => $baseDir . '/src/Internal/Admin/Agentic/AgenticWebhookPayloadBuilder.php',
     'Automattic\\WooCommerce\\Internal\\Admin\\Analytics' => $baseDir . '/src/Internal/Admin/Analytics.php',
@@ -1156,11 +1165,17 @@ return array(
     'Automattic\\WooCommerce\\Internal\\CLI\\Migrator\\Platforms\\Shopify\\ShopifyMapper' => $baseDir . '/src/Internal/CLI/Migrator/Platforms/Shopify/ShopifyMapper.php',
     'Automattic\\WooCommerce\\Internal\\CLI\\Migrator\\Platforms\\Shopify\\ShopifyPlatform' => $baseDir . '/src/Internal/CLI/Migrator/Platforms/Shopify/ShopifyPlatform.php',
     'Automattic\\WooCommerce\\Internal\\CLI\\Migrator\\Runner' => $baseDir . '/src/Internal/CLI/Migrator/Runner.php',
+<<<<<<< HEAD
     'Automattic\\WooCommerce\\Internal\\Caches\\OrdersVersionStringInvalidator' => $baseDir . '/src/Internal/Caches/OrdersVersionStringInvalidator.php',
     'Automattic\\WooCommerce\\Internal\\Caches\\ProductCache' => $baseDir . '/src/Internal/Caches/ProductCache.php',
     'Automattic\\WooCommerce\\Internal\\Caches\\ProductCacheController' => $baseDir . '/src/Internal/Caches/ProductCacheController.php',
     'Automattic\\WooCommerce\\Internal\\Caches\\ProductVersionStringInvalidator' => $baseDir . '/src/Internal/Caches/ProductVersionStringInvalidator.php',
     'Automattic\\WooCommerce\\Internal\\Caches\\TaxRateVersionStringInvalidator' => $baseDir . '/src/Internal/Caches/TaxRateVersionStringInvalidator.php',
+=======
+    'Automattic\\WooCommerce\\Internal\\Caches\\ProductCache' => $baseDir . '/src/Internal/Caches/ProductCache.php',
+    'Automattic\\WooCommerce\\Internal\\Caches\\ProductCacheController' => $baseDir . '/src/Internal/Caches/ProductCacheController.php',
+    'Automattic\\WooCommerce\\Internal\\Caches\\ProductVersionStringInvalidator' => $baseDir . '/src/Internal/Caches/ProductVersionStringInvalidator.php',
+>>>>>>> origin/main
     'Automattic\\WooCommerce\\Internal\\Caches\\VersionStringGenerator' => $baseDir . '/src/Internal/Caches/VersionStringGenerator.php',
     'Automattic\\WooCommerce\\Internal\\ComingSoon\\ComingSoonAdminBarBadge' => $baseDir . '/src/Internal/ComingSoon/ComingSoonAdminBarBadge.php',
     'Automattic\\WooCommerce\\Internal\\ComingSoon\\ComingSoonCacheInvalidator' => $baseDir . '/src/Internal/ComingSoon/ComingSoonCacheInvalidator.php',
@@ -1225,13 +1240,24 @@ return array(
     'Automattic\\WooCommerce\\Internal\\Features\\ProductBlockEditor\\ProductTemplates\\Section' => $baseDir . '/src/Internal/Features/ProductBlockEditor/ProductTemplates/Section.php',
     'Automattic\\WooCommerce\\Internal\\Features\\ProductBlockEditor\\ProductTemplates\\SimpleProductTemplate' => $baseDir . '/src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php',
     'Automattic\\WooCommerce\\Internal\\Features\\ProductBlockEditor\\ProductTemplates\\Subsection' => $baseDir . '/src/Internal/Features/ProductBlockEditor/ProductTemplates/Subsection.php',
+<<<<<<< HEAD
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\ApiClient' => $baseDir . '/src/Internal/FraudProtection/ApiClient.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\BlackboxScriptHandler' => $baseDir . '/src/Internal/FraudProtection/BlackboxScriptHandler.php',
+=======
+    'Automattic\\WooCommerce\\Internal\\FraudProtection\\AdminSettingsHandler' => $baseDir . '/src/Internal/FraudProtection/AdminSettingsHandler.php',
+    'Automattic\\WooCommerce\\Internal\\FraudProtection\\ApiClient' => $baseDir . '/src/Internal/FraudProtection/ApiClient.php',
+>>>>>>> origin/main
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\BlockedSessionNotice' => $baseDir . '/src/Internal/FraudProtection/BlockedSessionNotice.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\CartEventTracker' => $baseDir . '/src/Internal/FraudProtection/CartEventTracker.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\CheckoutEventTracker' => $baseDir . '/src/Internal/FraudProtection/CheckoutEventTracker.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\DecisionHandler' => $baseDir . '/src/Internal/FraudProtection/DecisionHandler.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\FraudProtectionController' => $baseDir . '/src/Internal/FraudProtection/FraudProtectionController.php',
+<<<<<<< HEAD
+=======
+    'Automattic\\WooCommerce\\Internal\\FraudProtection\\FraudProtectionDispatcher' => $baseDir . '/src/Internal/FraudProtection/FraudProtectionDispatcher.php',
+    'Automattic\\WooCommerce\\Internal\\FraudProtection\\FraudProtectionTracker' => $baseDir . '/src/Internal/FraudProtection/FraudProtectionTracker.php',
+    'Automattic\\WooCommerce\\Internal\\FraudProtection\\JetpackConnectionManager' => $baseDir . '/src/Internal/FraudProtection/JetpackConnectionManager.php',
+>>>>>>> origin/main
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\PaymentMethodEventTracker' => $baseDir . '/src/Internal/FraudProtection/PaymentMethodEventTracker.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\SessionClearanceManager' => $baseDir . '/src/Internal/FraudProtection/SessionClearanceManager.php',
     'Automattic\\WooCommerce\\Internal\\FraudProtection\\SessionDataCollector' => $baseDir . '/src/Internal/FraudProtection/SessionDataCollector.php',
@@ -1382,6 +1408,7 @@ return array(
     'Automattic\\WooCommerce\\Internal\\ProductFilters\\QueryClauses' => $baseDir . '/src/Internal/ProductFilters/QueryClauses.php',
     'Automattic\\WooCommerce\\Internal\\ProductFilters\\TaxonomyHierarchyData' => $baseDir . '/src/Internal/ProductFilters/TaxonomyHierarchyData.php',
     'Automattic\\WooCommerce\\Internal\\ProductImage\\MatchImageBySKU' => $baseDir . '/src/Internal/ProductImage/MatchImageBySKU.php',
+<<<<<<< HEAD
     'Automattic\\WooCommerce\\Internal\\PushNotifications\\Controllers\\PushTokenRestController' => $baseDir . '/src/Internal/PushNotifications/Controllers/PushTokenRestController.php',
     'Automattic\\WooCommerce\\Internal\\PushNotifications\\DataStores\\PushTokensDataStore' => $baseDir . '/src/Internal/PushNotifications/DataStores/PushTokensDataStore.php',
     'Automattic\\WooCommerce\\Internal\\PushNotifications\\Entities\\PushToken' => $baseDir . '/src/Internal/PushNotifications/Entities/PushToken.php',
@@ -1389,6 +1416,12 @@ return array(
     'Automattic\\WooCommerce\\Internal\\PushNotifications\\Exceptions\\PushTokenNotFoundException' => $baseDir . '/src/Internal/PushNotifications/Exceptions/PushTokenNotFoundException.php',
     'Automattic\\WooCommerce\\Internal\\PushNotifications\\PushNotifications' => $baseDir . '/src/Internal/PushNotifications/PushNotifications.php',
     'Automattic\\WooCommerce\\Internal\\PushNotifications\\Validators\\PushTokenValidator' => $baseDir . '/src/Internal/PushNotifications/Validators/PushTokenValidator.php',
+=======
+    'Automattic\\WooCommerce\\Internal\\PushNotifications\\DataStores\\PushTokensDataStore' => $baseDir . '/src/Internal/PushNotifications/DataStores/PushTokensDataStore.php',
+    'Automattic\\WooCommerce\\Internal\\PushNotifications\\Entities\\PushToken' => $baseDir . '/src/Internal/PushNotifications/Entities/PushToken.php',
+    'Automattic\\WooCommerce\\Internal\\PushNotifications\\Exceptions\\PushTokenNotFoundException' => $baseDir . '/src/Internal/PushNotifications/Exceptions/PushTokenNotFoundException.php',
+    'Automattic\\WooCommerce\\Internal\\PushNotifications\\PushNotifications' => $baseDir . '/src/Internal/PushNotifications/PushNotifications.php',
+>>>>>>> origin/main
     'Automattic\\WooCommerce\\Internal\\ReceiptRendering\\ReceiptRenderingEngine' => $baseDir . '/src/Internal/ReceiptRendering/ReceiptRenderingEngine.php',
     'Automattic\\WooCommerce\\Internal\\ReceiptRendering\\ReceiptRenderingRestController' => $baseDir . '/src/Internal/ReceiptRendering/ReceiptRenderingRestController.php',
     'Automattic\\WooCommerce\\Internal\\RegisterHooksInterface' => $baseDir . '/src/Internal/RegisterHooksInterface.php',

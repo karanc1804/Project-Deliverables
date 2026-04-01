@@ -35,7 +35,11 @@ class WC_Email extends WC_Settings_API {
 	/**
 	 * Email method ID.
 	 *
+<<<<<<< HEAD
 	 * @var string
+=======
+	 * @var String
+>>>>>>> origin/main
 	 */
 	public $id;
 

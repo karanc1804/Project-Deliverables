@@ -87,6 +87,10 @@ class BlocksSharedState {
 
 		wp_interactivity_config( self::$settings_namespace, self::get_currency_data() );
 		wp_interactivity_config( self::$settings_namespace, self::get_locale_data() );
+<<<<<<< HEAD
+=======
+		wp_interactivity_config( self::$settings_namespace, self::get_core_data() );
+>>>>>>> origin/main
 	}
 
 	/**
@@ -126,6 +130,20 @@ class BlocksSharedState {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Get core data to include in settings.
+	 *
+	 * @return array
+	 */
+	private static function get_core_data(): array {
+		return array(
+			'isBlockTheme' => wp_is_block_theme(),
+		);
+	}
+
+	/**
+>>>>>>> origin/main
 	 * Get currency data to include in settings.
 	 *
 	 * @return array
@@ -178,6 +196,7 @@ class BlocksSharedState {
 			array( 'placeholderImgSrc' => wc_placeholder_img_src() )
 		);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Get cart errors formatted as notices for the store-notices interactivity store.
@@ -211,4 +230,6 @@ class BlocksSharedState {
 
 		return $notices;
 	}
+=======
+>>>>>>> origin/main
 }

@@ -8,7 +8,10 @@ use Exception;
 use WC_Order;
 use Automattic\WooCommerce\Gateways\PayPal\Constants as PayPalConstants;
 use Automattic\WooCommerce\Gateways\PayPal\AddressRequirements as PayPalAddressRequirements;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Gateways\PayPal\Helper as PayPalHelper;
+=======
+>>>>>>> origin/main
 use Automattic\WooCommerce\Enums\OrderStatus;
 use Automattic\Jetpack\Connection\Client as Jetpack_Connection_Client;
 
@@ -214,11 +217,18 @@ class Request {
 	 * @param WC_Order|null $order Order object.
 	 * @param string|null   $action_url The URL to authorize or capture the payment.
 	 * @param string        $action The action to perform. Either 'authorize' or 'capture'.
+<<<<<<< HEAD
 	 * @param bool          $is_retry Whether the payment is being retried.
 	 * @return void
 	 * @throws Exception If the PayPal payment authorization or capture fails.
 	 */
 	public function authorize_or_capture_payment( ?WC_Order $order, ?string $action_url, string $action = PayPalConstants::PAYMENT_ACTION_CAPTURE, bool $is_retry = false ): void {
+=======
+	 * @return void
+	 * @throws Exception If the PayPal payment authorization or capture fails.
+	 */
+	public function authorize_or_capture_payment( ?WC_Order $order, ?string $action_url, string $action = PayPalConstants::PAYMENT_ACTION_CAPTURE ): void {
+>>>>>>> origin/main
 		if ( ! $order ) {
 			\WC_Gateway_Paypal::log( 'Order not found to authorize or capture payment.' );
 			return;
@@ -269,6 +279,7 @@ class Request {
 			$body          = wp_remote_retrieve_body( $response );
 			$response_data = json_decode( $body, true );
 
+<<<<<<< HEAD
 			$issue                = isset( $response_data['details'][0]['issue'] ) ? $response_data['details'][0]['issue'] : '';
 			$duplicate_invoice_id = 422 === $http_code && PayPalConstants::PAYPAL_ISSUE_DUPLICATE_INVOICE_ID === $issue;
 
@@ -279,6 +290,8 @@ class Request {
 				return;
 			}
 
+=======
+>>>>>>> origin/main
 			if ( 200 !== $http_code && 201 !== $http_code ) {
 				$paypal_debug_id = isset( $response_data['debug_id'] ) ? $response_data['debug_id'] : null;
 				throw new Exception( 'PayPal ' . $action . ' payment failed. Response status: ' . $http_code . '. Response body: ' . $body );
@@ -429,6 +442,7 @@ class Request {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Handle duplicate invoice ID.
 	 * This is a workaround to handle the duplicate invoice ID error that occurs when the invoice ID is not unique.
 	 * We generate a new invoice ID and patch the invoice ID in the PayPal order.
@@ -512,6 +526,8 @@ class Request {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Get the authorization ID for the PayPal payment.
 	 *
 	 * @param WC_Order $order Order object.
@@ -541,6 +557,7 @@ class Request {
 			\WC_Gateway_Paypal::log( 'Authorization ID not found, trying to retrieve from PayPal order details as a fallback for backwards compatibility. Order ID: ' . $order->get_id() );
 
 			try {
+<<<<<<< HEAD
 				$order_data = $this->get_paypal_order_details( $paypal_order_id );
 			} catch ( Exception $e ) {
 				\WC_Gateway_Paypal::log( 'Error retrieving PayPal order details. Order ID: ' . $order->get_id() . '. Error: ' . $e->getMessage() );
@@ -553,6 +570,9 @@ class Request {
 			}
 
 			try {
+=======
+				$order_data         = $this->get_paypal_order_details( $paypal_order_id );
+>>>>>>> origin/main
 				$authorization_data = $this->get_latest_transaction_data(
 					$order_data['purchase_units'][0]['payments']['authorizations'] ?? array()
 				);
@@ -711,8 +731,13 @@ class Request {
 						'shipping_preference'   => $shipping_preference,
 						// Customer redirected here on approval.
 						'return_url'            => $this->normalize_url_for_paypal( add_query_arg( 'utm_nooverride', '1', $this->gateway->get_return_url( $order ) ) ),
+<<<<<<< HEAD
 						// Customer redirected back to checkout if they cancel the PayPal flow.
 						'cancel_url'            => $this->normalize_url_for_paypal( wc_get_checkout_url() ),
+=======
+						// Customer redirected here on cancellation.
+						'cancel_url'            => $this->normalize_url_for_paypal( $order->get_cancel_order_url_raw() ),
+>>>>>>> origin/main
 						// Convert WordPress locale format (e.g., 'en_US') to PayPal's expected format (e.g., 'en-US').
 						'locale'                => str_replace( '_', '-', $src_locale ),
 						'app_switch_preference' => array(
@@ -783,10 +808,13 @@ class Request {
 		$shipping = $this->get_paypal_order_shipping( $order );
 		if ( $shipping ) {
 			$params['purchase_units'][0]['shipping'] = $shipping;
+<<<<<<< HEAD
 		} elseif ( PayPalConstants::SHIPPING_SET_PROVIDED_ADDRESS === $shipping_preference ) {
 			// If the shipping preference is set to SET_PROVIDED_ADDRESS, but no shipping information is provided, PayPal create order request will fail.
 			// Throw an exception to prevent the request from being sent.
 			throw new Exception( 'Shipping address is required for PayPal create-order request. Order ID: ' . esc_html( (string) $order->get_id() ) );
+=======
+>>>>>>> origin/main
 		}
 
 		return $params;
@@ -1053,7 +1081,11 @@ class Request {
 
 		// Check if it's a valid alpha-2 code.
 		if ( strlen( $code ) === PayPalConstants::PAYPAL_COUNTRY_CODE_LENGTH ) {
+<<<<<<< HEAD
 			if ( PayPalHelper::is_country_supported_by_paypal( $code ) ) {
+=======
+			if ( WC()->countries->country_exists( $code ) ) {
+>>>>>>> origin/main
 				return $code;
 			}
 
@@ -1073,12 +1105,16 @@ class Request {
 		// Check if it's a valid alpha-3 code.
 		$alpha2 = WC()->countries->get_country_from_alpha_3_code( $code );
 		if ( null === $alpha2 ) {
+<<<<<<< HEAD
 			\WC_Gateway_Paypal::log( sprintf( 'Invalid alpha-3 country code: %s', $code ), 'error' );
 			return null;
 		}
 		if ( ! PayPalHelper::is_country_supported_by_paypal( $alpha2 ) ) {
 			\WC_Gateway_Paypal::log( sprintf( 'Country not supported by PayPal: %s (resolved from alpha-3: %s)', $alpha2, $code ) );
 			return null;
+=======
+			\WC_Gateway_Paypal::log( sprintf( 'Invalid alpha-3 country code: %s', $code ) );
+>>>>>>> origin/main
 		}
 
 		return $alpha2;

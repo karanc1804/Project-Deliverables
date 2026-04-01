@@ -88,9 +88,12 @@ class DefaultFreeExtensions {
 						self::get_plugin( 'google-listings-and-ads' ),
 						self::get_plugin( 'woocommerce-services:tax' ),
 						self::get_plugin( 'tiktok-for-business' ),
+<<<<<<< HEAD
 						self::get_plugin( 'snapchat-for-woocommerce' ),
 						self::get_plugin( 'facebook-for-woocommerce' ),
 						self::get_plugin( 'reddit-for-woocommerce' ),
+=======
+>>>>>>> origin/main
 					)
 				),
 			),
@@ -457,6 +460,7 @@ class DefaultFreeExtensions {
 				'is_built_by_wc' => false,
 				'is_visible'     => false,
 			),
+<<<<<<< HEAD
 			'snapchat-for-woocommerce'      => array(
 				'name'           => __( 'Snapchat Ads', 'woocommerce' ),
 				'description'    => __( 'Reach an untapped audience on Snapchat and drive more sales.', 'woocommerce' ),
@@ -473,6 +477,8 @@ class DefaultFreeExtensions {
 				'is_built_by_wc' => true,
 				'is_visible'     => true,
 			),
+=======
+>>>>>>> origin/main
 		);
 
 		$plugin        = $plugins[ $slug ];
@@ -560,6 +566,7 @@ class DefaultFreeExtensions {
 				'learn_more_link'  => 'https://woocommerce.com/products/google-listings-and-ads?utm_source=storeprofiler&utm_medium=product&utm_campaign=freefeatures',
 				'install_priority' => 6,
 			),
+<<<<<<< HEAD
 			'snapchat-for-woocommerce'  => array(
 				'label'            => __( 'Find New Customers with Snapchat Ads', 'woocommerce' ),
 				'image_url'        => plugins_url( '/assets/images/core-profiler/logo-snapchat.svg', WC_PLUGIN_FILE ),
@@ -581,6 +588,8 @@ class DefaultFreeExtensions {
 				'learn_more_link'  => 'https://woocommerce.com/products/reddit/?utm_source=storeprofiler&utm_medium=product&utm_campaign=freefeatures',
 				'install_priority' => 1,
 			),
+=======
+>>>>>>> origin/main
 			'woocommerce-services:tax'  => array(
 				'label'            => __( 'Get automated tax rates with WooCommerce Tax', 'woocommerce' ),
 				'image_url'        => self::get_woo_logo(),
@@ -602,6 +611,7 @@ class DefaultFreeExtensions {
 			self::get_rules_for_wcservices_tax_countries(),
 		);
 
+<<<<<<< HEAD
 		// TikTok, Pinterest, and Facebook share a single spot with 1/3 rotation each.
 		$_plugins['tiktok-for-business']['is_visible'] = array(
 			array(
@@ -633,6 +643,8 @@ class DefaultFreeExtensions {
 			),
 		);
 
+=======
+>>>>>>> origin/main
 		$remove_plugins_activated_rule = function ( $is_visible ) {
 			$is_visible = array_filter(
 				array_map(

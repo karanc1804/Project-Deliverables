@@ -108,7 +108,11 @@ class AsyncGenerator {
 		}
 
 		// Clear all previous actions to avoid race conditions.
+<<<<<<< HEAD
 		as_unschedule_all_actions( self::FEED_GENERATION_ACTION, array( $option_key ), 'woo-product-feed' );
+=======
+		as_unschedule_all_actions( self::FEED_GENERATION_ACTION, array( $option_key ), 'woo-product-feed' ); // @phpstan-ignore function.notFound
+>>>>>>> origin/main
 
 		$status = array(
 			'scheduled_at' => time(),
@@ -126,6 +130,10 @@ class AsyncGenerator {
 		);
 
 		// Start an immediate async action to generate the feed.
+<<<<<<< HEAD
+=======
+		// @phpstan-ignore-next-line function.notFound -- Action Scheduler.
+>>>>>>> origin/main
 		as_enqueue_async_action(
 			self::FEED_GENERATION_ACTION,
 			array( $option_key ),
@@ -199,6 +207,10 @@ class AsyncGenerator {
 			update_option( $option_key, $status );
 
 			// Schedule another action to delete the file after the expiry time.
+<<<<<<< HEAD
+=======
+			// @phpstan-ignore-next-line function.notFound -- Action Scheduler.
+>>>>>>> origin/main
 			as_schedule_single_action(
 				time() + self::FEED_EXPIRY,
 				self::FEED_DELETION_ACTION,
@@ -207,7 +219,11 @@ class AsyncGenerator {
 					$feed->get_file_path(),
 				),
 				'woo-product-feed',
+<<<<<<< HEAD
 				false
+=======
+				true
+>>>>>>> origin/main
 			);
 		} catch ( \Throwable $e ) {
 			wc_get_logger()->error(

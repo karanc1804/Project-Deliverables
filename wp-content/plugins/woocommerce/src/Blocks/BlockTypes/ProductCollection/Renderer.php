@@ -197,12 +197,23 @@ class Renderer {
 					class="wc-block-components-notice-banner"
 					data-wp-init="callbacks.scrollIntoView"
 					data-wp-class--is-error="state.isError"
+<<<<<<< HEAD
 					data-wp-class--is-success="state.isSuccess"
 					data-wp-class--is-info="state.isInfo"
 					data-wp-class--is-dismissible="context.notice.dismissible"
 					data-wp-bind--role="state.role"
 					data-wp-watch="callbacks.injectIcon"
 				>
+=======
+					data-wp-class--is-success ="state.isSuccess"
+					data-wp-class--is-info="state.isInfo"
+					data-wp-class--is-dismissible="context.notice.dismissible"
+					data-wp-bind--role="state.role"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+						<path data-wp-bind--d="state.iconPath"></path>
+					</svg>
+>>>>>>> origin/main
 					<div class="wc-block-components-notice-banner__content">
 						<span data-wp-init="callbacks.renderNoticeContent" aria-live="assertive" aria-atomic="true"></span>
 					</div>

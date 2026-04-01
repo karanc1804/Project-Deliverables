@@ -754,6 +754,7 @@ return array(
 				'enum' => array(
 					'pills',
 					'dropdown'
+<<<<<<< HEAD
 				),
 				'default' => 'pills'
 			),
@@ -768,6 +769,9 @@ return array(
 					'hide'
 				),
 				'default' => 'disable'
+=======
+				)
+>>>>>>> origin/main
 			)
 		),
 		'textdomain' => 'woocommerce',

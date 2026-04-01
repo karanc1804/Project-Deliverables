@@ -4,8 +4,11 @@ namespace Automattic\WooCommerce\Blocks\BlockTypes\Reviews;
 use Automattic\WooCommerce\Blocks\BlockTypes\AbstractBlock;
 use WP_Comment_Query;
 use WP_Block;
+<<<<<<< HEAD
 use WP_Comment;
 
+=======
+>>>>>>> origin/main
 /**
  * ProductReviewTemplate class.
  */
@@ -33,6 +36,7 @@ class ProductReviewTemplate extends AbstractBlock {
 	 *
 	 * @since 6.3.0 Changed render_block_context priority to `1`.
 	 *
+<<<<<<< HEAD
 	 * @param WP_Comment[] $comments      The array of comments.
 	 * @param WP_Block     $block         Block instance.
 	 *
@@ -46,6 +50,15 @@ class ProductReviewTemplate extends AbstractBlock {
 				continue;
 			}
 
+=======
+	 * @param WP_Comment[] $comments        The array of comments.
+	 * @param WP_Block     $block           Block instance.
+	 * @return string
+	 */
+	protected function block_product_review_template_render_comments( $comments, $block ) {
+		$content = '';
+		foreach ( $comments as $comment ) {
+>>>>>>> origin/main
 			$comment_id           = $comment->comment_ID;
 			$filter_block_context = static function ( $context ) use ( $comment_id ) {
 				$context['commentId'] = $comment_id;
@@ -53,6 +66,7 @@ class ProductReviewTemplate extends AbstractBlock {
 			};
 
 			/*
+<<<<<<< HEAD
 			 * We set commentId context through the `render_block_context` filter so
 			 * that dynamically inserted blocks (at `render_block` filter stage)
 			 * will also receive that context.
@@ -66,10 +80,26 @@ class ProductReviewTemplate extends AbstractBlock {
 			 * We construct a new WP_Block instance from the parsed block so that
 			 * it'll receive any changes made by the `render_block_data` filter.
 			 */
+=======
+			* We set commentId context through the `render_block_context` filter so
+			* that dynamically inserted blocks (at `render_block` filter stage)
+			* will also receive that context.
+			*
+			* Use an early priority to so that other 'render_block_context' filters
+			* have access to the values.
+			*/
+			add_filter( 'render_block_context', $filter_block_context, 1 );
+
+			/*
+			* We construct a new WP_Block instance from the parsed block so that
+			* it'll receive any changes made by the `render_block_data` filter.
+			*/
+>>>>>>> origin/main
 			$block_content = ( new WP_Block( $block->parsed_block ) )->render( array( 'dynamic' => false ) );
 
 			remove_filter( 'render_block_context', $filter_block_context, 1 );
 
+<<<<<<< HEAD
 			$children = $comment->get_children();
 
 			/*
@@ -96,6 +126,9 @@ class ProductReviewTemplate extends AbstractBlock {
 				);
 				$block_content .= sprintf( '<ol>%1$s</ol>', $inner_content );
 			}
+=======
+			$comment_classes = comment_class( '', $comment->comment_ID, $comment->comment_post_ID, false );
+>>>>>>> origin/main
 
 			$content .= sprintf( '<li id="comment-%1$s" %2$s>%3$s</li>', $comment->comment_ID, $comment_classes, $block_content );
 		}

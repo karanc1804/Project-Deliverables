@@ -12,11 +12,18 @@ use Automattic\Jetpack\Connection\Client as Jetpack_Connection_Client;
 defined( 'ABSPATH' ) || exit;
 
 /**
+<<<<<<< HEAD
  * Handles communication with the Blackbox fraud protection API.
  *
  * Uses Jetpack Connection for authenticated requests to the Blackbox API
  * to verify sessions and report fraud events. The API returns fraud protection
  * decisions (allow, block, or challenge).
+=======
+ * Handles communication with the WPCOM fraud protection endpoint.
+ *
+ * Uses Jetpack Connection for authenticated requests to the WPCOM endpoint
+ * to get fraud protection decisions (allow, block, or challenge).
+>>>>>>> origin/main
  *
  * This class implements a fail-open pattern: if the endpoint is unreachable,
  * times out, or returns an error, it returns an "allow" decision to ensure
@@ -29,6 +36,7 @@ class ApiClient {
 
 	/**
 	 * Default timeout for API requests in seconds.
+<<<<<<< HEAD
 	 *
 	 * Using 10 seconds as a reasonable timeout for fraud verification during checkout.
 	 * This balances giving the API enough time to respond while not blocking
@@ -50,6 +58,20 @@ class ApiClient {
 	 * Blackbox API report endpoint path.
 	 */
 	private const REPORT_ENDPOINT = '/report';
+=======
+	 */
+	private const DEFAULT_TIMEOUT = 30;
+
+	/**
+	 * WPCOM API version.
+	 */
+	private const WPCOM_API_VERSION = '2';
+
+	/**
+	 * WPCOM fraud protection events endpoint path within Transact platform.
+	 */
+	private const EVENTS_ENDPOINT = 'transact/fraud_protection/events';
+>>>>>>> origin/main
 
 	/**
 	 * Decision type: allow session.
@@ -77,13 +99,18 @@ class ApiClient {
 	);
 
 	/**
+<<<<<<< HEAD
 	 * Verify a session with the Blackbox API and get a fraud decision.
+=======
+	 * Send a fraud protection event and get a decision from WPCOM endpoint.
+>>>>>>> origin/main
 	 *
 	 * Implements fail-open pattern: if the endpoint is unreachable or times out,
 	 * returns "allow" decision and logs the error.
 	 *
 	 * @since 10.5.0
 	 *
+<<<<<<< HEAD
 	 * @param string               $session_id Session ID to verify.
 	 * @param array<string, mixed> $payload    Event data to send to the endpoint.
 	 * @return string Decision: "allow" or "block".
@@ -155,12 +182,37 @@ class ApiClient {
 	 */
 	private function process_decision_response( $response, array $event_data ): string {
 		if ( is_wp_error( $response ) ) {
+=======
+	 * @param string               $event_type Type of event being sent (e.g., 'cart_updated', 'checkout_started').
+	 * @param array<string, mixed> $event_data Event data to send to the endpoint.
+	 * @return string Decision: "allow" or "block".
+	 */
+	public function send_event( string $event_type, array $event_data ): string {
+		$payload = array_merge(
+			array( 'event_type' => $event_type ),
+			array_filter( $event_data, fn( $value ) => null !== $value )
+		);
+
+		FraudProtectionController::log(
+			'info',
+			sprintf( 'Sending fraud protection event: %s', $event_type ),
+			array( 'payload' => $payload )
+		);
+
+		$response = $this->make_request( 'POST', self::EVENTS_ENDPOINT, $payload );
+
+		if ( is_wp_error( $response ) ) {
+>>>>>>> origin/main
 			$error_data = $response->get_error_data() ?? array();
 			$error_data = is_array( $error_data ) ? $error_data : array( 'error' => $error_data );
 			FraudProtectionController::log(
 				'error',
 				sprintf(
+<<<<<<< HEAD
 					'Blackbox API request failed: %s. Failing open with "allow" decision.',
+=======
+					'Event track request failed: %s. Failing open with "allow" decision.',
+>>>>>>> origin/main
 					$response->get_error_message()
 				),
 				$error_data
@@ -193,7 +245,10 @@ class ApiClient {
 
 		$session    = is_array( $event_data['session'] ?? null ) ? $event_data['session'] : array();
 		$session_id = $session['session_id'] ?? 'unknown';
+<<<<<<< HEAD
 		$event_type = $event_data['event_type'] ?? 'unknown';
+=======
+>>>>>>> origin/main
 		FraudProtectionController::log(
 			'info',
 			sprintf(
@@ -209,6 +264,7 @@ class ApiClient {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Make an HTTP request to the Blackbox API via Jetpack Connection.
 	 *
 	 * Uses Jetpack's signed request mechanism which authenticates with the
@@ -221,6 +277,16 @@ class ApiClient {
 	 * @return array<string, mixed>|\WP_Error Parsed JSON response or WP_Error on failure.
 	 */
 	private function make_request( string $method, string $path, string $session_id, array $payload ) {
+=======
+	 * Make an HTTP request to a WPCOM endpoint via Jetpack Connection.
+	 *
+	 * @param string               $method  HTTP method (GET, POST, etc.).
+	 * @param string               $path    Endpoint path (relative to sites/{blog_id}/).
+	 * @param array<string, mixed> $payload Request payload.
+	 * @return array<string, mixed>|\WP_Error Parsed JSON response or WP_Error on failure.
+	 */
+	private function make_request( string $method, string $path, array $payload ) {
+>>>>>>> origin/main
 		if ( ! class_exists( Jetpack_Connection_Client::class ) ) {
 			return new \WP_Error(
 				'jetpack_not_available',
@@ -236,6 +302,7 @@ class ApiClient {
 			);
 		}
 
+<<<<<<< HEAD
 		$payload['blog_id'] = $blog_id;
 
 		$body = \wp_json_encode(
@@ -245,6 +312,11 @@ class ApiClient {
 				'extra'       => $payload,
 			)
 		);
+=======
+		$full_path = sprintf( 'sites/%d/%s', $blog_id, $path );
+
+		$body = \wp_json_encode( $payload );
+>>>>>>> origin/main
 
 		if ( false === $body ) {
 			return new \WP_Error(
@@ -254,6 +326,7 @@ class ApiClient {
 			);
 		}
 
+<<<<<<< HEAD
 		$url = self::BLACKBOX_API_BASE_URL . $path;
 
 		// Use Jetpack Connection Client to make a signed request.
@@ -267,6 +340,18 @@ class ApiClient {
 				'auth_location' => 'header',
 			),
 			$body
+=======
+		$response = Jetpack_Connection_Client::wpcom_json_api_request_as_blog(
+			$full_path,
+			self::WPCOM_API_VERSION,
+			array(
+				'headers' => array( 'Content-Type' => 'application/json' ),
+				'method'  => $method,
+				'timeout' => self::DEFAULT_TIMEOUT,
+			),
+			$body,
+			'wpcom'
+>>>>>>> origin/main
 		);
 
 		if ( is_wp_error( $response ) ) {
@@ -286,7 +371,11 @@ class ApiClient {
 		if ( $response_code >= 300 ) {
 			return new \WP_Error(
 				'api_error',
+<<<<<<< HEAD
 				sprintf( 'Blackbox API %s %s returned status code %d', $method, $path, $response_code ),
+=======
+				sprintf( 'Endpoint %s returned status code %d', "$method $path", $response_code ),
+>>>>>>> origin/main
 				array( 'response' => JSON_ERROR_NONE === json_last_error() ? $data : $response_body )
 			);
 		}

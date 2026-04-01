@@ -4151,8 +4151,13 @@ class PaymentsExtensionSuggestions {
 			),
 			self::NGENIUS           => array(
 				'_type'       => self::TYPE_PSP,
+<<<<<<< HEAD
 				'title'       => esc_html__( 'N-Genius Online by Network', 'woocommerce' ),
 				'description' => esc_html__( 'Power your business with N-Genius Online—smart, secure, and built for the future', 'woocommerce' ),
+=======
+				'title'       => esc_html__( 'N-Genius Online', 'woocommerce' ),
+				'description' => esc_html__( 'Power your business with N-Genius Online—smart, secure, and built for the future.', 'woocommerce' ),
+>>>>>>> origin/main
 				'icon'        => plugins_url( 'assets/images/onboarding/icons/ngenius.svg', WC_PLUGIN_FILE ),
 				'plugin'      => array(
 					'_type' => self::PLUGIN_TYPE_WPORG,

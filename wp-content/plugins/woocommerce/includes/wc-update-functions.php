@@ -1252,8 +1252,11 @@ function wc_update_300_webhooks() {
 /**
  * Add an index to the field comment_type to improve the response time of the query
  * used by WC_Comments::wp_count_comments() to get the number of comments by type.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_300_comment_type_index() {
 	global $wpdb;
@@ -1318,8 +1321,11 @@ function wc_update_300_settings() {
 
 /**
  * Convert meta values into term for product visibility.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_300_product_visibility() {
 	global $wpdb;
@@ -1383,8 +1389,11 @@ function wc_update_300_product_visibility() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_300_db_version() {
 	WC_Install::update_db_version( '3.0.0' );
@@ -1392,8 +1401,11 @@ function wc_update_300_db_version() {
 
 /**
  * Add an index to the downloadable product permissions table to improve performance of update_user_by_order_id.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_310_downloadable_products() {
 	global $wpdb;
@@ -1407,8 +1419,11 @@ function wc_update_310_downloadable_products() {
 
 /**
  * Find old order notes and ensure they have the correct type for exclusion.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_310_old_comments() {
 	global $wpdb;
@@ -1418,8 +1433,11 @@ function wc_update_310_old_comments() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_310_db_version() {
 	WC_Install::update_db_version( '3.1.0' );
@@ -1427,8 +1445,11 @@ function wc_update_310_db_version() {
 
 /**
  * Update shop_manager capabilities.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_312_shop_manager_capabilities() {
 	$role = get_role( 'shop_manager' );
@@ -1437,8 +1458,11 @@ function wc_update_312_shop_manager_capabilities() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_312_db_version() {
 	WC_Install::update_db_version( '3.1.2' );
@@ -1446,8 +1470,11 @@ function wc_update_312_db_version() {
 
 /**
  * Update state codes for Mexico.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_320_mexican_states() {
 	global $wpdb;
@@ -1521,8 +1548,11 @@ function wc_update_320_mexican_states() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_320_db_version() {
 	WC_Install::update_db_version( '3.2.0' );
@@ -1530,8 +1560,11 @@ function wc_update_320_db_version() {
 
 /**
  * Update image settings to use new aspect ratios and widths.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_image_options() {
 	$old_thumbnail_size = get_option( 'shop_catalog_image_size', array() );
@@ -1577,8 +1610,11 @@ function wc_update_330_image_options() {
 
 /**
  * Migrate webhooks from post type to CRUD.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_webhooks() {
 	register_post_type( 'shop_webhook' );
@@ -1618,8 +1654,11 @@ function wc_update_330_webhooks() {
 
 /**
  * Assign default cat to all products with no cats.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_set_default_product_cat() {
 	/*
@@ -1632,8 +1671,11 @@ function wc_update_330_set_default_product_cat() {
 
 /**
  * Update product stock status to use the new onbackorder status.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_product_stock_status() {
 	global $wpdb;
@@ -1677,8 +1719,11 @@ function wc_update_330_product_stock_status() {
 
 /**
  * Clear addons page transients
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_clear_transients() {
 	delete_transient( 'wc_addons_sections' );
@@ -1687,8 +1732,11 @@ function wc_update_330_clear_transients() {
 
 /**
  * Set PayPal's sandbox credentials.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_set_paypal_sandbox_credentials() {
 
@@ -1707,8 +1755,11 @@ function wc_update_330_set_paypal_sandbox_credentials() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_330_db_version() {
 	WC_Install::update_db_version( '3.3.0' );
@@ -1716,8 +1767,11 @@ function wc_update_330_db_version() {
 
 /**
  * Update state codes for Ireland and BD.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_340_states() {
 	$country_states = array(
@@ -1861,8 +1915,11 @@ function wc_update_340_state() {
 
 /**
  * Set last active prop for users.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_340_last_active() {
 	global $wpdb;
@@ -1883,8 +1940,11 @@ function wc_update_340_last_active() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_340_db_version() {
 	WC_Install::update_db_version( '3.4.0' );
@@ -1940,8 +2000,11 @@ function wc_update_344_db_version() {
 
 /**
  * Set the comment type to 'review' for product reviews that don't have a comment type.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_350_reviews_comment_type() {
 	global $wpdb;
@@ -1953,8 +2016,11 @@ function wc_update_350_reviews_comment_type() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_350_db_version() {
 	WC_Install::update_db_version( '3.5.0' );
@@ -1980,8 +2046,11 @@ function wc_update_352_drop_download_log_fk() {
 /**
  * Remove edit_user capabilities from shop managers and use "translated" capabilities instead.
  * See wc_shop_manager_has_capability function.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_354_modify_shop_manager_caps() {
 	global $wp_roles;
@@ -1999,8 +2068,11 @@ function wc_update_354_modify_shop_manager_caps() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_354_db_version() {
 	WC_Install::update_db_version( '3.5.4' );
@@ -2008,8 +2080,11 @@ function wc_update_354_db_version() {
 
 /**
  * Update product lookup tables in bulk.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_360_product_lookup_tables() {
 	wc_update_product_lookup_tables();
@@ -2017,8 +2092,11 @@ function wc_update_360_product_lookup_tables() {
 
 /**
  * Renames ordering meta to be consistent across taxonomies.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_360_term_meta() {
 	global $wpdb;
@@ -2043,8 +2121,11 @@ function wc_update_360_downloadable_product_permissions_index() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_360_db_version() {
 	WC_Install::update_db_version( '3.6.0' );
@@ -2117,8 +2198,11 @@ function wc_update_370_mro_std_currency() {
 
 /**
  * Update DB Version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_370_db_version() {
 	WC_Install::update_db_version( '3.7.0' );
@@ -2127,8 +2211,11 @@ function wc_update_370_db_version() {
 /**
  * We've moved the MaxMind database to a new location, as per the TOS' requirement that the database not
  * be publicly accessible.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_390_move_maxmind_database() {
 	// Make sure to use all of the correct filters to pull the local database path.
@@ -2150,8 +2237,11 @@ function wc_update_390_move_maxmind_database() {
 
 /**
  * So that we can best meet MaxMind's TOS, the geolocation database update cron should run once per 15 days.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_390_change_geolocation_database_update_cron() {
 	wp_clear_scheduled_hook( 'woocommerce_geoip_updater' );
@@ -2160,8 +2250,11 @@ function wc_update_390_change_geolocation_database_update_cron() {
 
 /**
  * Update DB version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_390_db_version() {
 	WC_Install::update_db_version( '3.9.0' );
@@ -2169,8 +2262,11 @@ function wc_update_390_db_version() {
 
 /**
  * Increase column size
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_400_increase_size_of_column() {
 	global $wpdb;
@@ -2180,13 +2276,20 @@ function wc_update_400_increase_size_of_column() {
 
 /**
  * Reset ActionScheduler migration status. Needs AS >= 3.0 shipped with WC >= 4.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_400_reset_action_scheduler_migration_status() {
 	if (
 		class_exists( 'ActionScheduler_DataController' ) &&
+<<<<<<< HEAD
 		method_exists( 'ActionScheduler_DataController', 'mark_migration_incomplete' ) // @phpstan-ignore function.alreadyNarrowedType
+=======
+		method_exists( 'ActionScheduler_DataController', 'mark_migration_incomplete' )
+>>>>>>> origin/main
 	) {
 		\ActionScheduler_DataController::mark_migration_incomplete();
 	}
@@ -2194,8 +2297,11 @@ function wc_update_400_reset_action_scheduler_migration_status() {
 
 /**
  * Update DB version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_400_db_version() {
 	WC_Install::update_db_version( '4.0.0' );
@@ -2217,8 +2323,11 @@ function wc_update_440_insert_attribute_terms_for_variable_products() {
 
 /**
  * Update DB version.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_440_db_version() {
 	WC_Install::update_db_version( '4.4.0' );
@@ -2226,8 +2335,11 @@ function wc_update_440_db_version() {
 
 /**
  * Update DB version to 4.5.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_450_db_version() {
 	WC_Install::update_db_version( '4.5.0' );
@@ -2297,8 +2409,11 @@ function wc_update_450_sanitize_coupons_code() {
  * Fixes product review count that might have been incorrect.
  *
  * See @link https://github.com/woocommerce/woocommerce/issues/27688.
+<<<<<<< HEAD
  *
  * @return bool True to run again, false if completed.
+=======
+>>>>>>> origin/main
  */
 function wc_update_500_fix_product_review_count() {
 	global $wpdb;
@@ -2354,28 +2469,42 @@ function wc_update_500_fix_product_review_count() {
 
 /**
  * Update DB version to 5.0.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_500_db_version() {
 	WC_Install::update_db_version( '5.0.0' );
 }
 
+<<<<<<< HEAD
 // phpcs:disable Squiz.Commenting.FunctionComment.InvalidReturnVoid -- return statement is in a nested function, not this one.
+=======
+>>>>>>> origin/main
 /**
  * Creates the refund and returns policy page.
  *
  * See @link https://github.com/woocommerce/woocommerce/issues/29235.
+<<<<<<< HEAD
  *
  * @return void
  */
 function wc_update_560_create_refund_returns_page() {
 // phpcs:enable Squiz.Commenting.FunctionComment.InvalidReturnVoid
+=======
+ */
+function wc_update_560_create_refund_returns_page() {
+>>>>>>> origin/main
 	/**
 	 * Filter on the pages created to return what we expect.
 	 *
 	 * @param array $pages The default WC pages.
+<<<<<<< HEAD
 	 * @return array
+=======
+>>>>>>> origin/main
 	 */
 	function filter_created_pages( $pages ) {
 		$page_to_create = array( 'refund_returns' );
@@ -2392,8 +2521,11 @@ function wc_update_560_create_refund_returns_page() {
 
 /**
  * Update DB version to 5.6.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_560_db_version() {
 	WC_Install::update_db_version( '5.6.0' );
@@ -2403,8 +2535,11 @@ function wc_update_560_db_version() {
  * Migrate rate limit options to the new table.
  *
  * See @link https://github.com/woocommerce/woocommerce/issues/27103.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_600_migrate_rate_limit_options() {
 	global $wpdb;
@@ -2434,8 +2569,11 @@ function wc_update_600_migrate_rate_limit_options() {
 
 /**
  * Update DB version to 6.0.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_600_db_version() {
 	WC_Install::update_db_version( '6.0.0' );
@@ -2465,8 +2603,11 @@ function wc_update_630_create_product_attributes_lookup_table() {
 /**
  *
  * Update DB version to 6.3.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_630_db_version() {
 	WC_Install::update_db_version( '6.3.0' );
@@ -2486,8 +2627,11 @@ function wc_update_640_add_primary_key_to_product_attributes_lookup_table() {
 /**
  *
  * Update DB version to 6.4.0.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_640_db_version() {
 	WC_Install::update_db_version( '6.4.0' );
@@ -2497,8 +2641,11 @@ function wc_update_640_db_version() {
  * Add the standard WooCommerce upload directories to the Approved Product Download Directories list
  * and start populating it based on existing product download URLs, but do not enable the feature
  * (for existing installations, a site admin should review and make a conscious decision to enable).
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_650_approved_download_directories() {
 	$directory_sync = wc_get_container()->get( Download_Directories_Sync::class );
@@ -2509,8 +2656,11 @@ function wc_update_650_approved_download_directories() {
 /**
  * In some cases, the approved download directories table may not have been successfully created during the update to
  * 6.5.0. If this was the case we will need to re-initialize the feature.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_651_approved_download_directories() {
 	global $wpdb;
@@ -2536,8 +2686,11 @@ function wc_update_651_approved_download_directories() {
 
 /**
  * Purges the comments count cache after 6.7.0 split reviews from the comments page.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_670_purge_comments_count_cache() {
 	if ( ! is_callable( 'WC_Comments::delete_comments_count_cache' ) ) {
@@ -2567,8 +2720,11 @@ function wc_update_700_remove_download_log_fk() {
 
 /**
  * Remove the transient data for recommended marketing extensions.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_700_remove_recommended_marketing_plugins_transient() {
 	delete_transient( 'wc_marketing_recommended_plugins' );
@@ -2577,8 +2733,11 @@ function wc_update_700_remove_recommended_marketing_plugins_transient() {
 /**
  * Update the New Zealand state codes in the database
  * after they were updated in code to the CLDR standard.
+<<<<<<< HEAD
  *
  * @return bool True if there are more records that need to be migrated, false otherwise.
+=======
+>>>>>>> origin/main
  */
 function wc_update_721_adjust_new_zealand_states() {
 	return MigrationHelper::migrate_country_states(
@@ -2607,8 +2766,11 @@ function wc_update_721_adjust_new_zealand_states() {
 /**
  * Update the Ukraine state codes in the database
  * after they were updated in code to the CLDR standard.
+<<<<<<< HEAD
  *
  * @return bool True if there are more records that need to be migrated, false otherwise.
+=======
+>>>>>>> origin/main
  */
 function wc_update_721_adjust_ukraine_states() {
 	return MigrationHelper::migrate_country_states(
@@ -2648,8 +2810,11 @@ function wc_update_721_adjust_ukraine_states() {
  * This is a simple wrapper for the corresponding 7.2.1 update function. The reason we do this (instead of
  * reusing the original function directly) is for better traceability in the Action Scheduler log, in case
  * of problems.
+<<<<<<< HEAD
  *
  * @return bool True if there are more records that need to be migrated, false otherwise.
+=======
+>>>>>>> origin/main
  */
 function wc_update_722_adjust_new_zealand_states() {
 	return wc_update_721_adjust_new_zealand_states();
@@ -2661,8 +2826,11 @@ function wc_update_722_adjust_new_zealand_states() {
  * This is a simple wrapper for the corresponding 7.2.1 update function. The reason we do this (instead of
  * reusing the original function directly) is for better traceability in the Action Scheduler log, in case
  * of problems.
+<<<<<<< HEAD
  *
  * @return bool True if there are more records that need to be migrated, false otherwise.
+=======
+>>>>>>> origin/main
  */
 function wc_update_722_adjust_ukraine_states() {
 	return wc_update_721_adjust_ukraine_states();
@@ -2671,8 +2839,11 @@ function wc_update_722_adjust_ukraine_states() {
 /**
  * Add new columns date_paid and date_completed to wp_wc_order_stats table in order to provide the option
  * of using the dates in the reports
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_750_add_columns_to_order_stats_table() {
 	global $wpdb;
@@ -2707,8 +2878,11 @@ function wc_update_750_disable_new_product_management_experience() {
 
 /**
  * Remove the multichannel marketing feature flag and options. This feature is now enabled by default.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_770_remove_multichannel_marketing_feature_options() {
 	delete_option( 'woocommerce_multichannel_marketing_enabled' );
@@ -2717,8 +2891,11 @@ function wc_update_770_remove_multichannel_marketing_feature_options() {
 
 /**
  * Set a flag to indicate whether the blockified Product Grid Block should be used as a template.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_790_blockified_product_grid_block() {
 	update_option( BlockOptions::WC_BLOCK_USE_BLOCKIFIED_PRODUCT_GRID_BLOCK_AS_TEMPLATE, wc_bool_to_string( false ) );
@@ -2773,8 +2950,11 @@ LIMIT 250
 
 /**
  * Rename the checkout template to page-checkout.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_830_rename_checkout_template() {
 	$template = get_block_template( BlockTemplateUtils::PLUGIN_SLUG . '//checkout', 'wp_template' );
@@ -2794,8 +2974,11 @@ function wc_update_830_rename_checkout_template() {
 
 /**
  * Rename the cart template to page-cart.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_830_rename_cart_template() {
 	$template = get_block_template( BlockTemplateUtils::PLUGIN_SLUG . '//cart', 'wp_template' );
@@ -2818,8 +3001,11 @@ function wc_update_830_rename_cart_template() {
  *
  * This is removed because it is not used anymore.
  * It is replaced by `woocommerce_admin_marketing_recommendations_specs` transient that is created by `MarketingRecommendationsDataSourcePoller`.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_860_remove_recommended_marketing_plugins_transient() {
 	delete_transient( 'wc_marketing_recommended_plugins' );
@@ -2828,8 +3014,11 @@ function wc_update_860_remove_recommended_marketing_plugins_transient() {
 /**
  * Create an .htaccess file and an empty index.html file to prevent listing of the default transient files directory,
  * if the directory exists.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_870_prevent_listing_of_transient_files_directory() {
 	global $wp_filesystem;
@@ -2847,8 +3036,11 @@ function wc_update_870_prevent_listing_of_transient_files_directory() {
 
 /**
  * If it exists, remove the inbox note that asks users to connect to `Woo.com`.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_890_update_connect_to_woocommerce_note() {
 	$note = Notes::get_note_by_name( WooSubscriptionsNotes::CONNECTION_NOTE_NAME );
@@ -2872,8 +3064,11 @@ function wc_update_890_update_connect_to_woocommerce_note() {
  * to reduce the amount of new connections to the legacy gateway.
  *
  * Shows an admin notice to inform the store owner that PayPal Standard has been disabled and suggests installing PayPal Payments.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_890_update_paypal_standard_load_eligibility() {
 	$paypal = class_exists( 'WC_Gateway_Paypal' ) ? WC_Gateway_Paypal::get_instance() : null;
@@ -2891,8 +3086,11 @@ function wc_update_890_update_paypal_standard_load_eligibility() {
 /**
  * Create the woocommerce_history_of_autoinstalled_plugins option if it doesn't exist
  * as a copy of woocommerce_autoinstalled_plugins if it exists.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_891_create_plugin_autoinstall_history_option() {
 	$autoinstalled_plugins_history_info = get_site_option( 'woocommerce_history_of_autoinstalled_plugins' );
@@ -2906,8 +3104,11 @@ function wc_update_891_create_plugin_autoinstall_history_option() {
 
 /**
  * Add woocommerce_show_lys_tour.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_910_add_launch_your_store_tour_option() {
 	add_option( 'woocommerce_show_lys_tour', 'yes' );
@@ -2915,8 +3116,11 @@ function wc_update_910_add_launch_your_store_tour_option() {
 
 /**
  * Add woocommerce_hooked_blocks_version option for existing stores that are using a theme that supports the Block Hooks API
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_920_add_wc_hooked_blocks_version_option() {
 	if ( ! wp_is_block_theme() && ! current_theme_supports( 'block-template-parts' ) ) {
@@ -3005,8 +3209,11 @@ function wc_update_910_remove_obsolete_user_meta() {
 
 /**
  * Add woocommerce_coming_soon option when it is not currently present.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_930_add_woocommerce_coming_soon_option() {
 	add_option( 'woocommerce_coming_soon', 'no' );
@@ -3014,8 +3221,11 @@ function wc_update_930_add_woocommerce_coming_soon_option() {
 
 /**
  * Migrate Launch Your Store tour meta keys to the woocommerce_meta user data fields.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_930_migrate_user_meta_for_launch_your_store_tour() {
 	// Rename `woocommerce_launch_your_store_tour_hidden` meta key to `woocommerce_admin_launch_your_store_tour_hidden`.
@@ -3044,8 +3254,11 @@ function wc_update_930_migrate_user_meta_for_launch_your_store_tour() {
 
 /**
  * Recreate FTS index if it already exists, so that phone number can be added to the index.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_940_add_phone_to_order_address_fts_index(): void {
 	$fts_already_exists = get_option( CustomOrdersTableController::HPOS_FTS_ADDRESS_INDEX_CREATED_OPTION ) === 'yes';
@@ -3139,8 +3352,11 @@ function wc_update_1000_multisite_visibility_setting(): void {
 
 /**
  * Autoloads woocommerce_allow_tracking option.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_950_tracking_option_autoload() {
 	$options = array(
@@ -3152,8 +3368,11 @@ function wc_update_950_tracking_option_autoload() {
 /**
  * Update the base color for emails as part of the WooCommerce rebranding,
  * but only if the user hasn't specified a custom color.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_961_migrate_default_email_base_color() {
 	$color = get_option( 'woocommerce_email_base_color' );
@@ -3164,8 +3383,11 @@ function wc_update_961_migrate_default_email_base_color() {
 
 /**
  * Add old refunded order items to the product_lookup_table.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_1020_add_old_refunded_order_items_to_product_lookup_table() {
 	global $wpdb;
@@ -3206,8 +3428,11 @@ function wc_update_1020_add_old_refunded_order_items_to_product_lookup_table() {
 /**
  * Remove the option woocommerce_order_attribution_install_banner_dismissed.
  * This data is now stored in the user meta table in the PR #55715.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_980_remove_order_attribution_install_banner_dismissed_option() {
 	delete_option( 'woocommerce_order_attribution_install_banner_dismissed' );
@@ -3215,8 +3440,11 @@ function wc_update_980_remove_order_attribution_install_banner_dismissed_option(
 
 /**
  * One-time force enable the new Payments Settings page feature for all stores.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_985_enable_new_payments_settings_page_feature() {
 	update_option( 'woocommerce_feature_reactify-classic-payments-settings_enabled', 'yes' );
@@ -3224,8 +3452,11 @@ function wc_update_985_enable_new_payments_settings_page_feature() {
 
 /**
  * Remove the transient wc_count_comments as this has migrated to use cache.
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_990_remove_wc_count_comments_transient() {
 	delete_transient( 'wc_count_comments' );
@@ -3293,8 +3524,11 @@ function wc_update_1040_cleanup_legacy_ptk_patterns_fetching() {
  * This migration ensures any installations that still have this old option set will have their brand permalink updated appropriately.
  *
  * @since 10.5.0
+<<<<<<< HEAD
  *
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_update_1050_migrate_brand_permalink_setting() {
 	if ( 'yes' !== get_option( 'woocommerce_prepend_shop_page_to_urls' ) ) {
@@ -3381,6 +3615,7 @@ function wc_update_1050_enable_autoload_options() {
 function wc_update_1050_remove_deprecated_marketplace_option(): void {
 	delete_option( 'woocommerce_feature_marketplace_enabled' );
 }
+<<<<<<< HEAD
 
 /**
  * Add the `woo_idx_comment_approved_type` index to improve the performance of comment-related queries in the admin area.
@@ -3398,3 +3633,5 @@ function wc_update_1060_add_woo_idx_comment_approved_type_index(): void {
 		$wpdb->query( "ALTER TABLE {$wpdb->comments} ADD INDEX woo_idx_comment_approved_type (comment_approved, comment_type, comment_post_ID)" );
 	}
 }
+=======
+>>>>>>> origin/main

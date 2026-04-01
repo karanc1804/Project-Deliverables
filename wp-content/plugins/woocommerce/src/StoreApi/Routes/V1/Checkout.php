@@ -9,7 +9,10 @@ use Automattic\WooCommerce\StoreApi\Utilities\DraftOrderTrait;
 use Automattic\WooCommerce\Checkout\Helpers\ReserveStockException;
 use Automattic\WooCommerce\StoreApi\Utilities\CheckoutTrait;
 use Automattic\WooCommerce\Internal\FraudProtection\BlockedSessionNotice;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\FraudProtection\CheckoutEventTracker;
+=======
+>>>>>>> origin/main
 use Automattic\WooCommerce\Internal\FraudProtection\FraudProtectionController;
 use Automattic\WooCommerce\Internal\FraudProtection\SessionClearanceManager;
 
@@ -162,7 +165,11 @@ class Checkout extends AbstractCartRoute {
 			&& wc_get_container()->get( SessionClearanceManager::class )->is_session_blocked() ) {
 			$response = $this->get_route_error_response(
 				'woocommerce_rest_checkout_error',
+<<<<<<< HEAD
 				wc_get_container()->get( BlockedSessionNotice::class )->get_message_plaintext( 'purchase' ),
+=======
+				wc_get_container()->get( BlockedSessionNotice::class )->get_message_plaintext( 'checkout' ),
+>>>>>>> origin/main
 				403
 			);
 		}
@@ -583,6 +590,7 @@ class Checkout extends AbstractCartRoute {
 			true
 		);
 
+<<<<<<< HEAD
 		// Track successful order placement (success or pending payment).
 		if ( in_array( $payment_result->get_status(), array( 'success', 'pending' ), true ) ) {
 			$container = wc_get_container();
@@ -592,6 +600,8 @@ class Checkout extends AbstractCartRoute {
 			}
 		}
 
+=======
+>>>>>>> origin/main
 		return $this->prepare_item_for_response(
 			(object) [
 				'order'          => wc_get_order( $this->order ),

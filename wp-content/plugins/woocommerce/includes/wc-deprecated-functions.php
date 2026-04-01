@@ -27,7 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $version     The version of WooCommerce that deprecated the hook.
  * @param string $replacement The hook that should have been used.
  * @param string $message     A message regarding the change.
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_do_deprecated_action( $tag, $args, $version, $replacement = null, $message = null ) {
 	if ( ! has_action( $tag ) ) {
@@ -45,7 +48,10 @@ function wc_do_deprecated_action( $tag, $args, $version, $replacement = null, $m
  * @param string $function Function used.
  * @param string $version Version the message was added in.
  * @param string $replacement Replacement for the called function.
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_deprecated_function( $function, $version, $replacement = null ) {
 	// @codingStandardsIgnoreStart
@@ -68,7 +74,10 @@ function wc_deprecated_function( $function, $version, $replacement = null ) {
  * @param string $version     The version of WordPress that deprecated the hook.
  * @param string $replacement The hook that should have been used.
  * @param string $message     A message regarding the change.
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_deprecated_hook( $hook, $version, $replacement = null, $message = null ) {
 	// @codingStandardsIgnoreStart
@@ -93,7 +102,10 @@ function wc_deprecated_hook( $hook, $version, $replacement = null, $message = nu
  * @param Exception $exception_object The exception object.
  * @param string    $function The function which threw exception.
  * @param array     $args The args passed to the function.
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_caught_exception( $exception_object, $function = '', $args = array() ) {
 	// @codingStandardsIgnoreStart
@@ -112,7 +124,10 @@ function wc_caught_exception( $exception_object, $function = '', $args = array()
  * @param string $function Function used.
  * @param string $message Message to log.
  * @param string $version Version the message was added in.
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_doing_it_wrong( $function, $message, $version ) {
 	// @codingStandardsIgnoreStart
@@ -134,7 +149,10 @@ function wc_doing_it_wrong( $function, $message, $version ) {
  * @param  string $argument
  * @param  string $version
  * @param  string $replacement
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_deprecated_argument( $argument, $version, $message = null ) {
 	if ( wp_doing_ajax() || WC()->is_rest_api_request() ) {
@@ -147,7 +165,10 @@ function wc_deprecated_argument( $argument, $version, $message = null ) {
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_show_messages() {
 	wc_deprecated_function( 'woocommerce_show_messages', '2.1', 'wc_print_notices' );
@@ -156,7 +177,10 @@ function woocommerce_show_messages() {
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_weekend_area_js() {
 	wc_deprecated_function( 'woocommerce_weekend_area_js', '2.1' );
@@ -164,7 +188,10 @@ function woocommerce_weekend_area_js() {
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_tooltip_js() {
 	wc_deprecated_function( 'woocommerce_tooltip_js', '2.1' );
@@ -172,7 +199,10 @@ function woocommerce_tooltip_js() {
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_datepicker_js() {
 	wc_deprecated_function( 'woocommerce_datepicker_js', '2.1' );
@@ -180,7 +210,10 @@ function woocommerce_datepicker_js() {
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_admin_scripts() {
 	wc_deprecated_function( 'woocommerce_admin_scripts', '2.1' );
@@ -188,7 +221,10 @@ function woocommerce_admin_scripts() {
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_create_page( $slug, $option = '', $page_title = '', $page_content = '', $post_parent = 0 ) {
 	wc_deprecated_function( 'woocommerce_create_page', '2.1', 'wc_create_page' );
@@ -197,7 +233,10 @@ function woocommerce_create_page( $slug, $option = '', $page_title = '', $page_c
 
 /**
  * @deprecated 2.1
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_readfile_chunked( $file, $retbytes = true ) {
 	wc_deprecated_function( 'woocommerce_readfile_chunked', '2.1', 'WC_Download_Handler::readfile_chunked()' );
@@ -234,7 +273,10 @@ function woocommerce_get_formatted_product_name( $product ) {
  * Handle IPN requests for the legacy paypal gateway by calling gateways manually if needed.
  *
  * @access public
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_legacy_paypal_ipn() {
 	if ( ! empty( $_GET['paypalListener'] ) && 'paypal_standard_IPN' === $_GET['paypalListener'] ) {
@@ -246,7 +288,10 @@ add_action( 'init', 'woocommerce_legacy_paypal_ipn' );
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return WC_Product|null|false
+=======
+>>>>>>> origin/main
  */
 function get_product( $the_product = false, $args = array() ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_product' );
@@ -255,7 +300,10 @@ function get_product( $the_product = false, $args = array() ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_protected_product_add_to_cart( $passed, $product_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_protected_product_add_to_cart' );
@@ -264,7 +312,10 @@ function woocommerce_protected_product_add_to_cart( $passed, $product_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_empty_cart() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_empty_cart' );
@@ -273,16 +324,26 @@ function woocommerce_empty_cart() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
  */
 function woocommerce_load_persistent_cart( $user_login, $user = 0 ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_load_persistent_cart' );
 	wc_load_persistent_cart( $user_login, $user );
+=======
+ */
+function woocommerce_load_persistent_cart( $user_login, $user = 0 ) {
+	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_load_persistent_cart' );
+	return wc_load_persistent_cart( $user_login, $user );
+>>>>>>> origin/main
 }
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_add_to_cart_message( $product_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_add_to_cart_message' );
@@ -291,7 +352,10 @@ function woocommerce_add_to_cart_message( $product_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_clear_cart_after_payment() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_clear_cart_after_payment' );
@@ -300,7 +364,10 @@ function woocommerce_clear_cart_after_payment() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cart_totals_subtotal_html() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cart_totals_subtotal_html' );
@@ -309,7 +376,10 @@ function woocommerce_cart_totals_subtotal_html() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cart_totals_shipping_html() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cart_totals_shipping_html' );
@@ -318,7 +388,10 @@ function woocommerce_cart_totals_shipping_html() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cart_totals_coupon_html( $coupon ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cart_totals_coupon_html' );
@@ -327,7 +400,10 @@ function woocommerce_cart_totals_coupon_html( $coupon ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cart_totals_order_total_html() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cart_totals_order_total_html' );
@@ -336,7 +412,10 @@ function woocommerce_cart_totals_order_total_html() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cart_totals_fee_html( $fee ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cart_totals_fee_html' );
@@ -345,7 +424,10 @@ function woocommerce_cart_totals_fee_html( $fee ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cart_totals_shipping_method_label( $method ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cart_totals_shipping_method_label' );
@@ -354,7 +436,10 @@ function woocommerce_cart_totals_shipping_method_label( $method ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_template_part( $slug, $name = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_template_part' );
@@ -363,7 +448,10 @@ function woocommerce_get_template_part( $slug, $name = '' ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_template( $template_name, $args = array(), $template_path = '', $default_path = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_template' );
@@ -372,7 +460,10 @@ function woocommerce_get_template( $template_name, $args = array(), $template_pa
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_locate_template( $template_name, $template_path = '', $default_path = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_locate_template' );
@@ -381,7 +472,10 @@ function woocommerce_locate_template( $template_name, $template_path = '', $defa
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_mail( $to, $subject, $message, $headers = "Content-Type: text/html\r\n", $attachments = "" ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_mail' );
@@ -390,7 +484,10 @@ function woocommerce_mail( $to, $subject, $message, $headers = "Content-Type: te
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_disable_admin_bar( $show_admin_bar ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_disable_admin_bar' );
@@ -399,7 +496,10 @@ function woocommerce_disable_admin_bar( $show_admin_bar ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int|WP_Error
+=======
+>>>>>>> origin/main
  */
 function woocommerce_create_new_customer( $email, $username = '', $password = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_create_new_customer' );
@@ -408,7 +508,10 @@ function woocommerce_create_new_customer( $email, $username = '', $password = ''
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_set_customer_auth_cookie( $customer_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_set_customer_auth_cookie' );
@@ -417,7 +520,10 @@ function woocommerce_set_customer_auth_cookie( $customer_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_update_new_customer_past_orders( $customer_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_update_new_customer_past_orders' );
@@ -426,7 +532,10 @@ function woocommerce_update_new_customer_past_orders( $customer_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_paying_customer( $order_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_paying_customer' );
@@ -435,7 +544,10 @@ function woocommerce_paying_customer( $order_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_customer_bought_product( $customer_email, $user_id, $product_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_customer_bought_product' );
@@ -444,7 +556,10 @@ function woocommerce_customer_bought_product( $customer_email, $user_id, $produc
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_customer_has_capability( $allcaps, $caps, $args ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_customer_has_capability' );
@@ -453,7 +568,10 @@ function woocommerce_customer_has_capability( $allcaps, $caps, $args ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_sanitize_taxonomy_name( $taxonomy ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_sanitize_taxonomy_name' );
@@ -462,7 +580,10 @@ function woocommerce_sanitize_taxonomy_name( $taxonomy ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_filename_from_url( $file_url ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_filename_from_url' );
@@ -471,7 +592,10 @@ function woocommerce_get_filename_from_url( $file_url ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return float
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_dimension( $dim, $to_unit ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_dimension' );
@@ -480,7 +604,10 @@ function woocommerce_get_dimension( $dim, $to_unit ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return float
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_weight( $weight, $to_unit ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_weight' );
@@ -489,7 +616,10 @@ function woocommerce_get_weight( $weight, $to_unit ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_trim_zeros( $price ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_trim_zeros' );
@@ -498,7 +628,10 @@ function woocommerce_trim_zeros( $price ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return float
+=======
+>>>>>>> origin/main
  */
 function woocommerce_round_tax_total( $tax ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_round_tax_total' );
@@ -507,7 +640,10 @@ function woocommerce_round_tax_total( $tax ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_format_decimal( $number, $dp = false, $trim_zeros = false ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_format_decimal' );
@@ -516,7 +652,10 @@ function woocommerce_format_decimal( $number, $dp = false, $trim_zeros = false )
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string|array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_clean( $var ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_clean' );
@@ -525,7 +664,10 @@ function woocommerce_clean( $var ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_array_overlay( $a1, $a2 ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_array_overlay' );
@@ -534,7 +676,10 @@ function woocommerce_array_overlay( $a1, $a2 ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_price( $price, $args = array() ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_price' );
@@ -543,7 +688,10 @@ function woocommerce_price( $price, $args = array() ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_let_to_num( $size ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_let_to_num' );
@@ -552,7 +700,10 @@ function woocommerce_let_to_num( $size ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_date_format() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_date_format' );
@@ -561,7 +712,10 @@ function woocommerce_date_format() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_time_format() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_time_format' );
@@ -570,7 +724,10 @@ function woocommerce_time_format() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_timezone_string() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_timezone_string' );
@@ -580,7 +737,10 @@ function woocommerce_timezone_string() {
 if ( ! function_exists( 'woocommerce_rgb_from_hex' ) ) {
 	/**
 	 * @deprecated 3.0
+<<<<<<< HEAD
 	 * @return array
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_rgb_from_hex( $color ) {
 		wc_deprecated_function( __FUNCTION__, '3.0', 'wc_rgb_from_hex' );
@@ -591,7 +751,10 @@ if ( ! function_exists( 'woocommerce_rgb_from_hex' ) ) {
 if ( ! function_exists( 'woocommerce_hex_darker' ) ) {
 	/**
 	 * @deprecated 3.0
+<<<<<<< HEAD
 	 * @return string
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_hex_darker( $color, $factor = 30 ) {
 		wc_deprecated_function( __FUNCTION__, '3.0', 'wc_hex_darker' );
@@ -602,7 +765,10 @@ if ( ! function_exists( 'woocommerce_hex_darker' ) ) {
 if ( ! function_exists( 'woocommerce_hex_lighter' ) ) {
 	/**
 	 * @deprecated 3.0
+<<<<<<< HEAD
 	 * @return string
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_hex_lighter( $color, $factor = 30 ) {
 		wc_deprecated_function( __FUNCTION__, '3.0', 'wc_hex_lighter' );
@@ -613,7 +779,10 @@ if ( ! function_exists( 'woocommerce_hex_lighter' ) ) {
 if ( ! function_exists( 'woocommerce_light_or_dark' ) ) {
 	/**
 	 * @deprecated 3.0
+<<<<<<< HEAD
 	 * @return string
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_light_or_dark( $color, $dark = '#000000', $light = '#FFFFFF' ) {
 		wc_deprecated_function( __FUNCTION__, '3.0', 'wc_light_or_dark' );
@@ -624,7 +793,10 @@ if ( ! function_exists( 'woocommerce_light_or_dark' ) ) {
 if ( ! function_exists( 'woocommerce_format_hex' ) ) {
 	/**
 	 * @deprecated 3.0
+<<<<<<< HEAD
 	 * @return string|null
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_format_hex( $hex ) {
 		wc_deprecated_function( __FUNCTION__, '3.0', 'wc_format_hex' );
@@ -634,7 +806,10 @@ if ( ! function_exists( 'woocommerce_format_hex' ) ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_order_id_by_order_key( $order_key ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_order_id_by_order_key' );
@@ -643,7 +818,10 @@ function woocommerce_get_order_id_by_order_key( $order_key ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int|bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_downloadable_file_permission( $download_id, $product_id, $order ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_downloadable_file_permission' );
@@ -652,7 +830,10 @@ function woocommerce_downloadable_file_permission( $download_id, $product_id, $o
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_downloadable_product_permissions( $order_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_downloadable_product_permissions' );
@@ -661,7 +842,10 @@ function woocommerce_downloadable_product_permissions( $order_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int|bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_add_order_item( $order_id, $item ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_add_order_item' );
@@ -670,7 +854,10 @@ function woocommerce_add_order_item( $order_id, $item ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_delete_order_item( $item_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_delete_order_item' );
@@ -679,7 +866,10 @@ function woocommerce_delete_order_item( $item_id ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_update_order_item_meta( $item_id, $meta_key, $meta_value, $prev_value = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_update_order_item_meta' );
@@ -688,7 +878,10 @@ function woocommerce_update_order_item_meta( $item_id, $meta_key, $meta_value, $
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_add_order_item_meta( $item_id, $meta_key, $meta_value, $unique = false ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_add_order_item_meta' );
@@ -697,7 +890,10 @@ function woocommerce_add_order_item_meta( $item_id, $meta_key, $meta_value, $uni
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return bool
+=======
+>>>>>>> origin/main
  */
 function woocommerce_delete_order_item_meta( $item_id, $meta_key, $meta_value = '', $delete_all = false ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_delete_order_item_meta' );
@@ -706,7 +902,10 @@ function woocommerce_delete_order_item_meta( $item_id, $meta_key, $meta_value = 
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return mixed
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_order_item_meta( $item_id, $key, $single = true ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_order_item_meta' );
@@ -715,7 +914,10 @@ function woocommerce_get_order_item_meta( $item_id, $key, $single = true ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_cancel_unpaid_orders() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_cancel_unpaid_orders' );
@@ -724,7 +926,10 @@ function woocommerce_cancel_unpaid_orders() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_processing_order_count() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_processing_order_count' );
@@ -733,7 +938,10 @@ function woocommerce_processing_order_count() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_page_id( $page ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_page_id' );
@@ -742,7 +950,10 @@ function woocommerce_get_page_id( $page ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_endpoint_url( $endpoint, $value = '', $permalink = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_endpoint_url' );
@@ -751,7 +962,10 @@ function woocommerce_get_endpoint_url( $endpoint, $value = '', $permalink = '' )
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_lostpassword_url( $url ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_lostpassword_url' );
@@ -760,7 +974,10 @@ function woocommerce_lostpassword_url( $url ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_customer_edit_account_url() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_customer_edit_account_url' );
@@ -769,7 +986,10 @@ function woocommerce_customer_edit_account_url() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_nav_menu_items( $items, $args ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_nav_menu_items' );
@@ -778,7 +998,10 @@ function woocommerce_nav_menu_items( $items, $args ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_nav_menu_item_classes( $menu_items, $args ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_nav_menu_item_classes' );
@@ -787,7 +1010,10 @@ function woocommerce_nav_menu_item_classes( $menu_items, $args ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_list_pages( $pages ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_list_pages' );
@@ -796,7 +1022,10 @@ function woocommerce_list_pages( $pages ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_product_dropdown_categories( $args = array(), $deprecated_hierarchical = 1, $deprecated_show_uncategorized = 1, $deprecated_orderby = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_product_dropdown_categories' );
@@ -805,7 +1034,10 @@ function woocommerce_product_dropdown_categories( $args = array(), $deprecated_h
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return mixed
+=======
+>>>>>>> origin/main
  */
 function woocommerce_walk_category_dropdown_tree( $a1 = '', $a2 = '', $a3 = '' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_walk_category_dropdown_tree' );
@@ -814,7 +1046,10 @@ function woocommerce_walk_category_dropdown_tree( $a1 = '', $a2 = '', $a3 = '' )
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_taxonomy_metadata_wpdbfix() {
 	wc_deprecated_function( __FUNCTION__, '3.0' );
@@ -822,7 +1057,10 @@ function woocommerce_taxonomy_metadata_wpdbfix() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_taxonomy_metadata_wpdbfix() {
 	wc_deprecated_function( __FUNCTION__, '3.0' );
@@ -830,7 +1068,10 @@ function wc_taxonomy_metadata_wpdbfix() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_order_terms( $the_term, $next_id, $taxonomy, $index = 0, $terms = null ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_reorder_terms' );
@@ -839,7 +1080,10 @@ function woocommerce_order_terms( $the_term, $next_id, $taxonomy, $index = 0, $t
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return int
+=======
+>>>>>>> origin/main
  */
 function woocommerce_set_term_order( $term_id, $index, $taxonomy, $recursive = false ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_set_term_order' );
@@ -848,7 +1092,10 @@ function woocommerce_set_term_order( $term_id, $index, $taxonomy, $recursive = f
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_terms_clauses( $clauses, $taxonomies, $args ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_terms_clauses' );
@@ -857,25 +1104,42 @@ function woocommerce_terms_clauses( $clauses, $taxonomies, $args ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
  */
 function _woocommerce_term_recount( $terms, $taxonomy, $callback, $terms_are_term_taxonomy_ids ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', '_wc_term_recount' );
 	_wc_term_recount( $terms, $taxonomy, $callback, $terms_are_term_taxonomy_ids );
+=======
+ */
+function _woocommerce_term_recount( $terms, $taxonomy, $callback, $terms_are_term_taxonomy_ids ) {
+	wc_deprecated_function( __FUNCTION__, '3.0', '_wc_term_recount' );
+	return _wc_term_recount( $terms, $taxonomy, $callback, $terms_are_term_taxonomy_ids );
+>>>>>>> origin/main
 }
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
  */
 function woocommerce_recount_after_stock_change( $product_id ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_recount_after_stock_change' );
 	wc_recount_after_stock_change( $product_id );
+=======
+ */
+function woocommerce_recount_after_stock_change( $product_id ) {
+	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_recount_after_stock_change' );
+	return wc_recount_after_stock_change( $product_id );
+>>>>>>> origin/main
 }
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_change_term_counts( $terms, $taxonomies, $args ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_change_term_counts' );
@@ -884,7 +1148,10 @@ function woocommerce_change_term_counts( $terms, $taxonomies, $args ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_product_ids_on_sale() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_product_ids_on_sale' );
@@ -893,7 +1160,10 @@ function woocommerce_get_product_ids_on_sale() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_featured_product_ids() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_featured_product_ids' );
@@ -902,7 +1172,10 @@ function woocommerce_get_featured_product_ids() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_product_terms( $object_id, $taxonomy, $fields = 'all' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_product_terms' );
@@ -911,7 +1184,10 @@ function woocommerce_get_product_terms( $object_id, $taxonomy, $fields = 'all' )
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_product_post_type_link( $permalink, $post ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_product_post_type_link' );
@@ -920,7 +1196,10 @@ function woocommerce_product_post_type_link( $permalink, $post ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_placeholder_img_src() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_placeholder_img_src' );
@@ -929,7 +1208,10 @@ function woocommerce_placeholder_img_src() {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_placeholder_img( $size = 'woocommerce_thumbnail' ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_placeholder_img' );
@@ -938,7 +1220,10 @@ function woocommerce_placeholder_img( $size = 'woocommerce_thumbnail' ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return string
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_formatted_variation( $variation = '', $flat = false ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_formatted_variation' );
@@ -947,16 +1232,26 @@ function woocommerce_get_formatted_variation( $variation = '', $flat = false ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
  */
 function woocommerce_scheduled_sales() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_scheduled_sales' );
 	wc_scheduled_sales();
+=======
+ */
+function woocommerce_scheduled_sales() {
+	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_scheduled_sales' );
+	return wc_scheduled_sales();
+>>>>>>> origin/main
 }
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_get_attachment_image_attributes( $attr ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_get_attachment_image_attributes' );
@@ -965,7 +1260,10 @@ function woocommerce_get_attachment_image_attributes( $attr ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return array
+=======
+>>>>>>> origin/main
  */
 function woocommerce_prepare_attachment_for_js( $response ) {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_prepare_attachment_for_js' );
@@ -974,16 +1272,26 @@ function woocommerce_prepare_attachment_for_js( $response ) {
 
 /**
  * @deprecated 3.0
+<<<<<<< HEAD
  * @return void
  */
 function woocommerce_track_product_view() {
 	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_track_product_view' );
 	wc_track_product_view();
+=======
+ */
+function woocommerce_track_product_view() {
+	wc_deprecated_function( __FUNCTION__, '3.0', 'wc_track_product_view' );
+	return wc_track_product_view();
+>>>>>>> origin/main
 }
 
 /**
  * @deprecated 2.3 has no replacement
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function woocommerce_compile_less_styles() {
 	wc_deprecated_function( 'woocommerce_compile_less_styles', '2.3' );
@@ -1045,7 +1353,10 @@ function woocommerce_get_product_schema() {
  * @param float $sale_price
  * @param string $date_from
  * @param string $date_to
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function _wc_save_product_price( $product_id, $regular_price, $sale_price = '', $date_from = '', $date_to = '' ) {
 	wc_doing_it_wrong( '_wc_save_product_price()', 'This function is not for developer use and is deprecated.', '3.0' );
@@ -1147,7 +1458,10 @@ function wc_get_min_max_price_meta_query( $args ) {
  * @param  int    $new_term_id      New term ID.
  * @param  string $term_taxonomy_id Term taxonomy ID.
  * @param  string $taxonomy         Taxonomy.
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_taxonomy_metadata_update_content_for_split_terms( $old_term_id, $new_term_id, $term_taxonomy_id, $taxonomy ) {
 	wc_deprecated_function( 'wc_taxonomy_metadata_update_content_for_split_terms', '3.6' );
@@ -1284,7 +1598,10 @@ function wc_get_log_file_name( $handle ) {
  * @param string  $user_login User login.
  * @param WP_User $user       User data.
  * @deprecated 2.3
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_load_persistent_cart( $user_login, $user ) {
 	if ( ! $user || ! apply_filters( 'woocommerce_persistent_cart_enabled', true ) ) {
@@ -1362,7 +1679,10 @@ if ( ! function_exists( 'woocommerce_product_subcategories' ) ) {
  * Products RSS Feed.
  *
  * @deprecated 2.6
+<<<<<<< HEAD
  * @return void
+=======
+>>>>>>> origin/main
  */
 function wc_products_rss_feed() {
 	wc_deprecated_function( 'wc_products_rss_feed', '2.6' );
@@ -1374,7 +1694,10 @@ if ( ! function_exists( 'woocommerce_reset_loop' ) ) {
 	 * Reset the loop's index and columns when we're done outputting a product loop.
 	 *
 	 * @deprecated 3.3
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_reset_loop() {
 		wc_reset_loop();
@@ -1386,7 +1709,10 @@ if ( ! function_exists( 'woocommerce_product_reviews_tab' ) ) {
 	 * Output the reviews tab content.
 	 *
 	 * @deprecated 2.4.0 Unused.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	function woocommerce_product_reviews_tab() {
 		wc_deprecated_function( 'woocommerce_product_reviews_tab', '2.4' );

@@ -14,6 +14,7 @@ class Products extends Task {
 	const HAS_PRODUCT_TRANSIENT = 'woocommerce_product_task_has_product_transient';
 
 	/**
+<<<<<<< HEAD
 	 * Whether a deferred revert check has already been scheduled for this request.
 	 *
 	 * @var bool
@@ -21,6 +22,8 @@ class Products extends Task {
 	private static $revert_scheduled = false;
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Constructor
 	 *
 	 * @param TaskList $task_list Parent task list.
@@ -34,9 +37,12 @@ class Products extends Task {
 		add_action( 'woocommerce_new_product', array( $this, 'maybe_set_has_product_transient' ), 10, 2 );
 		add_action( 'untrashed_post', array( $this, 'maybe_set_has_product_transient_on_untrashed_post' ) );
 		add_action( 'current_screen', array( $this, 'maybe_redirect_to_add_product_tasklist' ), 30, 0 );
+<<<<<<< HEAD
 
 		add_action( 'trashed_post', array( $this, 'on_product_trashed' ) );
 		add_action( 'deleted_post_product', array( $this, 'on_product_deleted' ) );
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -190,6 +196,7 @@ class Products extends Task {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Handle product trashing via the trashed_post hook.
 	 *
 	 * @param int $post_id Post ID.
@@ -255,6 +262,8 @@ class Products extends Task {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Check if the product qualifies as a user created product.
 	 *
 	 * @param WC_Product $product Product object.

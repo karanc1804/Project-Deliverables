@@ -21,7 +21,11 @@ interface WC_Queue_Interface {
 	 * @param string $hook The hook to trigger.
 	 * @param array  $args Arguments to pass when the hook triggers.
 	 * @param string $group The group to assign this job to.
+<<<<<<< HEAD
 	 * @return int The action ID
+=======
+	 * @return string The action ID
+>>>>>>> origin/main
 	 */
 	public function add( $hook, $args = array(), $group = '' );
 
@@ -32,7 +36,11 @@ interface WC_Queue_Interface {
 	 * @param string $hook The hook to trigger.
 	 * @param array  $args Arguments to pass when the hook triggers.
 	 * @param string $group The group to assign this job to.
+<<<<<<< HEAD
 	 * @return int The action ID
+=======
+	 * @return string The action ID
+>>>>>>> origin/main
 	 */
 	public function schedule_single( $timestamp, $hook, $args = array(), $group = '' );
 
@@ -44,7 +52,11 @@ interface WC_Queue_Interface {
 	 * @param string $hook The hook to trigger.
 	 * @param array  $args Arguments to pass when the hook triggers.
 	 * @param string $group The group to assign this job to.
+<<<<<<< HEAD
 	 * @return int The action ID
+=======
+	 * @return string The action ID
+>>>>>>> origin/main
 	 */
 	public function schedule_recurring( $timestamp, $interval_in_seconds, $hook, $args = array(), $group = '' );
 
@@ -66,7 +78,11 @@ interface WC_Queue_Interface {
 	 * @param string $hook The hook to trigger.
 	 * @param array  $args Arguments to pass when the hook triggers.
 	 * @param string $group The group to assign this job to.
+<<<<<<< HEAD
 	 * @return int The action ID
+=======
+	 * @return string The action ID
+>>>>>>> origin/main
 	 */
 	public function schedule_cron( $timestamp, $cron_schedule, $hook, $args = array(), $group = '' );
 

@@ -57,6 +57,7 @@ class PaymentResult {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get payment status.
 	 *
 	 * @since 10.5.0
@@ -67,6 +68,8 @@ class PaymentResult {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Set payment status.
 	 *
 	 * @throws \Exception When an invalid status is provided.

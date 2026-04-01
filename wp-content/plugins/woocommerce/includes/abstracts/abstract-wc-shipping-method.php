@@ -318,6 +318,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 
 		// Taxes - if not an array and not set to false, calc tax based on cost and passed calc_tax variable. This saves shipping methods having to do complex tax calculations.
 		if ( ! is_array( $taxes ) && false !== $taxes && $total_cost > 0 && $this->is_taxable() ) {
+<<<<<<< HEAD
 			if ( 'per_item' === $args['calc_tax'] ) {
 				$taxes = $this->get_taxes_per_item( $args['cost'] );
 			} else {
@@ -337,6 +338,9 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 			if ( $shipping_prices_include_tax && ! empty( $taxes ) ) {
 				$total_cost = $total_cost - array_sum( $taxes );
 			}
+=======
+			$taxes = 'per_item' === $args['calc_tax'] ? $this->get_taxes_per_item( $args['cost'] ) : WC_Tax::calc_shipping_tax( $total_cost, WC_Tax::get_shipping_tax_rates() );
+>>>>>>> origin/main
 		}
 
 		// Round the total cost after taxes have been calculated.
@@ -396,6 +400,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 					continue;
 				}
 
+<<<<<<< HEAD
 				$cart_item_data = $cart[ $cost_key ]['data'];
 				if ( is_object( $cart_item_data ) && is_callable( array( $cart_item_data, 'get_tax_class' ) ) ) {
 					$tax_class = $cart_item_data->get_tax_class();
@@ -404,6 +409,9 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 				}
 				$item_tax_rates = WC_Tax::get_shipping_tax_rates( $tax_class );
 				$item_taxes     = WC_Tax::calc_shipping_tax( $amount, $item_tax_rates );
+=======
+				$item_taxes = WC_Tax::calc_shipping_tax( $amount, WC_Tax::get_shipping_tax_rates( $cart[ $cost_key ]['data']->get_tax_class() ) );
+>>>>>>> origin/main
 
 				// Sum the item taxes.
 				foreach ( array_keys( $taxes + $item_taxes ) as $key ) {
@@ -413,8 +421,12 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 
 			// Add any cost for the order - order costs are in the key 'order'.
 			if ( isset( $costs['order'] ) ) {
+<<<<<<< HEAD
 				$order_tax_rates = WC_Tax::get_shipping_tax_rates();
 				$item_taxes      = WC_Tax::calc_shipping_tax( $costs['order'], $order_tax_rates );
+=======
+				$item_taxes = WC_Tax::calc_shipping_tax( $costs['order'], WC_Tax::get_shipping_tax_rates() );
+>>>>>>> origin/main
 
 				// Sum the item taxes.
 				foreach ( array_keys( $taxes + $item_taxes ) as $key ) {

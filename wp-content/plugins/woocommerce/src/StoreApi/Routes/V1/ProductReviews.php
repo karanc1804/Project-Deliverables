@@ -184,10 +184,17 @@ class ProductReviews extends AbstractRoute {
 		);
 
 		$params['per_page'] = array(
+<<<<<<< HEAD
 			'description'       => __( 'Maximum number of items to be returned in result set.', 'woocommerce' ),
 			'type'              => 'integer',
 			'default'           => 10,
 			'minimum'           => 1,
+=======
+			'description'       => __( 'Maximum number of items to be returned in result set. Defaults to no limit if left blank.', 'woocommerce' ),
+			'type'              => 'integer',
+			'default'           => 10,
+			'minimum'           => 0,
+>>>>>>> origin/main
 			'maximum'           => 100,
 			'sanitize_callback' => 'absint',
 			'validate_callback' => 'rest_validate_request_arg',

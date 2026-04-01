@@ -82,9 +82,16 @@ class VersionStringGenerator {
 		$this->validate_input( $id );
 
 		$cache_key = $this->get_cache_key( $id );
+<<<<<<< HEAD
 		$version   = wp_cache_get( $cache_key, self::CACHE_GROUP );
 
 		if ( false === $version ) {
+=======
+		$found     = false;
+		$version   = wp_cache_get( $cache_key, self::CACHE_GROUP, false, $found );
+
+		if ( ! $found ) {
+>>>>>>> origin/main
 			if ( ! $generate ) {
 				return null;
 			}
@@ -135,6 +142,7 @@ class VersionStringGenerator {
 		$ttl = apply_filters( 'woocommerce_version_string_generator_ttl', DAY_IN_SECONDS, $id );
 		$ttl = max( 0, (int) $ttl );
 
+<<<<<<< HEAD
 		$result = wp_cache_set( $cache_key, $version, self::CACHE_GROUP, $ttl );
 
 		if ( is_bool( $result ) ) {
@@ -153,6 +161,9 @@ class VersionStringGenerator {
 			wp_cache_delete( $cache_key, self::CACHE_GROUP );
 		}
 		return false;
+=======
+		return wp_cache_set( $cache_key, $version, self::CACHE_GROUP, $ttl );
+>>>>>>> origin/main
 	}
 
 	/**
@@ -168,10 +179,14 @@ class VersionStringGenerator {
 		$this->validate_input( $id );
 
 		$cache_key = $this->get_cache_key( $id );
+<<<<<<< HEAD
 		$result    = wp_cache_delete( $cache_key, self::CACHE_GROUP );
 
 		// Some object cache implementations may return non-boolean values.
 		return ! is_bool( $result ) || $result;
+=======
+		return wp_cache_delete( $cache_key, self::CACHE_GROUP );
+>>>>>>> origin/main
 	}
 
 	/**

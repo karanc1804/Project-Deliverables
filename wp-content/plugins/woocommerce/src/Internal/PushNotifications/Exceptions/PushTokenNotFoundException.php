@@ -9,7 +9,11 @@ namespace Automattic\WooCommerce\Internal\PushNotifications\Exceptions;
 
 defined( 'ABSPATH' ) || exit;
 
+<<<<<<< HEAD
 use WC_Data_Exception;
+=======
+use Exception;
+>>>>>>> origin/main
 use WP_Http;
 
 /**
@@ -17,6 +21,7 @@ use WP_Http;
  *
  * @since 10.5.0
  */
+<<<<<<< HEAD
 class PushTokenNotFoundException extends WC_Data_Exception {
 	/**
 	 * Constructor.
@@ -31,3 +36,6 @@ class PushTokenNotFoundException extends WC_Data_Exception {
 		);
 	}
 }
+=======
+class PushTokenNotFoundException extends Exception {}
+>>>>>>> origin/main

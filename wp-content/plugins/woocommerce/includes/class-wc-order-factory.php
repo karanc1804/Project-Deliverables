@@ -71,9 +71,14 @@ class WC_Order_Factory {
 			return array();
 		}
 
+<<<<<<< HEAD
 		/** @var int[] $order_ids */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$order_ids           = array_filter( array_map( array( __CLASS__, 'get_order_id' ), $order_ids ) );
 		$result              = array();
+=======
+		$result              = array();
+		$order_ids           = array_filter( array_map( array( __CLASS__, 'get_order_id' ), $order_ids ) );
+>>>>>>> origin/main
 		$original_order_sort = $order_ids;
 		$order_cache         = wc_get_container()->get( OrderCache::class );
 
@@ -92,8 +97,11 @@ class WC_Order_Factory {
 			$order_ids = $uncached_order_ids;
 		}
 
+<<<<<<< HEAD
 		_prime_post_caches( $order_ids, false, true );
 
+=======
+>>>>>>> origin/main
 		// We separate order list by class, since their datastore might be different.
 		$order_list_by_class = array();
 		$order_id_classnames = self::get_class_names_for_order_ids( $order_ids );

@@ -504,7 +504,11 @@ class Reviews {
 			return '';
 		}
 
+<<<<<<< HEAD
 		return ' <span class="menu-counter count-' . esc_attr( $count ) . '"><span class="pending-count">' . esc_html( $count ) . '</span></span>';
+=======
+		return ' <span class="awaiting-mod count-' . esc_attr( $count ) . '"><span class="pending-count">' . esc_html( $count ) . '</span></span>';
+>>>>>>> origin/main
 	}
 
 	/**

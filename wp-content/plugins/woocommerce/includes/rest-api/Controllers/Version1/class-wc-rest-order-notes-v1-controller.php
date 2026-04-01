@@ -66,10 +66,16 @@ class WC_REST_Order_Notes_V1_Controller extends WC_REST_Controller {
 				'permission_callback' => array( $this, 'create_item_permissions_check' ),
 				'args'                => array_merge( $this->get_endpoint_args_for_item_schema( WP_REST_Server::CREATABLE ), array(
 					'note' => array(
+<<<<<<< HEAD
 						'type'              => 'string',
 						'description'       => __( 'Order note content.', 'woocommerce' ),
 						'required'          => true,
 						'sanitize_callback' => 'wp_kses_post',
+=======
+						'type'        => 'string',
+						'description' => __( 'Order note content.', 'woocommerce' ),
+						'required'    => true,
+>>>>>>> origin/main
 					),
 				) ),
 			),

@@ -41,6 +41,7 @@ class Authentication {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Use the Store API session handler when a valid Cart-Token is present.
 	 *
 	 * @since 10.6.0
@@ -61,6 +62,8 @@ class Authentication {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Expose Store API headers in CORS responses.
 	 * We're explicitly exposing the Cart-Token, not the nonce. Only one of them is needed.
 	 *
@@ -117,6 +120,7 @@ class Authentication {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Checks if the request has a store API route as a GET `rest_route` parameter.
 	 *
 	 * @since 10.6.0
@@ -134,6 +138,8 @@ class Authentication {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Is the request a preflight request? Checks the request method
 	 *
 	 * @return boolean

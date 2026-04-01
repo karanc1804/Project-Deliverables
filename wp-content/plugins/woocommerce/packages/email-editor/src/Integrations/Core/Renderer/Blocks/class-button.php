@@ -88,9 +88,14 @@ class Button extends Abstract_Block_Renderer {
 			return '';
 		}
 
+<<<<<<< HEAD
 		$button_text    = $dom_helper->get_element_inner_html( $button_link ) ? $dom_helper->get_element_inner_html( $button_link ) : '';
 		$button_url     = $button_link->getAttribute( 'href' ) ? $button_link->getAttribute( 'href' ) : '#';
 		$data_link_href = $button_link->getAttribute( 'data-link-href' );
+=======
+		$button_text = $dom_helper->get_element_inner_html( $button_link ) ? $dom_helper->get_element_inner_html( $button_link ) : '';
+		$button_url  = $button_link->getAttribute( 'href' ) ? $button_link->getAttribute( 'href' ) : '#';
+>>>>>>> origin/main
 
 		$block_attributes = wp_parse_args(
 			$parsed_block['attrs'] ?? array(),
@@ -118,6 +123,7 @@ class Button extends Abstract_Block_Renderer {
 			'role'   => 'presentation',
 		);
 
+<<<<<<< HEAD
 		$data_link_attr = $data_link_href
 			? sprintf( ' data-link-href="%s"', esc_attr( $data_link_href ) )
 			: '';
@@ -128,6 +134,13 @@ class Button extends Abstract_Block_Renderer {
 			esc_attr( $link_styles['css'] ),
 			esc_url( $button_url ),
 			$data_link_attr,
+=======
+		$button_content = sprintf(
+			'<a class="button-link %1$s" style="%2$s" href="%3$s" target="_blank">%4$s</a>',
+			esc_attr( $link_styles['classnames'] ),
+			esc_attr( $link_styles['css'] ),
+			esc_url( $button_url ),
+>>>>>>> origin/main
 			$button_text
 		);
 

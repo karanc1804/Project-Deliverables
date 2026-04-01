@@ -533,8 +533,12 @@ class DataRegenerator {
  is_variation_attribute tinyint(1) NOT NULL,
  in_stock tinyint(1) NOT NULL,
  INDEX is_variation_attribute_term_id (is_variation_attribute, term_id),
+<<<<<<< HEAD
  PRIMARY KEY  ( `product_or_parent_id`, `term_id`, `product_id`, `taxonomy` ),
  KEY product_id (product_id)
+=======
+ PRIMARY KEY  ( `product_or_parent_id`, `term_id`, `product_id`, `taxonomy` )
+>>>>>>> origin/main
 ) $collate;";
 	}
 

@@ -74,6 +74,7 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Get the hooks relevant to response caching.
 	 *
 	 * @param WP_REST_Request<array<string, mixed>> $request     The request object.
@@ -91,6 +92,8 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Get data for ETag generation, excluding fields that change on each request.
 	 *
 	 * @param array                                 $data        Response data.
@@ -139,10 +142,14 @@ class WC_REST_Products_V2_Controller extends WC_REST_CRUD_Controller {
 					'methods'             => WP_REST_Server::READABLE,
 					'callback'            => $this->with_cache(
 						array( $this, 'get_items' ),
+<<<<<<< HEAD
 						array(
 							'endpoint_id'              => 'get_products',
 							'relevant_version_strings' => array( 'list_products' ),
 						)
+=======
+						array( 'endpoint_id' => 'get_products' )
+>>>>>>> origin/main
 					),
 					'permission_callback' => array( $this, 'get_items_permissions_check' ),
 					'args'                => $this->get_collection_params(),

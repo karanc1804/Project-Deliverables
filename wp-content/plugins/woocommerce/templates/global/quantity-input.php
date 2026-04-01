@@ -65,3 +65,7 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
 	do_action( 'woocommerce_after_quantity_input_field' );
 	?>
 </div>
+<<<<<<< HEAD
+=======
+<?php
+>>>>>>> origin/main

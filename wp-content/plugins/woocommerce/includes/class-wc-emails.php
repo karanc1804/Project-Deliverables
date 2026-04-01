@@ -65,7 +65,10 @@ class WC_Emails {
 	 * Cloning is forbidden.
 	 *
 	 * @since 2.1
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function __clone() {
 		wc_doing_it_wrong( __FUNCTION__, __( 'Cloning is forbidden.', 'woocommerce' ), '2.1' );
@@ -75,7 +78,10 @@ class WC_Emails {
 	 * Unserializing instances of this class is forbidden.
 	 *
 	 * @since 2.1
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function __wakeup() {
 		wc_doing_it_wrong( __FUNCTION__, __( 'Unserializing instances of this class is forbidden.', 'woocommerce' ), '2.1' );
@@ -83,8 +89,11 @@ class WC_Emails {
 
 	/**
 	 * Hook in all transactional emails.
+<<<<<<< HEAD
 	 *
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public static function init_transactional_emails() {
 		/**
@@ -146,7 +155,10 @@ class WC_Emails {
 	 * otherwise falls back to send now.
 	 *
 	 * @param mixed ...$args Optional arguments.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public static function queue_transactional_email( ...$args ) {
 		if ( is_a( self::$background_emailer, 'WC_Background_Emailer' ) ) {
@@ -168,7 +180,10 @@ class WC_Emails {
 	 *
 	 * @param string $filter Filter name.
 	 * @param array  $args Email args (default: []).
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public static function send_queued_transactional_email( $filter = '', $args = array() ) {
 		/**
@@ -198,7 +213,10 @@ class WC_Emails {
 	 * @internal
 	 *
 	 * @param array $args Email args (default: []).
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public static function send_transactional_email( $args = array() ) {
 		try {
@@ -274,13 +292,17 @@ class WC_Emails {
 
 	/**
 	 * Init email classes.
+<<<<<<< HEAD
 	 *
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function init() {
 		// Include email classes.
 		include_once __DIR__ . '/emails/class-wc-email.php';
 
+<<<<<<< HEAD
 		$emails = array(
 			'WC_Email_New_Order'                 => __DIR__ . '/emails/class-wc-email-new-order.php',
 			'WC_Email_Cancelled_Order'           => __DIR__ . '/emails/class-wc-email-cancelled-order.php',
@@ -320,6 +342,31 @@ class WC_Emails {
 		// Enable custom partially refunded order email for the block email editor.
 		if ( FeaturesUtil::feature_is_enabled( 'block_email_editor' ) ) {
 			$this->emails['WC_Email_Customer_Partially_Refunded_Order'] = include __DIR__ . '/emails/class-wc-email-customer-partially-refunded-order.php';
+=======
+		$this->emails['WC_Email_New_Order']                 = include __DIR__ . '/emails/class-wc-email-new-order.php';
+		$this->emails['WC_Email_Cancelled_Order']           = include __DIR__ . '/emails/class-wc-email-cancelled-order.php';
+		$this->emails['WC_Email_Customer_Cancelled_Order']  = include __DIR__ . '/emails/class-wc-email-customer-cancelled-order.php';
+		$this->emails['WC_Email_Failed_Order']              = include __DIR__ . '/emails/class-wc-email-failed-order.php';
+		$this->emails['WC_Email_Customer_Failed_Order']     = include __DIR__ . '/emails/class-wc-email-customer-failed-order.php';
+		$this->emails['WC_Email_Customer_On_Hold_Order']    = include __DIR__ . '/emails/class-wc-email-customer-on-hold-order.php';
+		$this->emails['WC_Email_Customer_Processing_Order'] = include __DIR__ . '/emails/class-wc-email-customer-processing-order.php';
+		$this->emails['WC_Email_Customer_Completed_Order']  = include __DIR__ . '/emails/class-wc-email-customer-completed-order.php';
+		$this->emails['WC_Email_Customer_Refunded_Order']   = include __DIR__ . '/emails/class-wc-email-customer-refunded-order.php';
+		$this->emails['WC_Email_Customer_Invoice']          = include __DIR__ . '/emails/class-wc-email-customer-invoice.php';
+		$this->emails['WC_Email_Customer_Note']             = include __DIR__ . '/emails/class-wc-email-customer-note.php';
+		$this->emails['WC_Email_Customer_Reset_Password']   = include __DIR__ . '/emails/class-wc-email-customer-reset-password.php';
+		$this->emails['WC_Email_Customer_New_Account']      = include __DIR__ . '/emails/class-wc-email-customer-new-account.php';
+
+		if ( FeaturesUtil::feature_is_enabled( 'point_of_sale' ) ) {
+			$this->emails['WC_Email_Customer_POS_Completed_Order'] = include __DIR__ . '/emails/class-wc-email-customer-pos-completed-order.php';
+			$this->emails['WC_Email_Customer_POS_Refunded_Order']  = include __DIR__ . '/emails/class-wc-email-customer-pos-refunded-order.php';
+		}
+
+		if ( FeaturesUtil::feature_is_enabled( 'fulfillments' ) ) {
+			$this->emails['WC_Email_Customer_Fulfillment_Created'] = include __DIR__ . '/emails/class-wc-email-customer-fulfillment-created.php';
+			$this->emails['WC_Email_Customer_Fulfillment_Updated'] = include __DIR__ . '/emails/class-wc-email-customer-fulfillment-updated.php';
+			$this->emails['WC_Email_Customer_Fulfillment_Deleted'] = include __DIR__ . '/emails/class-wc-email-customer-fulfillment-deleted.php';
+>>>>>>> origin/main
 		}
 
 		/**
@@ -363,7 +410,10 @@ class WC_Emails {
 	 * Get the email header.
 	 *
 	 * @param mixed $email_heading Heading for the email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function email_header( $email_heading ) {
 		wc_get_template(
@@ -377,8 +427,11 @@ class WC_Emails {
 
 	/**
 	 * Get the email footer.
+<<<<<<< HEAD
 	 *
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function email_footer() {
 		wc_get_template( 'emails/email-footer.php' );
@@ -487,7 +540,10 @@ class WC_Emails {
 	 * Prepare and send the customer invoice email on demand.
 	 *
 	 * @param int|WC_Order $order Order instance or ID.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function customer_invoice( $order ) {
 		$email = $this->emails['WC_Email_Customer_Invoice'];
@@ -505,7 +561,10 @@ class WC_Emails {
 	 * @param int   $customer_id        Customer ID.
 	 * @param array $new_customer_data  New customer data.
 	 * @param bool  $password_generated If password is generated.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function customer_new_account( $customer_id, $new_customer_data = array(), $password_generated = false ) {
 		if ( ! $customer_id ) {
@@ -522,7 +581,10 @@ class WC_Emails {
 	 * @param bool     $sent_to_admin If should sent to admin.
 	 * @param bool     $plain_text    If is plain text email.
 	 * @param string   $email         Email address.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function order_details( $order, $sent_to_admin = false, $plain_text = false, $email = '' ) {
 		if ( $plain_text ) {
@@ -556,7 +618,10 @@ class WC_Emails {
 	 * @param bool     $sent_to_admin If should sent to admin.
 	 * @param bool     $plain_text    If is plain text email.
 	 * @param string   $email         Email address.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function order_downloads( $order, $sent_to_admin = false, $plain_text = false, $email = '' ) {
 		$show_downloads = $order->has_downloadable_item() && $order->is_download_permitted() && ! $sent_to_admin && ! is_a( $email, 'WC_Email_Customer_Refunded_Order' );
@@ -618,7 +683,10 @@ class WC_Emails {
 	 * @param WC_Order $order         Order instance.
 	 * @param bool     $sent_to_admin If should sent to admin.
 	 * @param bool     $plain_text    If is plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function order_meta( $order, $sent_to_admin = false, $plain_text = false ) {
 		/**
@@ -681,7 +749,10 @@ class WC_Emails {
 	 * @param bool        $sent_to_admin If should sent to admin.
 	 * @param bool        $plain_text    If is plain text email.
 	 * @param string      $email         Email address.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function fulfillment_details( $order, $fulfillment, $sent_to_admin = false, $plain_text = false, $email = '' ) {
 		if ( $plain_text ) {
@@ -716,7 +787,10 @@ class WC_Emails {
 	 * @param Fulfillment $fulfillment   Fulfillment instance.
 	 * @param bool        $sent_to_admin If should sent to admin.
 	 * @param bool        $plain_text    If is plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function fulfillment_meta( $order, $fulfillment, $sent_to_admin = false, $plain_text = false ) {
 		$fields        = $fulfillment->get_meta_data();
@@ -765,7 +839,10 @@ class WC_Emails {
 	 * @param WC_Order $order         Order instance.
 	 * @param bool     $sent_to_admin If should sent to admin.
 	 * @param bool     $plain_text    If is plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function customer_details( $order, $sent_to_admin = false, $plain_text = false ) {
 		if ( ! is_a( $order, 'WC_Order' ) ) {
@@ -797,7 +874,10 @@ class WC_Emails {
 	 * @param WC_Order $order         Order instance.
 	 * @param bool     $sent_to_admin If should sent to admin.
 	 * @param bool     $plain_text    If is plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function email_addresses( $order, $sent_to_admin = false, $plain_text = false ) {
 		if ( ! is_a( $order, 'WC_Order' ) ) {
@@ -828,7 +908,10 @@ class WC_Emails {
 	 * @param WC_Order $order         Order instance.
 	 * @param bool     $sent_to_admin If email is sent to admin.
 	 * @param bool     $plain_text    If this is a plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function additional_checkout_fields( $order, $sent_to_admin = false, $plain_text = false ) {
 		if ( ! is_a( $order, 'WC_Order' ) ) {
@@ -881,7 +964,10 @@ class WC_Emails {
 	 * @param WC_Order $order         Order instance.
 	 * @param bool     $sent_to_admin If email is sent to admin.
 	 * @param bool     $plain_text    If this is a plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function additional_address_fields( $address_type, $order, $sent_to_admin = false, $plain_text = false ) {
 		if ( ! is_a( $order, 'WC_Order' ) ) {
@@ -971,8 +1057,11 @@ class WC_Emails {
 
 	/**
 	 * Add email sender filters.
+<<<<<<< HEAD
 	 *
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	private function add_email_sender_filters() {
 		add_filter( 'wp_mail_from', array( $this, 'get_from_address' ) );
@@ -981,8 +1070,11 @@ class WC_Emails {
 
 	/**
 	 * Remove email sender filters.
+<<<<<<< HEAD
 	 *
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	private function remove_email_sender_filters() {
 		remove_filter( 'wp_mail_from', array( $this, 'get_from_address' ) );
@@ -993,7 +1085,10 @@ class WC_Emails {
 	 * Low stock notification email.
 	 *
 	 * @param WC_Product $product Product instance.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function low_stock( $product ) {
 		if ( 'no' === get_option( 'woocommerce_notify_low_stock', 'yes' ) ) {
@@ -1084,7 +1179,10 @@ class WC_Emails {
 	 * No stock notification email.
 	 *
 	 * @param WC_Product $product Product instance.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function no_stock( $product ) {
 		if ( 'no' === get_option( 'woocommerce_notify_no_stock', 'yes' ) ) {
@@ -1171,7 +1269,10 @@ class WC_Emails {
 	 * Backorder notification email.
 	 *
 	 * @param array $args Arguments.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function backorder( $args ) {
 		$args = wp_parse_args(
@@ -1263,7 +1364,10 @@ class WC_Emails {
 	 * @param WC_Order $order         Order instance.
 	 * @param bool     $sent_to_admin If should sent to admin.
 	 * @param bool     $plain_text    If is plain text email.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function order_schema_markup( $order, $sent_to_admin = false, $plain_text = false ) {
 		wc_deprecated_function( 'WC_Emails::order_schema_markup', '3.0', 'WC_Structured_Data::generate_order_data' );
