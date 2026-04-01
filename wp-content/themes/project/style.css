@@ -2006,3 +2006,208 @@ body.single-product .wp-block-woocommerce-product-meta {
         text-align: center;
     }
 }
+
+/* styling product description tab */
+.woocommerce-Tabs-panel--description {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px 25px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* styling heading */
+.woocommerce-Tabs-panel--description h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* styling paragraph text */
+.woocommerce-Tabs-panel--description p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
+    margin: 0;
+}
+
+/* tablet responsiveness */
+@media (max-width: 1024px) {
+    .woocommerce-Tabs-panel--description {
+        margin: 30px 20px;
+        padding: 25px 20px;
+    }
+
+    .woocommerce-Tabs-panel--description h2 {
+        font-size: 24px;
+    }
+
+    .woocommerce-Tabs-panel--description p {
+        font-size: 15px;
+    }
+}
+
+/* mobile responsiveness */
+@media (max-width: 600px) {
+    .woocommerce-Tabs-panel--description {
+        margin: 20px 15px;
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .woocommerce-Tabs-panel--description h2 {
+        font-size: 20px;
+    }
+
+    .woocommerce-Tabs-panel--description p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+
+
+/* main reviews container */
+.woocommerce-Reviews {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* title */
+.woocommerce-Reviews-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* no reviews text */
+.woocommerce-noreviews {
+    text-align: center;
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* review form wrapper */
+#review_form_wrapper {
+    margin-top: 20px;
+}
+
+/* form title */
+.comment-reply-title {
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* labels */
+.comment-form label {
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* textarea */
+.comment-form textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 14px;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.comment-form textarea:focus {
+    border-color: #000;
+    outline: none;
+}
+
+/* rating stars */
+.comment-form-rating {
+    margin-bottom: 20px;
+}
+
+.comment-form-rating .stars a {
+    font-size: 18px;
+    color: #ccc;
+    margin-right: 5px;
+    transition: 0.2s ease;
+}
+
+.comment-form-rating .stars a:hover {
+    color: #000;
+}
+
+/* submit button */
+.form-submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-submit .submit {
+    background: #000;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-submit .submit:hover {
+    background: #222;
+    transform: translateY(-2px);
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+    .woocommerce-Reviews {
+        margin: 30px 20px;
+        padding: 25px;
+    }
+
+    .woocommerce-Reviews-title {
+        font-size: 24px;
+    }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+    .woocommerce-Reviews {
+        margin: 20px 15px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .woocommerce-Reviews-title {
+        font-size: 20px;
+    }
+
+    .comment-reply-title {
+        font-size: 18px;
+    }
+
+    .comment-form textarea {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .form-submit .submit {
+        width: 100%;
+        padding: 12px;
+    }
+}
