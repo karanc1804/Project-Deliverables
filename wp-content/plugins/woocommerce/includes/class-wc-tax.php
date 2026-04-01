@@ -82,7 +82,6 @@ class WC_Tax {
 	 * @return array
 	 */
 	public static function calc_shipping_tax( $price, $rates ) {
-<<<<<<< HEAD
 		/**
 		 * Filter to control if shipping prices include tax.
 		 *
@@ -97,9 +96,6 @@ class WC_Tax {
 			$taxes = self::calc_exclusive_tax( $price, $rates );
 		}
 
-=======
-		$taxes = self::calc_exclusive_tax( $price, $rates );
->>>>>>> origin/main
 		return apply_filters( 'woocommerce_calc_shipping_tax', $taxes, $price, $rates );
 	}
 

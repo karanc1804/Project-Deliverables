@@ -12,11 +12,7 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails\Block
-<<<<<<< HEAD
  * @version 10.6.0
-=======
- * @version 10.2.0
->>>>>>> origin/main
  */
 
 use Automattic\WooCommerce\Internal\EmailEditor\BlockEmailRenderer;
@@ -46,13 +42,8 @@ printf( esc_html__( 'Order failed: #%s,', 'woocommerce' ), '<!--[woocommerce/ord
 <div class="wp-block-woocommerce-email-content"> <?php echo esc_html( BlockEmailRenderer::WOO_EMAIL_CONTENT_PLACEHOLDER ); ?> </div>
 <!-- /wp:woocommerce/email-content -->
 
-<<<<<<< HEAD
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center"><?php
-=======
-<!-- wp:paragraph -->
-<p><?php
->>>>>>> origin/main
 echo wp_kses_post( __( 'We hope they’ll be back soon! Read more about <a href="https://woocommerce.com/document/managing-orders/">troubleshooting failed payments</a>.', 'woocommerce' ) );
 ?></p>
 <!-- /wp:paragraph -->

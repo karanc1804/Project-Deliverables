@@ -143,14 +143,9 @@ if ( ! class_exists( 'WC_Admin_Dashboard', false ) ) :
 				'wc-status-widget-async',
 				'wc_status_widget_params',
 				array(
-<<<<<<< HEAD
 					'ajax_url'      => admin_url( 'admin-ajax.php' ),
 					'security'      => wp_create_nonce( 'wc-status-widget' ),
 					'error_message' => esc_html__( 'Error loading widget', 'woocommerce' ),
-=======
-					'ajax_url' => admin_url( 'admin-ajax.php' ),
-					'security' => wp_create_nonce( 'wc-status-widget' ),
->>>>>>> origin/main
 				)
 			);
 
@@ -480,7 +475,6 @@ if ( ! class_exists( 'WC_Admin_Dashboard', false ) ) :
 		}
 
 		/**
-<<<<<<< HEAD
 		 * Recent reviews widget: placeholder.
 		 */
 		public function recent_reviews() {
@@ -562,12 +556,6 @@ if ( ! class_exists( 'WC_Admin_Dashboard', false ) ) :
 			} else {
 				echo '<p>' . esc_html__( 'There are no product reviews yet.', 'woocommerce' ) . '</p>';
 			}
-=======
-		 * Recent reviews widget.
-		 */
-		public function recent_reviews() {
-			$this->legacy_recent_reviews();
->>>>>>> origin/main
 		}
 
 		/**

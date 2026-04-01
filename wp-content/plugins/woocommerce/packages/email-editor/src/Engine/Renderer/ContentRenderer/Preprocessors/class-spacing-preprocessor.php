@@ -49,7 +49,6 @@ class Spacing_Preprocessor implements Preprocessor {
 				$block['email_attrs']['margin-top'] = $gap;
 			}
 
-<<<<<<< HEAD
 			// Handle horizontal gap for columns: apply padding-left to column children (except the first).
 			if ( 'core/columns' === $parent_block_name && 0 !== $key && null !== $parent_block ) {
 				$columns_gap = $this->get_columns_block_gap( $parent_block, $gap );
@@ -58,15 +57,12 @@ class Spacing_Preprocessor implements Preprocessor {
 				}
 			}
 
-=======
->>>>>>> origin/main
 			$block['innerBlocks']  = $this->add_block_gaps( $block['innerBlocks'] ?? array(), $gap, $block );
 			$parsed_blocks[ $key ] = $block;
 		}
 
 		return $parsed_blocks;
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Extracts the horizontal blockGap from a columns block.
@@ -99,6 +95,4 @@ class Spacing_Preprocessor implements Preprocessor {
 
 		return null;
 	}
-=======
->>>>>>> origin/main
 }

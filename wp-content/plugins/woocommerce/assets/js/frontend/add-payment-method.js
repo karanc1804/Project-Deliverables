@@ -5,7 +5,6 @@ jQuery( function( $ ) {
 		return false;
 	}
 
-<<<<<<< HEAD
 	var $form = $( '#add_payment_method' );
 
 	/**
@@ -46,13 +45,6 @@ jQuery( function( $ ) {
 
 	/* Payment option selection */
 	$form.on( 'click init_add_payment_method', '.payment_methods input.input-radio', function() {
-=======
-	$( '#add_payment_method' )
-
-	/* Payment option selection */
-
-	.on( 'click init_add_payment_method', '.payment_methods input.input-radio', function() {
->>>>>>> origin/main
 		if ( $( '.payment_methods input.input-radio' ).length > 1 ) {
 			var target_payment_box = $( 'div.payment_box.' + $( this ).attr( 'ID' ) );
 			if ( $( this ).is( ':checked' ) && ! target_payment_box.is( ':visible' ) ) {
@@ -64,7 +56,6 @@ jQuery( function( $ ) {
 		} else {
 			$( 'div.payment_box' ).show();
 		}
-<<<<<<< HEAD
 
 		// Handle custom place order button for selected gateway
 		wc.customPlaceOrderButton.__maybeShow( $( this ).val(), createAddPaymentMethodApi() );
@@ -82,15 +73,6 @@ jQuery( function( $ ) {
 
 	$form.on( 'submit', function() {
 		$form.block({ message: null, overlayCSS: { background: '#fff', opacity: 0.6 } });
-=======
-	})
-
-	// Trigger initial click
-	.find( 'input[name=payment_method]:checked' ).trigger( 'click' );
-
-	$( '#add_payment_method' ).on( 'submit', function() {
-		$( '#add_payment_method' ).block({ message: null, overlayCSS: { background: '#fff', opacity: 0.6 } });
->>>>>>> origin/main
 	});
 
 	$( document.body ).trigger( 'init_add_payment_method' );

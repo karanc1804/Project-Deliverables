@@ -70,7 +70,6 @@ use WP_REST_Response;
  *                         'cache_ttl'      => HOUR_IN_SECONDS,
  *                         // Optional array, defaults to the controller's get_hooks_relevant_to_caching().
  *                         'relevant_hooks'  => array( 'filter_name_1', 'filter_name_2' ),
-<<<<<<< HEAD
  *                         // Optional array, defaults to the controller's get_files_relevant_to_response_caching().
  *                         // Paths can be absolute or relative to the first directory from
  *                         // get_allowed_directories_for_file_based_response_caching() (WC_ABSPATH by default).
@@ -78,8 +77,6 @@ use WP_REST_Response;
  *                         // Optional array, defaults to the controller's get_version_strings_relevant_to_caching().
  *                         // Version string IDs to track; cache is invalidated when any version string changes.
  *                         'relevant_version_strings' => array( 'list_products' ),
-=======
->>>>>>> origin/main
  *                         // Optional bool, defaults to the controller's response_cache_vary_by_user().
  *                         'vary_by_user'    => true,
  *                         // Optional array, defaults to the controller's get_response_headers_to_include_in_caching().
@@ -99,13 +96,10 @@ use WP_REST_Response;
  * - get_default_response_entity_type(): Default entity type for endpoints without explicit config.
  * - response_cache_vary_by_user(): Whether cache should be user-specific.
  * - get_hooks_relevant_to_caching(): Hook names to track for cache invalidation.
-<<<<<<< HEAD
  * - get_files_relevant_to_response_caching(): File paths to track for cache invalidation.
  * - get_version_strings_relevant_to_caching(): Version string IDs to track for cache invalidation.
  * - get_allowed_directories_for_file_based_response_caching(): Directories allowed for file tracking.
  * - get_file_check_interval_for_response_caching(): How long to cache file modification checks (default 10 minutes).
-=======
->>>>>>> origin/main
  * - get_ttl_for_cached_response(): TTL for cached outputs in seconds.
  * - get_response_headers_to_include_in_caching(): Headers to include in cache (false = use exclusion mode).
  * - get_response_headers_to_exclude_from_caching(): Headers to exclude from cache (when in exclusion mode).
@@ -114,13 +108,10 @@ use WP_REST_Response;
  * - Entity versions change (tracked via VersionStringGenerator).
  * - Hook callbacks change
  *   (if the `get_hooks_relevant_to_caching()` call result or the 'relevant_hooks' array isn't empty).
-<<<<<<< HEAD
  * - Tracked files change or are deleted
  *   (if the `get_files_relevant_to_response_caching()` call result or the 'relevant_files' array isn't empty).
  * - Relevant version strings change or are deleted
  *   (if the `get_version_strings_relevant_to_caching()` call result or the 'relevant_version_strings' array isn't empty).
-=======
->>>>>>> origin/main
  * - Cached response TTL expires.
  *
  * NOTE: This caching mechanism uses the WordPress cache (wp_cache_* functions).
@@ -156,7 +147,6 @@ trait RestApiCache {
 	);
 
 	/**
-<<<<<<< HEAD
 	 * Cache group for warning suppression (separate from main cache to avoid interference).
 	 *
 	 * @var string
@@ -171,8 +161,6 @@ trait RestApiCache {
 	private static int $file_warning_suppression_ttl = HOUR_IN_SECONDS;
 
 	/**
-=======
->>>>>>> origin/main
 	 * The instance of VersionStringGenerator to use, or null if caching is disabled.
 	 *
 	 * @var VersionStringGenerator|null
@@ -196,11 +184,8 @@ trait RestApiCache {
 	/**
 	 * Initialize the trait.
 	 * This MUST be called from the controller's constructor.
-<<<<<<< HEAD
 	 *
 	 * @since 10.5.0
-=======
->>>>>>> origin/main
 	 */
 	protected function initialize_rest_api_cache(): void {
 		// Guard against early instantiation before WooCommerce is fully initialized.
@@ -230,11 +215,8 @@ trait RestApiCache {
 	 * Usage: `'callback' => $this->with_cache( array( $this, 'endpoint_callback_method' ) )`
 	 *        `'callback' => $this->with_cache( array( $this, 'endpoint_callback_method' ), [ 'entity_type' => 'product' ] )`
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param callable $callback The original endpoint callback.
 	 * @param array    $config   Caching configuration:
 	 *                           - entity_type: string (falls back to get_default_response_entity_type()).
@@ -242,11 +224,8 @@ trait RestApiCache {
 	 *                           - endpoint_id: string|null (optional friendly identifier for the endpoint).
 	 *                           - cache_ttl: int (defaults to get_ttl_for_cached_response()).
 	 *                           - relevant_hooks: array (defaults to get_hooks_relevant_to_caching()).
-<<<<<<< HEAD
 	 *                           - relevant_files: array (defaults to get_files_relevant_to_response_caching()).
 	 *                           - relevant_version_strings: array (defaults to get_version_strings_relevant_to_caching()).
-=======
->>>>>>> origin/main
 	 *                           - include_headers: array|false (defaults to get_response_headers_to_include_in_caching()).
 	 *                           - exclude_headers: array (defaults to get_response_headers_to_exclude_from_caching()).
 	 * @return callable Wrapped callback.
@@ -280,18 +259,7 @@ trait RestApiCache {
 			return call_user_func( $callback, $request );
 		}
 
-<<<<<<< HEAD
 		if ( ! $this->should_use_cache_for_request( $request ) ) {
-=======
-		$cached_config     = null;
-		$should_skip_cache = ! $this->should_use_cache_for_request( $request );
-		if ( ! $should_skip_cache ) {
-			$cached_config     = $this->build_cache_config( $request, $config );
-			$should_skip_cache = is_null( $cached_config );
-		}
-
-		if ( $should_skip_cache || is_null( $cached_config ) ) {
->>>>>>> origin/main
 			$response = call_user_func( $callback, $request );
 			if ( ! is_wp_error( $response ) ) {
 				$response = rest_ensure_response( $response );
@@ -300,11 +268,8 @@ trait RestApiCache {
 			return $response;
 		}
 
-<<<<<<< HEAD
 		$cached_config = $this->build_cache_config( $request, $config );
 
-=======
->>>>>>> origin/main
 		$this->is_handling_cached_endpoint = true;
 
 		if ( $backend_caching_enabled ) {
@@ -358,39 +323,20 @@ trait RestApiCache {
 	 * @param WP_REST_Request<array<string, mixed>> $request The request object.
 	 * @param array                                 $config  Raw configuration array passed to with_cache.
 	 *
-<<<<<<< HEAD
 	 * @return array Normalized cache config with keys: endpoint_id, entity_type, vary_by_user, cache_ttl, relevant_hooks, relevant_files, include_headers, exclude_headers, cache_key.
 	 *
 	 * @throws \InvalidArgumentException If entity_type is not provided and no default is available, or if include_headers is not false or an array.
 	 */
 	private function build_cache_config( WP_REST_Request $request, array $config ): array { // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
-=======
-	 * @return array|null Normalized cache config with keys: endpoint_id, entity_type, vary_by_user, cache_ttl, relevant_hooks, include_headers, exclude_headers, cache_key. Returns null if entity type is not available.
-	 *
-	 * @throws \InvalidArgumentException If include_headers is not false or an array.
-	 */
-	private function build_cache_config( WP_REST_Request $request, array $config ): ?array { // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
->>>>>>> origin/main
 		$endpoint_id  = $config['endpoint_id'] ?? null;
 		$entity_type  = $config['entity_type'] ?? $this->get_default_response_entity_type();
 		$vary_by_user = $config['vary_by_user'] ?? $this->response_cache_vary_by_user( $request, $endpoint_id );
 
 		if ( ! $entity_type ) {
-<<<<<<< HEAD
 			throw new \InvalidArgumentException(
 				'REST API cache: No entity type provided in with_cache() config and no default entity type available from get_default_response_entity_type(). ' .
 				'Either pass "entity_type" in the config array or override get_default_response_entity_type() in your controller.'
 			);
-=======
-			$legacy_proxy = wc_get_container()->get( LegacyProxy::class );
-			$legacy_proxy->call_function(
-				'wc_doing_it_wrong',
-				__METHOD__,
-				'No entity type provided and no default entity type available. Skipping cache.',
-				'10.5.0'
-			);
-			return null;
->>>>>>> origin/main
 		}
 
 		$include_headers = $config['include_headers'] ?? $this->get_response_headers_to_include_in_caching( $request, $endpoint_id );
@@ -401,7 +347,6 @@ trait RestApiCache {
 		}
 
 		return array(
-<<<<<<< HEAD
 			'endpoint_id'              => $endpoint_id,
 			'entity_type'              => $entity_type,
 			'vary_by_user'             => $vary_by_user,
@@ -412,16 +357,6 @@ trait RestApiCache {
 			'include_headers'          => $include_headers,
 			'exclude_headers'          => $config['exclude_headers'] ?? $this->get_response_headers_to_exclude_from_caching( $request, $endpoint_id ),
 			'cache_key'                => $this->get_key_for_cached_response( $request, $entity_type, $vary_by_user, $endpoint_id ),
-=======
-			'endpoint_id'     => $endpoint_id,
-			'entity_type'     => $entity_type,
-			'vary_by_user'    => $vary_by_user,
-			'cache_ttl'       => $config['cache_ttl'] ?? $this->get_ttl_for_cached_response( $request, $endpoint_id ),
-			'relevant_hooks'  => $config['relevant_hooks'] ?? $this->get_hooks_relevant_to_caching( $request, $endpoint_id ),
-			'include_headers' => $include_headers,
-			'exclude_headers' => $config['exclude_headers'] ?? $this->get_response_headers_to_exclude_from_caching( $request, $endpoint_id ),
-			'cache_key'       => $this->get_key_for_cached_response( $request, $entity_type, $vary_by_user, $endpoint_id ),
->>>>>>> origin/main
 		);
 	}
 
@@ -469,7 +404,6 @@ trait RestApiCache {
 			$etag      = '"' . md5( $cached_config['cache_key'] . wp_json_encode( $etag_data ) ) . '"';
 
 			$this->store_cached_response(
-<<<<<<< HEAD
 				array_merge(
 					$cached_config,
 					array(
@@ -480,17 +414,6 @@ trait RestApiCache {
 						'etag'        => $etag,
 					)
 				)
-=======
-				$cached_config['cache_key'],
-				$data,
-				$status,
-				$cached_config['entity_type'],
-				$entity_ids,
-				$cached_config['cache_ttl'],
-				$cached_config['relevant_hooks'],
-				$cacheable_headers,
-				$etag
->>>>>>> origin/main
 			);
 
 			$cached = true;
@@ -592,11 +515,8 @@ trait RestApiCache {
 	 * This can be customized per-endpoint via the config array
 	 * passed to with_cache() ('entity_type' key).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @return string|null Entity type (e.g., 'product', 'order'), or null if no controller-wide default.
 	 */
 	protected function get_default_response_entity_type(): ?string {
@@ -609,11 +529,8 @@ trait RestApiCache {
 	 * Override in classes to exclude fields that change on each request
 	 * (e.g., random recommendations, timestamps).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param array                                 $data        Response data.
 	 * @param WP_REST_Request<array<string, mixed>> $request     The request object.
 	 * @param string|null                           $endpoint_id Optional friendly identifier for the endpoint.
@@ -633,11 +550,8 @@ trait RestApiCache {
 	 * This can be customized per-endpoint via the config array
 	 * passed to with_cache() ('vary_by_user' key).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param WP_REST_Request<array<string, mixed>> $request     The request object.
 	 * @param string|null                           $endpoint_id Optional friendly identifier for the endpoint.
 	 *
@@ -653,11 +567,8 @@ trait RestApiCache {
 	 * This can be customized per-endpoint via the config array
 	 * passed to with_cache() ('cache_ttl' key).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param WP_REST_Request<array<string, mixed>> $request     The request object.
 	 * @param string|null                           $endpoint_id Optional friendly identifier for the endpoint.
 	 *
@@ -678,11 +589,8 @@ trait RestApiCache {
 	 * This can be customized per-endpoint via the config array
 	 * passed to with_cache() ('relevant_hooks' key).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param WP_REST_Request<array<string, mixed>> $request     Request object.
 	 * @param string|null                           $endpoint_id Optional friendly identifier for the endpoint.
 	 *
@@ -693,7 +601,6 @@ trait RestApiCache {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Get the paths of files whose modification affects the response.
 	 *
 	 * All the returned files will be tracked for changes: whenever a response is cached,
@@ -774,8 +681,6 @@ trait RestApiCache {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Get the names of response headers to include in caching.
 	 *
 	 * When this returns an array, ONLY the headers whose names are returned
@@ -786,11 +691,8 @@ trait RestApiCache {
 	 * This can be customized per-endpoint via the config array
 	 * passed to with_cache() ('include_headers' key).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param WP_REST_Request<array<string, mixed>> $request     Request object.
 	 * @param string|null                           $endpoint_id Optional friendly identifier for the endpoint.
 	 *
@@ -812,11 +714,8 @@ trait RestApiCache {
 	 * This can be customized per-endpoint via the config array
 	 * passed to with_cache() ('exclude_headers' key).
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param WP_REST_Request<array<string, mixed>> $request     Request object.
 	 * @param string|null                           $endpoint_id Optional friendly identifier for the endpoint.
 	 *
@@ -835,11 +734,8 @@ trait RestApiCache {
 	 *
 	 * Controllers can override this method to customize entity ID extraction.
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param array                                 $response_data Response data.
 	 * @param WP_REST_Request<array<string, mixed>> $request       The request object.
 	 * @param string|null                           $endpoint_id   Optional friendly identifier for the endpoint.
@@ -980,11 +876,8 @@ trait RestApiCache {
 	/**
 	 * Get cache key information that uniquely identifies a request.
 	 *
-<<<<<<< HEAD
 	 * @since 10.5.0
 	 *
-=======
->>>>>>> origin/main
 	 * @param WP_REST_Request<array<string, mixed>> $request      The request object.
 	 * @param bool                                  $vary_by_user Whether to include user ID in cache key.
 	 * @param string|null                           $endpoint_id  Optional friendly identifier for the endpoint.
@@ -1096,7 +989,6 @@ trait RestApiCache {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Generate a hash based on the current values of the relevant version strings.
 	 *
 	 * @since 10.6.0
@@ -1434,8 +1326,6 @@ trait RestApiCache {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Get a cached response, but only if it's valid (otherwise the cached response will be invalidated).
 	 *
 	 * @param WP_REST_Request<array<string, mixed>> $request              The request object.
@@ -1450,16 +1340,9 @@ trait RestApiCache {
 		$cache_ttl      = $cached_config['cache_ttl'];
 		$relevant_hooks = $cached_config['relevant_hooks'];
 
-<<<<<<< HEAD
 		$cached = wp_cache_get( $cache_key, self::$cache_group );
 
 		if ( ! is_array( $cached ) || ! array_key_exists( 'data', $cached ) || ! isset( $cached['entity_versions'], $cached['created_at'] ) ) {
-=======
-		$found  = false;
-		$cached = wp_cache_get( $cache_key, self::$cache_group, false, $found );
-
-		if ( ! $found || ! is_array( $cached ) || ! array_key_exists( 'data', $cached ) || ! isset( $cached['entity_versions'], $cached['created_at'] ) ) {
->>>>>>> origin/main
 			return null;
 		}
 
@@ -1481,7 +1364,6 @@ trait RestApiCache {
 			}
 		}
 
-<<<<<<< HEAD
 		// Validate files hash if files are being tracked.
 		$relevant_files = $cached_config['relevant_files'];
 		if ( ! empty( $relevant_files ) ) {
@@ -1506,8 +1388,6 @@ trait RestApiCache {
 			}
 		}
 
-=======
->>>>>>> origin/main
 		if ( ! is_null( $this->version_string_generator ) ) {
 			foreach ( $cached['entity_versions'] as $entity_id => $cached_version ) {
 				$version_id      = "{$entity_type}_{$entity_id}";
@@ -1573,7 +1453,6 @@ trait RestApiCache {
 	/**
 	 * Store a response in cache.
 	 *
-<<<<<<< HEAD
 	 * @param array $args {
 	 *     Arguments for storing the cached response.
 	 *
@@ -1602,23 +1481,6 @@ trait RestApiCache {
 		if ( ! is_null( $this->version_string_generator ) ) {
 			foreach ( $args['entity_ids'] as $entity_id ) {
 				$version_id = "{$args['entity_type']}_{$entity_id}";
-=======
-	 * @param string $cache_key      The cache key.
-	 * @param mixed  $data           The response data to cache.
-	 * @param int    $status_code    The HTTP status code of the response.
-	 * @param string $entity_type    The entity type.
-	 * @param array  $entity_ids     Array of entity IDs in the response.
-	 * @param int    $cache_ttl      Cache TTL in seconds.
-	 * @param array  $relevant_hooks Hook names to track for invalidation.
-	 * @param array  $headers        Response headers to cache.
-	 * @param string $etag           ETag for the response.
-	 */
-	private function store_cached_response( string $cache_key, $data, int $status_code, string $entity_type, array $entity_ids, int $cache_ttl, array $relevant_hooks, array $headers = array(), string $etag = '' ): void {
-		$entity_versions = array();
-		if ( ! is_null( $this->version_string_generator ) ) {
-			foreach ( $entity_ids as $entity_id ) {
-				$version_id = "{$entity_type}_{$entity_id}";
->>>>>>> origin/main
 				$version    = $this->version_string_generator->get_version( $version_id );
 				if ( $version ) {
 					$entity_versions[ $entity_id ] = $version;
@@ -1628,11 +1490,7 @@ trait RestApiCache {
 
 		$legacy_proxy = wc_get_container()->get( LegacyProxy::class );
 		$cache_data   = array(
-<<<<<<< HEAD
 			'data'            => $args['data'],
-=======
-			'data'            => $data,
->>>>>>> origin/main
 			'entity_versions' => $entity_versions,
 			'created_at'      => $legacy_proxy->call_function( 'time' ),
 		);
@@ -1645,7 +1503,6 @@ trait RestApiCache {
 			$cache_data['hooks_hash'] = $this->generate_hooks_hash( $relevant_hooks );
 		}
 
-<<<<<<< HEAD
 		if ( ! empty( $relevant_files ) ) {
 			$files_hash = $this->generate_files_hash( $relevant_files );
 			if ( ! empty( $files_hash ) ) {
@@ -1660,8 +1517,6 @@ trait RestApiCache {
 			}
 		}
 
-=======
->>>>>>> origin/main
 		if ( ! empty( $headers ) ) {
 			$cache_data['headers'] = $headers;
 		}
@@ -1670,11 +1525,7 @@ trait RestApiCache {
 			$cache_data['etag'] = $etag;
 		}
 
-<<<<<<< HEAD
 		wp_cache_set( $args['cache_key'], $cache_data, self::$cache_group, $args['cache_ttl'] );
-=======
-		wp_cache_set( $cache_key, $cache_data, self::$cache_group, $cache_ttl );
->>>>>>> origin/main
 	}
 
 	/**

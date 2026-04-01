@@ -38,7 +38,6 @@ abstract class WC_Payment_Gateway extends WC_Settings_API {
 	public $order_button_text;
 
 	/**
-<<<<<<< HEAD
 	 * Whether the gateway provides a custom place order button.
 	 *
 	 * When true, the default "Place order" button will be hidden on page load
@@ -55,8 +54,6 @@ abstract class WC_Payment_Gateway extends WC_Settings_API {
 	public $has_custom_place_order_button = false;
 
 	/**
-=======
->>>>>>> origin/main
 	 * Yes or no based on whether the method is enabled.
 	 *
 	 * @var string

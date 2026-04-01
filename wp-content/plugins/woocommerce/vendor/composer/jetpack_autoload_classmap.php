@@ -7,7 +7,6 @@ $baseDir   = dirname($vendorDir);
 
 return array(
 	'Attribute' => array(
-<<<<<<< HEAD
 		'version' => '2.7.0.0',
 		'path'    => $baseDir . '/packages/email-editor/vendor-prefixed/packages/Symfony/Polyfill/Php80/Resources/stubs/Attribute.php'
 	),
@@ -308,7 +307,6 @@ return array(
 		'path'    => $vendorDir . '/automattic/jetpack-connection/src/class-tracking.php'
 	),
 	'Automattic\\WooCommerce\\Admin\\API\\AI\\BusinessDescription' => array(
-<<<<<<< HEAD
 		'version' => '10.6.0.0',
 		'path'    => $baseDir . '/src/Admin/API/AI/BusinessDescription.php'
 	),

@@ -213,7 +213,6 @@ class Controller extends AbstractController {
 			$reply_to_enabled = wc_bool_to_string( $values_to_update['woocommerce_email_reply_to_enabled'] );
 		}
 
-<<<<<<< HEAD
 		/**
 		 * Filters the values to update before validation and sanitization.
 		 *
@@ -236,8 +235,6 @@ class Controller extends AbstractController {
 			);
 		}
 
-=======
->>>>>>> origin/main
 		// Process each setting in the payload.
 		foreach ( $values_to_update as $setting_id => $setting_value ) {
 			// Sanitize the setting ID.

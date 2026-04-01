@@ -45,14 +45,9 @@ class WC_Comments {
 		add_action( 'wp_update_comment_count', array( __CLASS__, 'clear_transients' ) );
 
 		// Secure order notes.
-<<<<<<< HEAD
 		add_filter( 'comments_clauses', array( __CLASS__, 'exclude_order_comments' ) );
 		add_filter( 'comment_feed_where', array( __CLASS__, 'exclude_order_comments_from_feed_where' ) );
 		add_filter( 'akismet_excluded_comment_types', array( __CLASS__, 'akismet_excluded_comment_types' ) );
-=======
-		add_filter( 'comments_clauses', array( __CLASS__, 'exclude_order_comments' ), 10, 1 );
-		add_filter( 'comment_feed_where', array( __CLASS__, 'exclude_order_comments_from_feed_where' ) );
->>>>>>> origin/main
 
 		// Secure webhook comments.
 		add_filter( 'comments_clauses', array( __CLASS__, 'exclude_webhook_comments' ), 10, 1 );
@@ -128,7 +123,6 @@ class WC_Comments {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Exclude order comments from Akismet comments counting SQL queries for better performance.
 	 *
 	 * @since 10.6.0
@@ -142,8 +136,6 @@ class WC_Comments {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Exclude order comments from feed.
 	 *
 	 * @deprecated 3.1

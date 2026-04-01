@@ -177,7 +177,6 @@ class ProductImage extends AbstractBlock {
 
 		$alt_text = get_post_meta( $target_image_id, '_wp_attachment_image_alt', true );
 
-<<<<<<< HEAD
 		/**
 		 * Filters the loading attribute for product images.
 		 *
@@ -201,8 +200,6 @@ class ProductImage extends AbstractBlock {
 			$loading_attr = '';
 		}
 
-=======
->>>>>>> origin/main
 		$attr = array(
 			'alt'           => empty( $alt_text ) ? $product->get_title() : $alt_text,
 			'data-testid'   => 'product-image',
@@ -210,13 +207,10 @@ class ProductImage extends AbstractBlock {
 			'style'         => $image_style,
 		);
 
-<<<<<<< HEAD
 		if ( ! empty( $loading_attr ) ) {
 			$attr['loading'] = $loading_attr;
 		}
 
-=======
->>>>>>> origin/main
 		return $provided_image_id_is_valid ? wp_get_attachment_image( $image_id, $image_size, false, $attr ) : $product->get_image( $image_size, $attr );
 	}
 

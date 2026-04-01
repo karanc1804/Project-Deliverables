@@ -46,7 +46,6 @@ if ( array_key_exists( 'advanced', $tabs ) ) {
 	$tabs['advanced'] = $advanced;
 }
 
-<<<<<<< HEAD
 $marketplace_base_url = trailingslashit(
 	esc_url_raw( apply_filters( 'woo_com_base_url', 'https://woocommerce.com/' ) )
 ) . 'product-category/woocommerce-extensions/';
@@ -90,8 +89,6 @@ $marketplace_links = array(
 	),
 );
 
-=======
->>>>>>> origin/main
 ?>
 
 <div class="wrap woocommerce">
@@ -130,7 +127,6 @@ $marketplace_links = array(
 				<?php endif; ?>
 				<?php wp_nonce_field( 'woocommerce-settings' ); ?>
 			</p>
-<<<<<<< HEAD
 			<?php if ( isset( $marketplace_links[ $current_tab ] ) ) : ?>
 				<?php
 				$link_config = $marketplace_links[ $current_tab ];
@@ -170,8 +166,6 @@ $marketplace_links = array(
 				?>
 			</p>
 			<?php endif; ?>
-=======
->>>>>>> origin/main
 	</form>
 	<?php do_action( 'woocommerce_after_settings_' . $current_tab ); ?>
 </div>

@@ -19,7 +19,6 @@ defined( 'ABSPATH' ) || exit;
  */
 class Helper {
 	/**
-<<<<<<< HEAD
 	 * Check if a country code is supported by PayPal.
 	 *
 	 * @param string $country_code Country code.
@@ -30,8 +29,6 @@ class Helper {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Check if the PayPal gateway is enabled.
 	 *
 	 * @return bool

@@ -27,12 +27,9 @@ class ReportsSync {
 		add_action( 'woocommerce_new_product', array( __CLASS__, 'clear_stock_count_cache' ) );
 		add_action( 'update_option_woocommerce_notify_low_stock_amount', array( __CLASS__, 'clear_stock_count_cache' ) );
 		add_action( 'update_option_woocommerce_notify_no_stock_amount', array( __CLASS__, 'clear_stock_count_cache' ) );
-<<<<<<< HEAD
 		add_action( 'trashed_post', array( __CLASS__, 'maybe_clear_stock_count_cache_for_post' ) );
 		add_action( 'untrashed_post', array( __CLASS__, 'maybe_clear_stock_count_cache_for_post' ) );
 		add_action( 'delete_post', array( __CLASS__, 'maybe_clear_stock_count_cache_for_post' ) );
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -186,7 +183,6 @@ class ReportsSync {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Clear the stock count cache for a post if it's a product or product variation.
 	 *
 	 * Handles trashed_post, untrashed_post, and delete_post hooks.
@@ -203,8 +199,6 @@ class ReportsSync {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Clear the count cache when products are added or updated, or when
 	 * the no/low stock options are changed.
 	 *

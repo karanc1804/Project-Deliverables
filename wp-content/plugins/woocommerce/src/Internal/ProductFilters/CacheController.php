@@ -50,14 +50,11 @@ class CacheController implements RegisterHooksInterface {
 		add_action( 'created_term', array( $this, 'clear_taxonomy_hierarchy_cache' ), 10, 3 );
 		add_action( 'edited_term', array( $this, 'clear_taxonomy_hierarchy_cache' ), 10, 3 );
 		add_action( 'delete_term', array( $this, 'clear_taxonomy_hierarchy_cache' ), 10, 3 );
-<<<<<<< HEAD
 
 		// Clear taxonomy hierarchy cache when term meta (like 'order') is added or updated.
 		add_action( 'added_term_meta', array( $this, 'clear_taxonomy_hierarchy_cache_on_meta_update' ), 10, 4 );
 		add_action( 'updated_term_meta', array( $this, 'clear_taxonomy_hierarchy_cache_on_meta_update' ), 10, 4 );
 		add_action( 'deleted_term_meta', array( $this, 'clear_taxonomy_hierarchy_cache_on_meta_update' ), 10, 4 );
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -83,7 +80,6 @@ class CacheController implements RegisterHooksInterface {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Clear taxonomy hierarchy cache when term meta is updated.
 	 * This handles the case when categories are reordered (updates 'order' meta).
 	 *
@@ -107,8 +103,6 @@ class CacheController implements RegisterHooksInterface {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Delete all filter data transients.
 	 */
 	public function delete_filter_data_transients(): void {

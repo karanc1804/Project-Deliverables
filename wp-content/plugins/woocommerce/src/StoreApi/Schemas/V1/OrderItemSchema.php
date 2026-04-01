@@ -17,7 +17,6 @@ class OrderItemSchema extends ItemSchema {
 	protected $title = 'order_item';
 
 	/**
-<<<<<<< HEAD
 	 * Cache for parent product attributes.
 	 *
 	 * @var array|null
@@ -25,8 +24,6 @@ class OrderItemSchema extends ItemSchema {
 	private $cached_parent_attributes = null;
 
 	/**
-=======
->>>>>>> origin/main
 	 * The schema item identifier.
 	 *
 	 * @var string
@@ -40,11 +37,8 @@ class OrderItemSchema extends ItemSchema {
 	 * @return array
 	 */
 	public function get_item_response( $order_item ) {
-<<<<<<< HEAD
 		$this->cached_parent_attributes = null;
 
-=======
->>>>>>> origin/main
 		$order   = $order_item->get_order();
 		$product = $order_item->get_product();
 
@@ -87,18 +81,11 @@ class OrderItemSchema extends ItemSchema {
 			$product_properties['prices']             = $this->prepare_product_price_response( $product, get_option( 'woocommerce_tax_display_cart' ) );
 			$product_properties['sold_individually']  = $product->is_sold_individually();
 			$product_properties['images']             = $this->get_images( $product );
-<<<<<<< HEAD
 
 			// Only include variation data for product variations, not simple products.
 			// This is consistent with the cart endpoint behavior.
 			if ( $product instanceof \WC_Product_Variation ) {
 				$product_properties['variation'] = $this->get_variation_data_from_order_item( $order_item, $product );
-=======
-			// Only include variation data for product variations, not simple products.
-			// This is consistent with the cart endpoint behavior.
-			if ( $product instanceof \WC_Product_Variation ) {
-				$product_properties['variation'] = $this->format_variation_data( $product->get_attributes(), $product );
->>>>>>> origin/main
 			}
 		}
 
@@ -144,7 +131,6 @@ class OrderItemSchema extends ItemSchema {
 			'line_total_tax'    => $this->prepare_money_response( $order_item->get_total_tax(), wc_get_price_decimals() ),
 		];
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Get variation data from order item metadata.
@@ -226,6 +212,4 @@ class OrderItemSchema extends ItemSchema {
 
 		return $this->cached_parent_attributes;
 	}
-=======
->>>>>>> origin/main
 }

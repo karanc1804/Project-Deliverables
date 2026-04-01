@@ -12,11 +12,7 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
-<<<<<<< HEAD
  * @version 10.6.0
-=======
- * @version 10.4.0
->>>>>>> origin/main
  */
 
 use Automattic\WooCommerce\Utilities\FeaturesUtil;
@@ -30,7 +26,6 @@ $shipping = $order->get_formatted_shipping_address();
 
 $email_improvements_enabled = FeaturesUtil::feature_is_enabled( 'email_improvements' );
 
-<<<<<<< HEAD
 /**
  * Filter whether to display the section divider in the email body.
  *
@@ -44,9 +39,6 @@ $display_section_divider = (bool) apply_filters( 'woocommerce_email_body_display
 	<hr style="border: 0; border-top: 1px solid #1E1E1E; border-top-color: rgba(30, 30, 30, 0.2); margin: 20px 0;">
 <?php endif; ?>
 <table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top; margin-bottom: <?php echo $email_improvements_enabled ? '0' : '40px'; ?>; padding:0;" border="0" role="presentation">
-=======
-?><table id="addresses" cellspacing="0" cellpadding="0" style="width: 100%; vertical-align: top; margin-bottom: <?php echo $email_improvements_enabled ? '0' : '40px'; ?>; padding:0;" border="0" role="presentation">
->>>>>>> origin/main
 	<tr>
 		<td class="font-family text-align-left" style="border:0; padding:0;" valign="top" width="50%">
 			<?php if ( $email_improvements_enabled ) { ?>

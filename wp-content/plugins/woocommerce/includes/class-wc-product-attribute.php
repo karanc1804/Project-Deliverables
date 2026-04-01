@@ -33,7 +33,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	);
 
 	/**
-<<<<<<< HEAD
 	 * Extra data array.
 	 *
 	 * @since 10.6.0
@@ -42,8 +41,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	protected $extra_data = array();
 
 	/**
-=======
->>>>>>> origin/main
 	 * Return if this attribute is a taxonomy.
 	 *
 	 * @return boolean
@@ -135,10 +132,7 @@ class WC_Product_Attribute implements ArrayAccess {
 	 */
 	public function get_data() {
 		return array_merge(
-<<<<<<< HEAD
 			$this->extra_data,
-=======
->>>>>>> origin/main
 			$this->data,
 			array(
 				'is_visible'   => $this->get_visible() ? 1 : 0,
@@ -156,7 +150,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	*/
 
 	/**
-<<<<<<< HEAD
 	 * Set extra data by key.
 	 *
 	 * @since 10.6.0
@@ -168,8 +161,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Set ID (this is the attribute ID).
 	 *
 	 * @param int $value Attribute ID.
@@ -230,7 +221,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	*/
 
 	/**
-<<<<<<< HEAD
 	 * Get all extra data.
 	 *
 	 * @since 10.6.0
@@ -252,8 +242,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Get the ID.
 	 *
 	 * @return int
@@ -334,12 +322,9 @@ class WC_Product_Attribute implements ArrayAccess {
 				if ( is_callable( array( $this, "get_$offset" ) ) ) {
 					return $this->{"get_$offset"}();
 				}
-<<<<<<< HEAD
 				if ( isset( $this->extra_data[ $offset ] ) ) {
 					return $this->extra_data[ $offset ];
 				}
-=======
->>>>>>> origin/main
 				break;
 		}
 		return '';
@@ -366,13 +351,9 @@ class WC_Product_Attribute implements ArrayAccess {
 			default:
 				if ( is_callable( array( $this, "set_$offset" ) ) ) {
 					$this->{"set_$offset"}( $value );
-<<<<<<< HEAD
 					break;
 				}
 				$this->extra_data[ $offset ] = $value;
-=======
-				}
->>>>>>> origin/main
 				break;
 		}
 	}
@@ -393,10 +374,6 @@ class WC_Product_Attribute implements ArrayAccess {
 	 */
 	#[\ReturnTypeWillChange]
 	public function offsetExists( $offset ) {
-<<<<<<< HEAD
 		return in_array( $offset, array_merge( array( 'is_variation', 'is_visible', 'is_taxonomy', 'value' ), array_keys( $this->data ), array_keys( $this->extra_data ) ), true );
-=======
-		return in_array( $offset, array_merge( array( 'is_variation', 'is_visible', 'is_taxonomy', 'value' ), array_keys( $this->data ) ), true );
->>>>>>> origin/main
 	}
 }

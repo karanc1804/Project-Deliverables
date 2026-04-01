@@ -54,7 +54,6 @@ class WC_REST_Product_Variations_V2_Controller extends WC_REST_Products_V2_Contr
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Get the hooks relevant to response caching.
 	 *
 	 * @param WP_REST_Request<array<string, mixed>> $request     The request object.
@@ -94,8 +93,6 @@ class WC_REST_Product_Variations_V2_Controller extends WC_REST_Products_V2_Contr
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Register the routes for products.
 	 */
 	public function register_routes() {
@@ -629,15 +626,10 @@ class WC_REST_Product_Variations_V2_Controller extends WC_REST_Products_V2_Contr
 
 		if ( ! wc_rest_check_post_permissions( $this->post_type, 'delete', $object->get_id() ) ) {
 			return new WP_Error(
-<<<<<<< HEAD
 				"woocommerce_rest_user_cannot_delete_{$this->post_type}",
 				/* translators: %s: post type */
 				sprintf( __( 'Sorry, you are not allowed to delete %s.', 'woocommerce' ), $this->post_type ),
 				array(
-=======
-				/* translators: %s: post type */
-				"woocommerce_rest_user_cannot_delete_{$this->post_type}", sprintf( __( 'Sorry, you are not allowed to delete %s.', 'woocommerce' ), $this->post_type ), array(
->>>>>>> origin/main
 					'status' => rest_authorization_required_code(),
 				)
 			);
@@ -654,15 +646,10 @@ class WC_REST_Product_Variations_V2_Controller extends WC_REST_Products_V2_Contr
 			// If we don't support trashing for this type, error out.
 			if ( ! $supports_trash ) {
 				return new WP_Error(
-<<<<<<< HEAD
 					'woocommerce_rest_trash_not_supported',
 					/* translators: %s: post type */
 					sprintf( __( 'The %s does not support trashing.', 'woocommerce' ), $this->post_type ),
 					array(
-=======
-					/* translators: %s: post type */
-					'woocommerce_rest_trash_not_supported', sprintf( __( 'The %s does not support trashing.', 'woocommerce' ), $this->post_type ), array(
->>>>>>> origin/main
 						'status' => 501,
 					)
 				);
@@ -672,15 +659,10 @@ class WC_REST_Product_Variations_V2_Controller extends WC_REST_Products_V2_Contr
 			if ( is_callable( array( $object, 'get_status' ) ) ) {
 				if ( 'trash' === $object->get_status() ) {
 					return new WP_Error(
-<<<<<<< HEAD
 						'woocommerce_rest_already_trashed',
 						/* translators: %s: post type */
 						sprintf( __( 'The %s has already been deleted.', 'woocommerce' ), $this->post_type ),
 						array(
-=======
-						/* translators: %s: post type */
-						'woocommerce_rest_already_trashed', sprintf( __( 'The %s has already been deleted.', 'woocommerce' ), $this->post_type ), array(
->>>>>>> origin/main
 							'status' => 410,
 						)
 					);
@@ -693,15 +675,10 @@ class WC_REST_Product_Variations_V2_Controller extends WC_REST_Products_V2_Contr
 
 		if ( ! $result ) {
 			return new WP_Error(
-<<<<<<< HEAD
 				'woocommerce_rest_cannot_delete',
 				/* translators: %s: post type */
 				sprintf( __( 'The %s cannot be deleted.', 'woocommerce' ), $this->post_type ),
 				array(
-=======
-				/* translators: %s: post type */
-				'woocommerce_rest_cannot_delete', sprintf( __( 'The %s cannot be deleted.', 'woocommerce' ), $this->post_type ), array(
->>>>>>> origin/main
 					'status' => 500,
 				)
 			);

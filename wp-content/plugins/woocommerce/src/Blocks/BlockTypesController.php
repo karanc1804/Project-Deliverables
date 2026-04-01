@@ -61,15 +61,9 @@ final class BlockTypesController {
 		add_filter( 'render_block', array( $this, 'add_data_attributes' ), 10, 2 );
 		add_action( 'woocommerce_login_form_end', array( $this, 'redirect_to_field' ) );
 		add_filter( 'widget_types_to_hide_from_legacy_widget_block', array( $this, 'hide_legacy_widgets_with_block_equivalent' ) );
-<<<<<<< HEAD
 		add_filter( 'register_block_type_args', array( $this, 'enqueue_block_style_for_classic_themes' ), 10, 2 );
 		add_filter( 'block_core_breadcrumbs_post_type_settings', array( $this, 'set_product_breadcrumbs_preferred_taxonomy' ), 10, 3 );
 		add_filter( 'block_core_breadcrumbs_items', array( $this, 'apply_woocommerce_breadcrumb_filters' ), 10, 1 );
-=======
-		add_action( 'woocommerce_delete_product_transients', array( $this, 'delete_product_transients' ) );
-		add_filter( 'register_block_type_args', array( $this, 'enqueue_block_style_for_classic_themes' ), 10, 2 );
-		add_filter( 'block_core_breadcrumbs_post_type_settings', array( $this, 'set_product_breadcrumbs_preferred_taxonomy' ), 10, 3 );
->>>>>>> origin/main
 	}
 
 	/**
@@ -365,18 +359,12 @@ final class BlockTypesController {
 
 	/**
 	 * Delete product transients when a product is deleted.
-<<<<<<< HEAD
 	 *
 	 * @deprecated since 10.6.0
 	 * @return void
 	 */
 	public function delete_product_transients() {
 		wc_deprecated_function( __METHOD__, '10.6.0' );
-=======
-	 */
-	public function delete_product_transients() {
-		delete_transient( 'wc_blocks_has_downloadable_product' );
->>>>>>> origin/main
 	}
 
 	/**
@@ -746,7 +734,6 @@ final class BlockTypesController {
 
 		return $settings;
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Apply WooCommerce breadcrumb filters to Core breadcrumbs block items.
@@ -795,6 +782,4 @@ final class BlockTypesController {
 			$wc_crumbs
 		);
 	}
-=======
->>>>>>> origin/main
 }

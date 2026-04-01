@@ -3,20 +3,12 @@
  */
 jQuery(function($) {
     'use strict';
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/main
     // Only run on admin dashboard
     if (!$('#wc-status-widget-loading').length) {
         return;
     }
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> origin/main
     // Load the widget content via AJAX
     function loadStatusWidget() {
         $.ajax({
@@ -40,7 +32,6 @@ jQuery(function($) {
             }
         });
     }
-<<<<<<< HEAD
 
     function showErrorMessage() {
 		const message = wc_status_widget_params.error_message || 'Error loading widget';
@@ -51,14 +42,3 @@ jQuery(function($) {
     // This allows the dashboard to render quickly first
     setTimeout(loadStatusWidget, 100);
 });
-=======
-    
-    function showErrorMessage() {
-        $('#wc-status-widget-loading').html('<p>' + 'Error loading widget' + '</p>');
-    }
-    
-    // Start loading the widget after a very short delay
-    // This allows the dashboard to render quickly first
-    setTimeout(loadStatusWidget, 100);
-});
->>>>>>> origin/main

@@ -139,19 +139,15 @@ class DecisionHandler {
 	/**
 	 * Update the session status based on the decision.
 	 *
-<<<<<<< HEAD
 	 * Important: Once a session is blocked, it stays blocked until explicitly reset.
 	 * This prevents race conditions where emptying the cart (done during block_session)
 	 * causes subsequent fraud checks to return "allow" (due to lower cart value),
 	 * which would incorrectly unblock the session.
 	 *
-=======
->>>>>>> origin/main
 	 * @param string $decision The validated decision to apply.
 	 * @return void
 	 */
 	private function update_session_status( string $decision ): void {
-<<<<<<< HEAD
 		// Don't overwrite a blocked session with an allow decision.
 		// Once blocked, a session should stay blocked until explicitly reset.
 		if ( ApiClient::DECISION_ALLOW === $decision && $this->session_manager->is_session_blocked() ) {
@@ -162,8 +158,6 @@ class DecisionHandler {
 			return;
 		}
 
-=======
->>>>>>> origin/main
 		switch ( $decision ) {
 			case ApiClient::DECISION_ALLOW:
 				$this->session_manager->allow_session();

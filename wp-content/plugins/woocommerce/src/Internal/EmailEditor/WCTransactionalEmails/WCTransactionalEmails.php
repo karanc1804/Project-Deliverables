@@ -30,10 +30,7 @@ class WCTransactionalEmails {
 		'customer_on_hold_order',
 		'customer_processing_order',
 		'customer_refunded_order',
-<<<<<<< HEAD
 		'customer_partially_refunded_order',
-=======
->>>>>>> origin/main
 		'customer_reset_password',
 		'failed_order',
 		'new_order',

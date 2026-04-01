@@ -444,11 +444,7 @@ class DataStore extends ReportsDataStore implements DataStoreInterface {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Create or update an entry in the wc_order_product_lookup table for an order.
-=======
-	 * Create or update an entry in the wc_admin_order_product_lookup table for an order.
->>>>>>> origin/main
 	 *
 	 * @since 3.5.0
 	 * @param int $order_id Order ID.

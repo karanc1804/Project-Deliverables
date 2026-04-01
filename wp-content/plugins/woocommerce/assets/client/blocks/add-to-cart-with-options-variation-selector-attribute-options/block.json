@@ -10,7 +10,6 @@
 	"attributes": {
 		"optionStyle": {
 			"type": "string",
-<<<<<<< HEAD
 			"enum": [ "pills", "dropdown" ],
 			"default": "pills"
 		},
@@ -22,9 +21,6 @@
 			"type": "string",
 			"enum": [ "disable", "hide" ],
 			"default": "disable"
-=======
-			"enum": [ "pills", "dropdown" ]
->>>>>>> origin/main
 		}
 	},
 	"textdomain": "woocommerce",

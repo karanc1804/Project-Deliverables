@@ -112,12 +112,9 @@ class FeaturePlugin {
 
 	/**
 	 * Define Constants.
-<<<<<<< HEAD
 	 *
 	 * IMPORTANT: When adding new constants here, also add them to
 	 * php-stubs/wc-constants.php for PHPStan static analysis.
-=======
->>>>>>> origin/main
 	 */
 	protected function define_constants() {
 		$this->define( 'WC_ADMIN_APP', 'wc-admin-app' );

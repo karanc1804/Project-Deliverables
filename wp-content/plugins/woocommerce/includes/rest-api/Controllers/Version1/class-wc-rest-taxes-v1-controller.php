@@ -8,11 +8,8 @@
  * @since    3.0.0
  */
 
-<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Traits\RestApiCache;
 
-=======
->>>>>>> origin/main
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -25,11 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 
-<<<<<<< HEAD
 	use RestApiCache;
 
-=======
->>>>>>> origin/main
 	/**
 	 * Endpoint namespace.
 	 *
@@ -45,7 +39,6 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 	protected $rest_base = 'taxes';
 
 	/**
-<<<<<<< HEAD
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -53,8 +46,6 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Register the routes for taxes.
 	 */
 	public function register_routes() {
@@ -64,7 +55,6 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 			array(
 				array(
 					'methods'             => WP_REST_Server::READABLE,
-<<<<<<< HEAD
 					'callback'            => $this->with_cache(
 						array( $this, 'get_items' ),
 						array(
@@ -72,9 +62,6 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 							'relevant_version_strings' => array( 'list_tax_rates' ),
 						)
 					),
-=======
-					'callback'            => array( $this, 'get_items' ),
->>>>>>> origin/main
 					'permission_callback' => array( $this, 'get_items_permissions_check' ),
 					'args'                => $this->get_collection_params(),
 				),
@@ -100,11 +87,7 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 				),
 				array(
 					'methods'             => WP_REST_Server::READABLE,
-<<<<<<< HEAD
 					'callback'            => $this->with_cache( array( $this, 'get_item' ) ),
-=======
-					'callback'            => array( $this, 'get_item' ),
->>>>>>> origin/main
 					'permission_callback' => array( $this, 'get_item_permissions_check' ),
 					'args'                => array(
 						'context' => $this->get_context_param( array( 'default' => 'view' ) ),
@@ -799,7 +782,6 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 
 		return $params;
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Get the default entity type for response caching.
@@ -834,6 +816,4 @@ class WC_REST_Taxes_V1_Controller extends WC_REST_Controller {
 			'woocommerce_rest_tax_query',
 		);
 	}
-=======
->>>>>>> origin/main
 }

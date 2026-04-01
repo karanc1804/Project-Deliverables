@@ -56,7 +56,6 @@ class Embed extends Abstract_Block_Renderer {
 	 * @var array
 	 */
 	private const VIDEO_PROVIDERS = array(
-<<<<<<< HEAD
 		'youtube'    => array(
 			'domains'  => array( 'youtube.com', 'youtu.be' ),
 			'base_url' => 'https://www.youtube.com/',
@@ -65,12 +64,6 @@ class Embed extends Abstract_Block_Renderer {
 			'domains'  => array( 'videopress.com', 'video.wordpress.com' ),
 			'base_url' => 'https://videopress.com/',
 		),
-=======
-		'youtube' => array(
-			'domains'  => array( 'youtube.com', 'youtu.be' ),
-			'base_url' => 'https://www.youtube.com/',
-		),
->>>>>>> origin/main
 	);
 
 	/**
@@ -333,11 +326,8 @@ class Embed extends Abstract_Block_Renderer {
 				return __( 'Listen on ReverbNation', 'woocommerce' );
 			case 'youtube':
 				return __( 'Watch on YouTube', 'woocommerce' );
-<<<<<<< HEAD
 			case 'videopress':
 				return __( 'Watch on VideoPress', 'woocommerce' );
-=======
->>>>>>> origin/main
 			default:
 				return __( 'Listen to the audio', 'woocommerce' );
 		}
@@ -369,13 +359,7 @@ class Embed extends Abstract_Block_Renderer {
 					$text_content = $body_element->textContent; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
 					// Look for HTTP/HTTPS URLs in the text content.
-<<<<<<< HEAD
 					$url = Html_Processing_Helper::extract_url_from_text( $text_content );
-=======
-					if ( preg_match( '/(?<![a-zA-Z0-9.-])https?:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}[a-zA-Z0-9\/?=&%-]*(?![a-zA-Z0-9.-])/', $text_content, $matches ) ) {
-						$url = $matches[0];
-					}
->>>>>>> origin/main
 				}
 			}
 		}
@@ -450,7 +434,6 @@ class Embed extends Abstract_Block_Renderer {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Validate that a URL's host matches the expected provider's domains.
 	 * This prevents SSRF when provider is set via user-controlled attributes.
 	 *
@@ -485,8 +468,6 @@ class Embed extends Abstract_Block_Renderer {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Render a video embed using the Video renderer.
 	 *
 	 * @param string            $url URL of the video.
@@ -497,7 +478,6 @@ class Embed extends Abstract_Block_Renderer {
 	 * @return string Rendered video embed or fallback.
 	 */
 	private function render_video_embed( string $url, string $provider, array $parsed_block, Rendering_Context $rendering_context, string $block_content ): string {
-<<<<<<< HEAD
 		// Validate URL matches the detected provider to prevent SSRF.
 		// Provider can come from user-controlled providerNameSlug attribute,
 		// so we must verify the URL actually belongs to that provider's domains.
@@ -506,8 +486,6 @@ class Embed extends Abstract_Block_Renderer {
 			return $this->render_link_fallback( $fallback_attr, $block_content, $parsed_block, $rendering_context );
 		}
 
-=======
->>>>>>> origin/main
 		// Try to get video thumbnail URL.
 		$poster_url = $this->get_video_thumbnail_url( $url, $provider );
 
@@ -521,12 +499,8 @@ class Embed extends Abstract_Block_Renderer {
 		$mock_video_block = array(
 			'blockName' => 'core/video',
 			'attrs'     => array(
-<<<<<<< HEAD
 				'poster'   => $poster_url,
 				'videoUrl' => $url,
-=======
-				'poster' => $poster_url,
->>>>>>> origin/main
 			),
 			'innerHTML' => '<figure class="wp-block-video wp-block-embed is-type-video is-provider-' . esc_attr( $provider ) . '"><div class="wp-block-embed__wrapper">' . esc_url( $url ) . '</div></figure>',
 		);
@@ -557,21 +531,14 @@ class Embed extends Abstract_Block_Renderer {
 	 * @return string Thumbnail URL or empty string.
 	 */
 	private function get_video_thumbnail_url( string $url, string $provider ): string {
-<<<<<<< HEAD
-=======
-		// Currently only YouTube supports thumbnail extraction.
->>>>>>> origin/main
 		if ( 'youtube' === $provider ) {
 			return $this->get_youtube_thumbnail( $url );
 		}
 
-<<<<<<< HEAD
 		if ( 'videopress' === $provider ) {
 			return $this->get_videopress_thumbnail( $url );
 		}
 
-=======
->>>>>>> origin/main
 		// For other providers, we don't have thumbnail extraction implemented.
 		// Return empty to trigger link fallback.
 		return '';
@@ -599,7 +566,6 @@ class Embed extends Abstract_Block_Renderer {
 		// Using 0.jpg format as shown in the example.
 		return 'https://img.youtube.com/vi/' . $video_id . '/0.jpg';
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Extract VideoPress video thumbnail URL.
@@ -673,6 +639,4 @@ class Embed extends Abstract_Block_Renderer {
 		set_transient( $cache_key, '', $cache_ttl );
 		return '';
 	}
-=======
->>>>>>> origin/main
 }

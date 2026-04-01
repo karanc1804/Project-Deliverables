@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class WC_Woo_Helper_Connection {
 	/**
-<<<<<<< HEAD
 	 * Get the notice for the connection URL mismatch.
 	 *
 	 * @return string The notice for the connection URL mismatch.
@@ -27,27 +26,13 @@ class WC_Woo_Helper_Connection {
 	public static function get_connection_url_notice(): string {
 		$connection_data = WC_Helper::get_cached_connection_data();
 		if ( false === $connection_data || ! empty( $connection_data['maybe_deleted_connection'] ) || false === ( $connection_data['alert_url_mismatch'] ?? false ) ) {
-=======
-	 * Check if the Woo Update Manager plugin is active.
-	 *
-	 * @return bool
-	 */
-	public static function get_connection_url_notice(): string {
-		$connection_data = WC_Helper::get_cached_connection_data();
-		if ( false === $connection_data || false === $connection_data['alert_url_mismatch'] ) {
->>>>>>> origin/main
 			return '';
 		}
 
 		$auth     = WC_Helper_Options::get( 'auth' );
-<<<<<<< HEAD
 		$url_raw  = is_array( $auth ) ? ( $auth['url'] ?? '' ) : '';
 		$url      = esc_html( rtrim( $url_raw, '/' ) );
 		$home_url = esc_html( rtrim( home_url(), '/' ) );
-=======
-		$url      = rtrim( $auth['url'], '/' );
-		$home_url = rtrim( home_url(), '/' );
->>>>>>> origin/main
 		if ( empty( $url ) || $home_url === $url ) {
 			return '';
 		}
@@ -61,7 +46,6 @@ class WC_Woo_Helper_Connection {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Get the notice for a deleted connection on WCCOM
 	 *
 	 * @return string The notice for a deleted connection on WCCOM.
@@ -84,8 +68,6 @@ class WC_Woo_Helper_Connection {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Check if the site has and linked host-plan orders.
 	 *
 	 * @return bool

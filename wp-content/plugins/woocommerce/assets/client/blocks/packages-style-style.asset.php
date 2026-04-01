@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 <?php return array('dependencies' => array('react', 'react-dom', 'react-jsx-runtime', 'wc-blocks-checkout-events', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-blocks-registry', 'wc-sanitize', 'wc-settings', 'wc-types', 'wp-compose', 'wp-data', 'wp-deprecated', 'wp-element', 'wp-html-entities', 'wp-i18n', 'wp-is-shallow-equal', 'wp-notices', 'wp-polyfill', 'wp-primitives', 'wp-warning'), 'version' => '7d36aa8e00e455285911');
-=======
-<?php return array('dependencies' => array('react', 'react-dom', 'react-jsx-runtime', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-blocks-registry', 'wc-sanitize', 'wc-settings', 'wc-types', 'wp-compose', 'wp-data', 'wp-deprecated', 'wp-element', 'wp-html-entities', 'wp-i18n', 'wp-is-shallow-equal', 'wp-notices', 'wp-polyfill', 'wp-primitives', 'wp-warning'), 'version' => 'd739017dd4edcfe17102');
->>>>>>> origin/main

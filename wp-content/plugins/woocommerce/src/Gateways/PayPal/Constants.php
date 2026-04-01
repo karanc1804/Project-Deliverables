@@ -124,7 +124,6 @@ class Constants {
 	);
 
 	/**
-<<<<<<< HEAD
 	 * Countries supported by PayPal.
 	 * https://developer.paypal.com/reference/country-codes/
 	 *
@@ -335,8 +334,6 @@ class Constants {
 	);
 
 	/**
-=======
->>>>>>> origin/main
 	 * PayPal authorization already captured issue code.
 	 *
 	 * @var string
@@ -358,7 +355,6 @@ class Constants {
 	const PAYPAL_ISSUE_PAYEE_ACCOUNT_RESTRICTED = 'PAYEE_ACCOUNT_RESTRICTED';
 
 	/**
-<<<<<<< HEAD
 	 * PayPal duplicate invoice ID issue code.
 	 *
 	 * @var string
@@ -366,8 +362,6 @@ class Constants {
 	const PAYPAL_ISSUE_DUPLICATE_INVOICE_ID = 'DUPLICATE_INVOICE_ID';
 
 	/**
-=======
->>>>>>> origin/main
 	 * Meta key for storing PayPal payment status in order meta.
 	 *
 	 * @var string

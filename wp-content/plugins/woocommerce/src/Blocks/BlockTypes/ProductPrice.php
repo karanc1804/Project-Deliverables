@@ -79,7 +79,6 @@ class ProductPrice extends AbstractBlock {
 			$context_directive      = '';
 
 			if ( $is_interactive ) {
-<<<<<<< HEAD
 				// phpcs:ignore Generic.Commenting.DocComment.MissingShort -- Type hint for PHPStan.
 				/** @var \WC_Product_Variable $product */
 				// Check if variation prices differ (replicates logic from WC_Product_Variable::get_available_variation).
@@ -120,28 +119,6 @@ class ProductPrice extends AbstractBlock {
 				}
 
 				if ( empty( $formatted_variations_data ) ) {
-=======
-				$variations_data           = $product->get_available_variations();
-				$formatted_variations_data = array();
-				$has_variation_price_html  = false;
-				foreach ( $variations_data as $variation ) {
-					if (
-						empty( $variation['variation_id'] )
-						|| ! array_key_exists( 'price_html', $variation )
-						|| '' === $variation['price_html']
-					) {
-						continue;
-					}
-					// Core behavior: when all variation prices are identical, Core returns '' for variation['price_html'].
-					// Therefore, the presence of any non-empty price_html implies price differences and warrants interactivity.
-					$has_variation_price_html                                = true;
-					$formatted_variations_data[ $variation['variation_id'] ] = array(
-						'price_html' => $variation['price_html'],
-					);
-				}
-
-				if ( ! $has_variation_price_html ) {
->>>>>>> origin/main
 					$is_interactive = false;
 				} else {
 					wp_interactivity_config(

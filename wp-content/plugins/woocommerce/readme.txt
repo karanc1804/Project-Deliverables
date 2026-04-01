@@ -4,11 +4,7 @@ Tags: online store, ecommerce, shop, shopping cart, sell online
 Requires at least: 6.8
 Tested up to: 6.9
 Requires PHP: 7.4
-<<<<<<< HEAD
 Stable tag: 10.5.3
-=======
-Stable tag: 10.5.1
->>>>>>> origin/main
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,7 +170,6 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-<<<<<<< HEAD
 = 10.6.0 2026-03-10 =
 
 **WooCommerce**
@@ -353,13 +348,6 @@ WooCommerce comes with some sample data you can use to see how products look; im
 * Enhancement - Updated Variation Selector Attribute Options block settings UI for improved clarity [#63038](https://github.com/woocommerce/woocommerce/pull/63038)
 * Enhancement - Update woocommerce_email_editor_integration_personalizer_context_data filter to allow overwrite values from core [#63231](https://github.com/woocommerce/woocommerce/pull/63231)
 * Enhancement - Use vanilla JS to replace order_notes after ajax updates [#60913](https://github.com/woocommerce/woocommerce/pull/60913)
-=======
-= 10.5.2 2026-02-13 =
-
-**WooCommerce**
-
-* Fix - Fix variable products add-to-cart button appearing disabled in some stores [#63262](https://github.com/woocommerce/woocommerce/pull/63262)
->>>>>>> origin/main
 
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).

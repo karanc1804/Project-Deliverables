@@ -8,11 +8,8 @@
  * @since   3.5.0
  */
 
-<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Traits\RestApiCache;
 
-=======
->>>>>>> origin/main
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -22,11 +19,8 @@ defined( 'ABSPATH' ) || exit;
  */
 class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 
-<<<<<<< HEAD
 	use RestApiCache;
 
-=======
->>>>>>> origin/main
 	/**
 	 * Endpoint namespace.
 	 *
@@ -42,7 +36,6 @@ class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 	protected $rest_base = 'data/currencies';
 
 	/**
-<<<<<<< HEAD
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -50,8 +43,6 @@ class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Register routes.
 	 */
 	public function register_routes() {
@@ -61,11 +52,7 @@ class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 			array(
 				array(
 					'methods'             => WP_REST_Server::READABLE,
-<<<<<<< HEAD
 					'callback'            => $this->with_cache( array( $this, 'get_items' ) ),
-=======
-					'callback'            => array( $this, 'get_items' ),
->>>>>>> origin/main
 					'permission_callback' => array( $this, 'get_items_permissions_check' ),
 				),
 				'schema' => array( $this, 'get_public_item_schema' ),
@@ -89,11 +76,7 @@ class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 			array(
 				array(
 					'methods'             => WP_REST_Server::READABLE,
-<<<<<<< HEAD
 					'callback'            => $this->with_cache( array( $this, 'get_item' ) ),
-=======
-					'callback'            => array( $this, 'get_item' ),
->>>>>>> origin/main
 					'permission_callback' => array( $this, 'get_item_permissions_check' ),
 					'args'                => array(
 						'location' => array(
@@ -253,7 +236,6 @@ class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 
 		return $this->add_additional_fields_schema( $schema );
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Get the default entity type for response caching.
@@ -313,6 +295,4 @@ class WC_REST_Data_Currencies_Controller extends WC_REST_Data_Controller {
 	protected function extract_entity_ids_from_response( array $response_data, WP_REST_Request $request, ?string $endpoint_id = null ): array { // phpcs:ignore Squiz.Commenting.FunctionComment.IncorrectTypeHint
 		return array();
 	}
-=======
->>>>>>> origin/main
 }

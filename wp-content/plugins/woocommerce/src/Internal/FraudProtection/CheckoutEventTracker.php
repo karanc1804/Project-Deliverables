@@ -13,29 +13,13 @@ defined( 'ABSPATH' ) || exit;
  * Tracks checkout events for fraud protection analysis.
  *
  * This class provides methods to track both WooCommerce Blocks (Store API) and traditional
-<<<<<<< HEAD
  * shortcode checkout events for fraud protection. Event-specific data is passed to the
  * SessionDataCollector which handles session data storage internally.
-=======
- * shortcode checkout events for fraud protection event dispatching.
- * Event-specific data is passed to the dispatcher which handles session data collection internally.
->>>>>>> origin/main
  *
  * @since 10.5.0
  * @internal This class is part of the internal API and is subject to change without notice.
  */
 class CheckoutEventTracker {
-<<<<<<< HEAD
-=======
-
-	/**
-	 * Fraud protection dispatcher instance.
-	 *
-	 * @var FraudProtectionDispatcher
-	 */
-	private FraudProtectionDispatcher $dispatcher;
-
->>>>>>> origin/main
 	/**
 	 * Session data collector instance.
 	 *
@@ -48,40 +32,23 @@ class CheckoutEventTracker {
 	 *
 	 * @internal
 	 *
-<<<<<<< HEAD
 	 * @param SessionDataCollector $session_data_collector    The session data collector instance.
 	 */
 	final public function init( SessionDataCollector $session_data_collector ): void {
-=======
-	 * @param FraudProtectionDispatcher $dispatcher                The fraud protection dispatcher instance.
-	 * @param SessionDataCollector      $session_data_collector    The session data collector instance.
-	 */
-	final public function init( FraudProtectionDispatcher $dispatcher, SessionDataCollector $session_data_collector ): void {
-		$this->dispatcher             = $dispatcher;
->>>>>>> origin/main
 		$this->session_data_collector = $session_data_collector;
 	}
 
 	/**
 	 * Track checkout page loaded event.
 	 *
-<<<<<<< HEAD
 	 * Collects session data when the checkout page is initially loaded.
-=======
-	 * Triggers fraud protection event dispatching when the checkout page is initially loaded.
->>>>>>> origin/main
 	 * This captures the initial session state before any user interactions.
 	 *
 	 * @internal
 	 * @return void
 	 */
 	public function track_checkout_page_loaded(): void {
-<<<<<<< HEAD
 		$this->session_data_collector->collect( 'checkout_page_loaded', array() );
-=======
-		// Track the page load event. Session data will be collected by the dispatcher.
-		$this->dispatcher->dispatch_event( 'checkout_page_loaded', array() );
->>>>>>> origin/main
 	}
 
 	/**
@@ -95,11 +62,7 @@ class CheckoutEventTracker {
 	 */
 	public function track_blocks_checkout_update(): void {
 		// At this point we don't have any payment or shipping data, so we pass an empty array.
-<<<<<<< HEAD
 		$this->session_data_collector->collect( 'checkout_update', array() );
-=======
-		$this->dispatcher->dispatch_event( 'checkout_update', array() );
->>>>>>> origin/main
 	}
 
 	/**
@@ -146,11 +109,7 @@ class CheckoutEventTracker {
 		// Only dispatch if either country changed.
 		if ( $billing_changed || $shipping_changed ) {
 			$event_data = $this->format_checkout_event_data( 'field_update', $data );
-<<<<<<< HEAD
 			$this->session_data_collector->collect( 'checkout_update', $event_data );
-=======
-			$this->dispatcher->dispatch_event( 'checkout_update', $event_data );
->>>>>>> origin/main
 		}
 	}
 
@@ -277,7 +236,6 @@ class CheckoutEventTracker {
 
 		return $payment_data;
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Track successful order placement.
@@ -304,6 +262,4 @@ class CheckoutEventTracker {
 
 		$this->session_data_collector->collect( 'order_placed', $event_data );
 	}
-=======
->>>>>>> origin/main
 }

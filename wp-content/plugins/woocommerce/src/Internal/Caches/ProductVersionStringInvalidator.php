@@ -61,10 +61,7 @@ class ProductVersionStringInvalidator {
 		add_action( 'delete_post', array( $this, 'handle_delete_post' ), 10, 2 );
 		add_action( 'trashed_post', array( $this, 'handle_trashed_post' ), 10, 1 );
 		add_action( 'untrashed_post', array( $this, 'handle_untrashed_post' ), 10, 1 );
-<<<<<<< HEAD
 		add_action( 'transition_post_status', array( $this, 'handle_transition_post_status' ), 10, 3 );
-=======
->>>>>>> origin/main
 
 		// WooCommerce CRUD hooks for products.
 		add_action( 'woocommerce_new_product', array( $this, 'handle_woocommerce_new_product' ), 10, 1 );
@@ -148,7 +145,6 @@ class ProductVersionStringInvalidator {
 		}
 
 		if ( 'product_variation' === $post->post_type ) {
-<<<<<<< HEAD
 			$parent_id = (int) $post->post_parent;
 			$this->invalidate_variation_and_parent( $post_id, $parent_id );
 			$this->invalidate_variations_list( $parent_id );
@@ -156,11 +152,6 @@ class ProductVersionStringInvalidator {
 		} elseif ( 'product' === $post->post_type ) {
 			$this->invalidate( $post_id );
 			$this->invalidate_products_list();
-=======
-			$this->invalidate_variation_and_parent( $post_id, (int) $post->post_parent );
-		} elseif ( 'product' === $post->post_type ) {
-			$this->invalidate( $post_id );
->>>>>>> origin/main
 		}
 	}
 
@@ -195,7 +186,6 @@ class ProductVersionStringInvalidator {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Handle the transition_post_status hook.
 	 *
 	 * Invalidates the product list version string when a product or variation
@@ -228,8 +218,6 @@ class ProductVersionStringInvalidator {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Handle the trashed_post and untrashed_post hooks.
 	 *
 	 * @param int $post_id The post ID.
@@ -244,7 +232,6 @@ class ProductVersionStringInvalidator {
 		}
 
 		if ( 'product_variation' === $post->post_type ) {
-<<<<<<< HEAD
 			$parent_id = (int) $post->post_parent;
 			$this->invalidate_variation_and_parent( $post_id, $parent_id );
 			$this->invalidate_variations_list( $parent_id );
@@ -252,11 +239,6 @@ class ProductVersionStringInvalidator {
 		} elseif ( 'product' === $post->post_type ) {
 			$this->invalidate( $post_id );
 			$this->invalidate_products_list();
-=======
-			$this->invalidate_variation_and_parent( $post_id, $post->post_parent );
-		} elseif ( 'product' === $post->post_type ) {
-			$this->invalidate( $post_id );
->>>>>>> origin/main
 		}
 	}
 
@@ -276,10 +258,7 @@ class ProductVersionStringInvalidator {
 		$variation_id = (int) $variation_id;
 		$parent_id    = $variation instanceof \WC_Product ? $variation->get_parent_id() : null;
 		$this->invalidate_variation_and_parent( $variation_id, $parent_id );
-<<<<<<< HEAD
 		$this->invalidate_variations_list( $parent_id );
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -298,10 +277,7 @@ class ProductVersionStringInvalidator {
 		$variation_id = (int) $variation_id;
 		$parent_id    = $variation instanceof \WC_Product ? $variation->get_parent_id() : null;
 		$this->invalidate_variation_and_parent( $variation_id, $parent_id );
-<<<<<<< HEAD
 		$this->invalidate_variation_parent_cache( $variation_id );
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -317,10 +293,7 @@ class ProductVersionStringInvalidator {
 	 */
 	public function handle_woocommerce_new_product( $product_id ): void {
 		$this->invalidate( (int) $product_id );
-<<<<<<< HEAD
 		$this->invalidate_products_list();
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -351,10 +324,7 @@ class ProductVersionStringInvalidator {
 	 */
 	public function handle_woocommerce_before_delete_product( $product_id ): void {
 		$this->invalidate( (int) $product_id );
-<<<<<<< HEAD
 		$this->invalidate_products_list();
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -370,10 +340,7 @@ class ProductVersionStringInvalidator {
 	 */
 	public function handle_woocommerce_trash_product( $product_id ): void {
 		$this->invalidate( (int) $product_id );
-<<<<<<< HEAD
 		$this->invalidate_products_list();
-=======
->>>>>>> origin/main
 	}
 
 	/**
@@ -388,15 +355,11 @@ class ProductVersionStringInvalidator {
 	 * @internal
 	 */
 	public function handle_woocommerce_before_delete_product_variation( $variation_id ): void {
-<<<<<<< HEAD
 		$variation_id = (int) $variation_id;
 		$parent_id    = $this->get_variation_parent_id( $variation_id );
 		$this->invalidate_variation_and_parent( $variation_id, $parent_id );
 		$this->invalidate_variations_list( $parent_id );
 		$this->invalidate_variation_parent_cache( $variation_id );
-=======
-		$this->invalidate_variation_and_parent( (int) $variation_id );
->>>>>>> origin/main
 	}
 
 	/**
@@ -411,15 +374,11 @@ class ProductVersionStringInvalidator {
 	 * @internal
 	 */
 	public function handle_woocommerce_trash_product_variation( $variation_id ): void {
-<<<<<<< HEAD
 		$variation_id = (int) $variation_id;
 		$parent_id    = $this->get_variation_parent_id( $variation_id );
 		$this->invalidate_variation_and_parent( $variation_id, $parent_id );
 		$this->invalidate_variations_list( $parent_id );
 		$this->invalidate_variation_parent_cache( $variation_id );
-=======
-		$this->invalidate_variation_and_parent( (int) $variation_id );
->>>>>>> origin/main
 	}
 
 	/**
@@ -551,7 +510,6 @@ class ProductVersionStringInvalidator {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Get the parent product ID for a variation.
 	 *
 	 * The result is cached in the object cache to avoid repeated lookups.
@@ -595,8 +553,6 @@ class ProductVersionStringInvalidator {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Invalidate a variation and its parent product.
 	 *
 	 * @param int      $variation_id The variation ID.
@@ -608,16 +564,7 @@ class ProductVersionStringInvalidator {
 		$this->invalidate( $variation_id );
 
 		if ( is_null( $parent_id ) ) {
-<<<<<<< HEAD
 			$parent_id = $this->get_variation_parent_id( $variation_id );
-=======
-			if ( $this->is_using_cpt_data_store() ) {
-				$parent_id = wp_get_post_parent_id( $variation_id );
-			} else {
-				$variation = wc_get_product( $variation_id );
-				$parent_id = $variation ? $variation->get_parent_id() : 0;
-			}
->>>>>>> origin/main
 		}
 
 		if ( ! $parent_id ) {
@@ -746,7 +693,6 @@ class ProductVersionStringInvalidator {
 	public function invalidate( int $product_id ): void {
 		wc_get_container()->get( VersionStringGenerator::class )->delete_version( "product_{$product_id}" );
 	}
-<<<<<<< HEAD
 
 	/**
 	 * Invalidate the product list version string.
@@ -775,6 +721,4 @@ class ProductVersionStringInvalidator {
 			wc_get_container()->get( VersionStringGenerator::class )->delete_version( "list_product_variations_{$product_id}" );
 		}
 	}
-=======
->>>>>>> origin/main
 }

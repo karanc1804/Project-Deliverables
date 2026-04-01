@@ -25,10 +25,7 @@ class WC_Breadcrumb {
 	 *
 	 * @param string $name Name.
 	 * @param string $link Link.
-<<<<<<< HEAD
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	public function add_crumb( $name, $link = '' ) {
 		$this->crumbs[] = array(
@@ -39,11 +36,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Reset crumbs.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	public function reset() {
 		$this->crumbs = array();
@@ -100,11 +94,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Prepend the shop page to shop breadcrumbs.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function prepend_shop_page() {
 		$permalinks   = wc_get_permalink_structure();
@@ -119,11 +110,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Is home trail..
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_home() {
 		$this->add_crumb( single_post_title( '', false ) );
@@ -131,11 +119,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * 404 trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_404() {
 		$this->add_crumb( __( 'Error 404', 'woocommerce' ) );
@@ -143,11 +128,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Attachment trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_attachment() {
 		global $post;
@@ -161,10 +143,7 @@ class WC_Breadcrumb {
 	 *
 	 * @param int    $post_id   Post ID.
 	 * @param string $permalink Post permalink.
-<<<<<<< HEAD
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_single( $post_id = 0, $permalink = '' ) {
 		if ( ! $post_id ) {
@@ -216,11 +195,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Page trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_page() {
 		global $post;
@@ -242,7 +218,6 @@ class WC_Breadcrumb {
 			}
 		}
 
-<<<<<<< HEAD
 		// On WC endpoints, get_the_title() returns the endpoint title (via wc_page_endpoint_title filter).
 		// Use post_title directly to avoid duplicates like "Orders / Orders" instead of "My Account / Orders".
 		$permalink = get_permalink();
@@ -252,19 +227,13 @@ class WC_Breadcrumb {
 			$this->add_crumb( get_the_title(), $permalink ? $permalink : '' );
 		}
 
-=======
-		$this->add_crumb( get_the_title(), get_permalink() );
->>>>>>> origin/main
 		$this->endpoint_trail();
 	}
 
 	/**
 	 * Product category trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_product_category() {
 		$current_term = $GLOBALS['wp_query']->get_queried_object();
@@ -276,11 +245,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Product tag trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_product_tag() {
 		$current_term = $GLOBALS['wp_query']->get_queried_object();
@@ -293,11 +259,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Shop breadcrumb.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_shop() {
 		if ( intval( get_option( 'page_on_front' ) ) === wc_get_page_id( 'shop' ) ) {
@@ -316,11 +279,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Post type archive trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_post_type_archive() {
 		$post_type = get_post_type_object( get_post_type() );
@@ -332,11 +292,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Category trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_category() {
 		$this_category = get_category( $GLOBALS['wp_query']->get_queried_object() );
@@ -354,11 +311,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Tag trail.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_tag() {
 		$queried_object = $GLOBALS['wp_query']->get_queried_object();
@@ -369,11 +323,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Add crumbs for date based archives.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_date() {
 		if ( is_year() || is_month() || is_day() ) {
@@ -388,13 +339,9 @@ class WC_Breadcrumb {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Add crumbs for taxonomies.
 	 *
 	 * @return void
-=======
-	 * Add crumbs for taxonomies
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_tax() {
 		$this_term = $GLOBALS['wp_query']->get_queried_object();
@@ -413,11 +360,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Add a breadcrumb for author archives.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function add_crumbs_author() {
 		global $author;
@@ -433,10 +377,7 @@ class WC_Breadcrumb {
 	 *
 	 * @param int    $term_id  Term ID.
 	 * @param string $taxonomy Taxonomy.
-<<<<<<< HEAD
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function term_ancestors( $term_id, $taxonomy ) {
 		$ancestors = get_ancestors( $term_id, $taxonomy );
@@ -453,11 +394,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Endpoints.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function endpoint_trail() {
 		$action         = isset( $_GET['action'] ) ? sanitize_text_field( wp_unslash( $_GET['action'] ) ) : '';
@@ -471,11 +409,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Add a breadcrumb for search results.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function search_trail() {
 		if ( is_search() ) {
@@ -486,11 +421,8 @@ class WC_Breadcrumb {
 
 	/**
 	 * Add a breadcrumb for pagination.
-<<<<<<< HEAD
 	 *
 	 * @return void
-=======
->>>>>>> origin/main
 	 */
 	protected function paged_trail() {
 		if ( get_query_var( 'paged' ) && 'subcategories' !== woocommerce_get_loop_display_mode() ) {

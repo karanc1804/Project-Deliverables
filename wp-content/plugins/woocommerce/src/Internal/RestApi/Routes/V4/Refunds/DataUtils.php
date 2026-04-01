@@ -51,7 +51,6 @@ class DataUtils {
 				$original_item = $order->get_item( $line_item['line_item_id'] );
 				if ( $original_item ) {
 					$original_taxes = $original_item->get_taxes();
-<<<<<<< HEAD
 					// Filter to only include tax IDs that have non-zero amounts.
 					$tax_totals = array_filter(
 						$original_taxes['total'] ?? array(),
@@ -60,9 +59,6 @@ class DataUtils {
 						}
 					);
 					$tax_ids    = array_keys( $tax_totals );
-=======
-					$tax_ids        = array_keys( $original_taxes['total'] ?? array() );
->>>>>>> origin/main
 
 					if ( ! empty( $tax_ids ) ) {
 						$tax_rates = $this->build_tax_rates_array( $order, $tax_ids );

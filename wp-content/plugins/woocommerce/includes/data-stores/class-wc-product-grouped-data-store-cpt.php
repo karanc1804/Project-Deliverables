@@ -70,7 +70,6 @@ class WC_Product_Grouped_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 	 * @param WC_Product $product Product object.
 	 */
 	protected function update_prices_from_children( &$product ) {
-<<<<<<< HEAD
 		$product_id   = $product->get_id();
 		$child_prices = array();
 
@@ -96,33 +95,6 @@ class WC_Product_Grouped_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 		}
 
 		$this->update_lookup_table( $product_id, 'wc_product_meta_lookup' );
-=======
-		$child_ids    = $product->get_children( 'edit' );
-		$child_prices = array();
-
-		// Prime caches for all child products at once to reduce queries.
-		if ( is_callable( '_prime_post_caches' ) && ! empty( $child_ids ) ) {
-			_prime_post_caches( $child_ids );
-		}
-
-		foreach ( $child_ids as $child_id ) {
-			$child = wc_get_product( $child_id );
-			if ( $child ) {
-				$child_prices[] = $child->get_price( 'edit' );
-			}
-		}
-		$child_prices = array_filter( $child_prices );
-		delete_post_meta( $product->get_id(), '_price' );
-		delete_post_meta( $product->get_id(), '_sale_price' );
-		delete_post_meta( $product->get_id(), '_regular_price' );
-
-		if ( ! empty( $child_prices ) ) {
-			add_post_meta( $product->get_id(), '_price', min( $child_prices ) );
-			add_post_meta( $product->get_id(), '_price', max( $child_prices ) );
-		}
-
-		$this->update_lookup_table( $product->get_id(), 'wc_product_meta_lookup' );
->>>>>>> origin/main
 
 		/**
 		 * Fire an action for this direct update so it can be detected by other code.
@@ -130,10 +102,6 @@ class WC_Product_Grouped_Data_Store_CPT extends WC_Product_Data_Store_CPT implem
 		 * @since 3.6
 		 * @param int $product_id Product ID that was updated directly.
 		 */
-<<<<<<< HEAD
 		do_action( 'woocommerce_updated_product_price', $product_id );
-=======
-		do_action( 'woocommerce_updated_product_price', $product->get_id() );
->>>>>>> origin/main
 	}
 }

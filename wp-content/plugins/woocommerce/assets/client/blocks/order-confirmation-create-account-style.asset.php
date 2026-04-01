@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 <?php return array('dependencies' => array('react', 'react-jsx-runtime', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-settings', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-primitives'), 'version' => '45458a8cf87ddd2afc9b');
-=======
-<?php return array('dependencies' => array('react', 'react-jsx-runtime', 'wc-blocks-components', 'wc-blocks-data-store', 'wc-settings', 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-element', 'wp-i18n', 'wp-polyfill', 'wp-primitives'), 'version' => 'a3b7b033ba0956ef5aef');
->>>>>>> origin/main

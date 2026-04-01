@@ -20,7 +20,6 @@ class DownloadsWrapper extends AbstractOrderConfirmationBlock {
 	 * @return boolean
 	 */
 	protected function store_has_downloadable_products() {
-<<<<<<< HEAD
 		global $wpdb;
 
 		if ( get_option( 'woocommerce_product_lookup_table_is_generating' ) ) {
@@ -49,32 +48,6 @@ class DownloadsWrapper extends AbstractOrderConfirmationBlock {
 		}
 
 		return $has_downloadable_products;
-=======
-		$has_downloadable_product = get_transient( 'wc_blocks_has_downloadable_product', false );
-
-		if ( false === $has_downloadable_product ) {
-			$product_ids              = get_posts(
-				array(
-					'post_type'   => 'product',
-					'numberposts' => 1,
-					'post_status' => 'publish',
-					'fields'      => 'ids',
-					// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
-					'meta_query'  => array(
-						array(
-							'key'     => '_downloadable',
-							'value'   => 'yes',
-							'compare' => '=',
-						),
-					),
-				)
-			);
-			$has_downloadable_product = ! empty( $product_ids );
-			set_transient( 'wc_blocks_has_downloadable_product', $has_downloadable_product ? '1' : '0', MONTH_IN_SECONDS );
-		}
-
-		return (bool) $has_downloadable_product;
->>>>>>> origin/main
 	}
 
 	/**

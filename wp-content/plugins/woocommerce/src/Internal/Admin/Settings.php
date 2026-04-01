@@ -154,10 +154,7 @@ class Settings {
 		//phpcs:ignore
 		$preload_options = apply_filters( 'woocommerce_admin_preload_options', array() );
 		if ( ! empty( $preload_options ) ) {
-<<<<<<< HEAD
 			wp_prime_option_caches( $preload_options );
-=======
->>>>>>> origin/main
 			foreach ( $preload_options as $option ) {
 				$settings['preloadOptions'][ $option ] = get_option( $option );
 			}

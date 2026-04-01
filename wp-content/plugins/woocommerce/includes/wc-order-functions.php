@@ -27,11 +27,7 @@ defined( 'ABSPATH' ) || exit;
  * This function should be used for order retrieval so that when we move to
  * custom tables, functions still work.
  *
-<<<<<<< HEAD
  * Args and usage: https://developer.woocommerce.com/docs/extensions/core-concepts/wc-get-orders/
-=======
- * Args and usage: https://github.com/woocommerce/woocommerce/wiki/wc_get_orders-and-WC_Order_Query
->>>>>>> origin/main
  *
  * @since  2.6.0
  * @param  array $args Array of args (above).
@@ -506,7 +502,6 @@ function wc_delete_shop_order_transients( $order = 0 ) {
 	if ( is_numeric( $order ) ) {
 		$order = wc_get_order( $order );
 	}
-<<<<<<< HEAD
 
 	// Clear customer's order related caches.
 	$order_id = 0;
@@ -516,31 +511,6 @@ function wc_delete_shop_order_transients( $order = 0 ) {
 		Users::delete_site_user_meta( $customer_id, 'wc_money_spent' );
 		Users::delete_site_user_meta( $customer_id, 'wc_order_count' );
 		Users::delete_site_user_meta( $customer_id, 'wc_last_order' );
-=======
-	$reports             = WC_Admin_Reports::get_reports();
-	$transients_to_clear = array(
-		'wc_admin_report',
-	);
-
-	foreach ( $reports as $report_group ) {
-		foreach ( $report_group['reports'] as $report_key => $report ) {
-			$transients_to_clear[] = 'wc_report_' . $report_key;
-		}
-	}
-
-	foreach ( $transients_to_clear as $transient ) {
-		delete_transient( $transient );
-	}
-
-	// Clear customer's order related caches.
-	if ( is_a( $order, 'WC_Order' ) ) {
-		$order_id = $order->get_id();
-		Users::delete_site_user_meta( $order->get_customer_id(), 'wc_money_spent' );
-		Users::delete_site_user_meta( $order->get_customer_id(), 'wc_order_count' );
-		Users::delete_site_user_meta( $order->get_customer_id(), 'wc_last_order' );
-	} else {
-		$order_id = 0;
->>>>>>> origin/main
 	}
 
 	// Increments the transient version to invalidate cache.
@@ -1134,7 +1104,6 @@ function wc_cancel_unpaid_orders() {
 		foreach ( $unpaid_orders as $unpaid_order ) {
 			$order = wc_get_order( $unpaid_order );
 
-<<<<<<< HEAD
 			if ( ! $order instanceof WC_Order ) {
 				continue;
 			}
@@ -1155,9 +1124,6 @@ function wc_cancel_unpaid_orders() {
 			 * @param WC_Order $order          The unpaid order object.
 			 */
 			if ( apply_filters( 'woocommerce_cancel_unpaid_order', in_array( $order->get_created_via(), array( 'checkout', 'store-api' ), true ), $order ) ) {
-=======
-			if ( apply_filters( 'woocommerce_cancel_unpaid_order', 'checkout' === $order->get_created_via(), $order ) ) {
->>>>>>> origin/main
 				$order->update_status( OrderStatus::CANCELLED, __( 'Unpaid order cancelled - time limit reached.', 'woocommerce' ) );
 			}
 		}

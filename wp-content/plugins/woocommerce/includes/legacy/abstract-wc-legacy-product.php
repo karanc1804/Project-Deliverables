@@ -588,10 +588,7 @@ abstract class WC_Abstract_Legacy_Product extends WC_Data {
 				$children = $product->get_children( 'edit' );
 			}
 
-<<<<<<< HEAD
 			/** @var int[] $children */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-=======
->>>>>>> origin/main
 			foreach ( $children as $child_id ) {
 				$all_meta = get_post_meta( $child_id );
 

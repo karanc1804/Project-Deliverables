@@ -1,10 +1,6 @@
 <?php
 /**
-<<<<<<< HEAD
  * Title: Coming Soon with Header and Footer
-=======
- * Title: Coming Soon With Header and Footer
->>>>>>> origin/main
  * Slug: woocommerce/page-coming-soon-with-header-footer
  * Categories: WooCommerce
  * Template Types: coming-soon

@@ -87,7 +87,6 @@ class HandlerRegistry {
 		);
 
 		$this->register_collection_handlers(
-<<<<<<< HEAD
 			'woocommerce/product-collection/by-brand',
 			function ( $collection_args, $common_query_values, $query ) {
 				// For Products by Brand collection, if no brand is selected, we should return an empty result set.
@@ -100,8 +99,6 @@ class HandlerRegistry {
 		);
 
 		$this->register_collection_handlers(
-=======
->>>>>>> origin/main
 			'woocommerce/product-collection/related',
 			function ( $collection_args ) {
 				// No products should be shown if no related product reference is set.

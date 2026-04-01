@@ -216,11 +216,7 @@ class WC_Product_Variable extends WC_Product {
 	 * This is lazy loaded as it's not used often and does require several queries.
 	 *
 	 * @param bool|string $visible_only Visible only.
-<<<<<<< HEAD
 	 * @return int[] Children ids
-=======
-	 * @return array Children ids
->>>>>>> origin/main
 	 */
 	public function get_children( $visible_only = '' ) {
 		if ( is_bool( $visible_only ) ) {
@@ -244,11 +240,7 @@ class WC_Product_Variable extends WC_Product {
 	 * This is lazy loaded as it's not used often and does require several queries.
 	 *
 	 * @since 3.0.0
-<<<<<<< HEAD
 	 * @return int[] Children ids
-=======
-	 * @return array Children ids
->>>>>>> origin/main
 	 */
 	public function get_visible_children() {
 		if ( null === $this->visible_children ) {

@@ -62,13 +62,9 @@ class WC_Product_Grouped extends WC_Product {
 	 * @return bool
 	 */
 	public function is_on_sale( $context = 'view' ) {
-<<<<<<< HEAD
 		$child_ids = $this->get_children( $context );
 		_prime_post_caches( $child_ids );
 		$children = array_filter( array_map( 'wc_get_product', $child_ids ), 'wc_products_array_filter_visible_grouped' );
-=======
-		$children = array_filter( array_map( 'wc_get_product', $this->get_children( $context ) ), 'wc_products_array_filter_visible_grouped' );
->>>>>>> origin/main
 		$on_sale  = false;
 
 		foreach ( $children as $child ) {
@@ -148,11 +144,7 @@ class WC_Product_Grouped extends WC_Product {
 	 * Return the children of this product.
 	 *
 	 * @param  string $context What the value is for. Valid values are view and edit.
-<<<<<<< HEAD
 	 * @return int[]
-=======
-	 * @return array
->>>>>>> origin/main
 	 */
 	public function get_children( $context = 'view' ) {
 		return $this->get_prop( 'children', $context );
@@ -162,7 +154,6 @@ class WC_Product_Grouped extends WC_Product {
 	 * Return the product's children - visible only.
 	 *
 	 * @since 9.8.0
-<<<<<<< HEAD
 	 * @return WC_Product[] Child products
 	 */
 	public function get_visible_children() {
@@ -171,13 +162,6 @@ class WC_Product_Grouped extends WC_Product {
 		/** @var WC_Product[] $grouped_products */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 		return $grouped_products;
-=======
-	 * @return array Child products
-	 */
-	public function get_visible_children() {
-		$grouped_products = array_map( 'wc_get_product', $this->get_children() );
-		return array_filter( $grouped_products, 'wc_products_array_filter_visible_grouped' );
->>>>>>> origin/main
 	}
 
 	/**

@@ -237,12 +237,8 @@ class WC_Shortcode_My_Account {
 		 * After sending the reset link, don't show the form again.
 		 */
 		if ( ! empty( $_GET['reset-link-sent'] ) ) { // WPCS: input var ok, CSRF ok.
-<<<<<<< HEAD
 			wc_get_template( 'myaccount/lost-password-confirmation.php' );
 			return;
-=======
-			return wc_get_template( 'myaccount/lost-password-confirmation.php' );
->>>>>>> origin/main
 
 			/**
 			 * Process reset key / login from email confirmation link
@@ -256,21 +252,14 @@ class WC_Shortcode_My_Account {
 
 				// Reset key / login is correct, display reset password form with hidden key / login values.
 				if ( is_object( $user ) ) {
-<<<<<<< HEAD
 					wc_get_template(
-=======
-					return wc_get_template(
->>>>>>> origin/main
 						'myaccount/form-reset-password.php',
 						array(
 							'key'   => $rp_key,
 							'login' => $rp_login,
 						)
 					);
-<<<<<<< HEAD
 					return;
-=======
->>>>>>> origin/main
 				}
 			}
 		}

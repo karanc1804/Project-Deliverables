@@ -162,10 +162,7 @@ class WC_Helper_Subscriptions_API {
 			WC_Helper::refresh_helper_subscriptions();
 			WC_Helper::get_subscriptions();
 			WC_Helper::get_product_usage_notice_rules();
-<<<<<<< HEAD
 			WC_Helper::fetch_helper_connection_info();
-=======
->>>>>>> origin/main
 			self::get_subscriptions();
 		} catch ( Exception $e ) {
 			wp_send_json_error(
@@ -175,11 +172,6 @@ class WC_Helper_Subscriptions_API {
 				400
 			);
 		}
-<<<<<<< HEAD
-=======
-
-		WC_Helper::fetch_helper_connection_info();
->>>>>>> origin/main
 	}
 
 	/**

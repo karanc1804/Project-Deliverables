@@ -13,10 +13,7 @@ use Automattic\WooCommerce\EmailEditor\Engine\PersonalizationTags\Personalizatio
 use Automattic\WooCommerce\EmailEditor\Engine\Templates\Templates;
 use Automattic\WooCommerce\EmailEditor\Engine\Logger\Email_Editor_Logger;
 use WP_Post;
-<<<<<<< HEAD
 use WP_REST_Request;
-=======
->>>>>>> origin/main
 use WP_Theme_JSON;
 
 /**
@@ -267,7 +264,6 @@ class Email_Editor {
 			array(
 				'methods'             => 'POST',
 				'callback'            => array( $this->email_api_controller, 'send_preview_email_data' ),
-<<<<<<< HEAD
 				'permission_callback' => function ( WP_REST_Request $request ) {
 					if ( ! current_user_can( 'edit_posts' ) ) {
 						return false;
@@ -277,10 +273,6 @@ class Email_Editor {
 						return false;
 					}
 					return current_user_can( 'edit_post', (int) $post_id );
-=======
-				'permission_callback' => function () {
-					return current_user_can( 'edit_posts' );
->>>>>>> origin/main
 				},
 			)
 		);
@@ -304,7 +296,6 @@ class Email_Editor {
 				'permission_callback' => function () {
 					return current_user_can( 'edit_posts' );
 				},
-<<<<<<< HEAD
 				'args'                => array(
 					'post_id' => array(
 						'description'       => __( 'The post ID for context-aware tag filtering.', 'woocommerce' ),
@@ -313,8 +304,6 @@ class Email_Editor {
 						'sanitize_callback' => 'absint',
 					),
 				),
-=======
->>>>>>> origin/main
 			)
 		);
 	}

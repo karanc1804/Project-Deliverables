@@ -652,7 +652,6 @@ class QueryBuilder {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Return a query that filters products by taxonomy terms.
 	 *
 	 * @since 10.6.0
@@ -713,8 +712,6 @@ class QueryBuilder {
 	}
 
 	/**
-=======
->>>>>>> origin/main
 	 * Merge two array recursively but replace the non-array values instead of
 	 * merging them. The merging strategy:
 	 *
@@ -790,10 +787,7 @@ class QueryBuilder {
 			'attributes_filter'   => $this->get_filter_by_attributes_query(),
 			'stock_status_filter' => $this->get_filter_by_stock_status_query(),
 			'rating_filter'       => $this->get_filter_by_rating_query(),
-<<<<<<< HEAD
 			'taxonomy_filter'     => $this->get_filter_by_taxonomy_query(),
-=======
->>>>>>> origin/main
 		);
 	}
 
