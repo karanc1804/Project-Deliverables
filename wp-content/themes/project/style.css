@@ -1908,3 +1908,101 @@ body.single-product .wp-block-woocommerce-product-meta {
         height: 280px;
     }
 }
+
+
+
+
+
+/* main promo block */
+.wp-block-group.alignfull.has-base-background-color {
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto !important;
+    padding: 60px 50px !important;
+    border-radius: 30px !important;
+    overflow: hidden;
+}
+
+/* dark overlay for readability */
+.wp-block-group.alignfull.has-base-background-color::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* keep content above overlay */
+.wp-block-group.alignfull.has-base-background-color > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* text styling */
+.wp-block-group.alignfull.has-base-background-color p,
+.wp-block-group.alignfull.has-base-background-color h3 {
+    color: #ffffff !important;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* heading premium look */
+.wp-block-group.alignfull.has-base-background-color h3 {
+    font-size: 52px !important;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+/* small text */
+.wp-block-group.alignfull.has-base-background-color p {
+    font-size: 18px;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* column alignment */
+.wp-block-group.alignfull.has-base-background-color .wp-block-columns {
+    align-items: center;
+    gap: 40px;
+}
+
+/* image styling */
+.wp-block-group.alignfull.has-base-background-color img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* button styling */
+.wp-block-group.alignfull.has-base-background-color .wp-block-button__link {
+    background: #ffffff;
+    color: #000 !important;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* button hover */
+.wp-block-group.alignfull.has-base-background-color .wp-block-button__link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+    background: #f5f5f5;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .wp-block-group.alignfull.has-base-background-color {
+        padding: 40px 25px !important;
+    }
+
+    .wp-block-group.alignfull.has-base-background-color h3 {
+        font-size: 34px !important;
+    }
+
+    .wp-block-group.alignfull.has-base-background-color .wp-block-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+}
