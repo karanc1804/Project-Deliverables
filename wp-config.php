@@ -59,7 +59,6 @@ define( 'LOGGED_IN_SALT',    'N!}=CRXjyvKk~rTpE_W22uY>3AQl%{<3#7mX8#5a%F btQ!9E8
 define( 'NONCE_SALT',        'WSJS-LGL`L7d)gvoJB6Du#r:E~@6uhI`nYtxR{-V^v(j6y(YFK$PhF(ult8,$ !E' );
 define( 'WP_CACHE_KEY_SALT', 'i}6R:B?_:H|_/t}jm2P}a_JfXQm;.=YlTN5uo4[N7aQJN[8SP`Z@$DK^nlxaV~?:' );
 
-
 /**#@-*/
 
 /**
@@ -101,3 +100,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+
