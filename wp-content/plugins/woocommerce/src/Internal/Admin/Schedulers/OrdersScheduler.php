@@ -381,9 +381,12 @@ AND status NOT IN ( 'wc-auto-draft', 'trash', 'auto-draft' )
 	 */
 	public static function schedule_recurring_batch_processor() {
 		$action_hook = self::get_action( self::PROCESS_PENDING_ORDERS_BATCH_ACTION );
+<<<<<<< HEAD
 		if ( null === $action_hook ) {
 			return;
 		}
+=======
+>>>>>>> origin/main
 		// The most efficient way to check for an existing action is to use `as_has_scheduled_action`, but in unusual
 		// cases where another plugin has loaded a very old version of Action Scheduler, it may not be available to us.
 		$has_scheduled_action = function_exists( 'as_has_scheduled_action' ) ? 'as_has_scheduled_action' : 'as_next_scheduled_action';
@@ -393,7 +396,11 @@ AND status NOT IN ( 'wc-auto-draft', 'trash', 'auto-draft' )
 
 		$interval = self::get_import_interval();
 
+<<<<<<< HEAD
 		as_schedule_recurring_action( time(), $interval, $action_hook, array(), static::$group ?? '', true );
+=======
+		as_schedule_recurring_action( time(), $interval, $action_hook, array(), static::$group, true );
+>>>>>>> origin/main
 	}
 
 	/**
@@ -415,9 +422,13 @@ AND status NOT IN ( 'wc-auto-draft', 'trash', 'auto-draft' )
 		if ( 'yes' === $old_value && 'no' === $new_value ) {
 			// Unschedule the recurring batch processor.
 			$action_hook = self::get_action( self::PROCESS_PENDING_ORDERS_BATCH_ACTION );
+<<<<<<< HEAD
 			if ( null !== $action_hook ) {
 				as_unschedule_all_actions( $action_hook, array(), static::$group ?? '' );
 			}
+=======
+			as_unschedule_all_actions( $action_hook, array(), static::$group );
+>>>>>>> origin/main
 
 			// Schedule an immediate catchup batch to process all orders up to now.
 			// This ensures no orders are missed during the transition.

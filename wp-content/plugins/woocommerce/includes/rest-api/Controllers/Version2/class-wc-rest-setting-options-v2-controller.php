@@ -172,8 +172,11 @@ class WC_REST_Setting_Options_V2_Controller extends WC_REST_Controller {
 			return new WP_Error( 'rest_setting_setting_group_invalid', __( 'Invalid setting group.', 'woocommerce' ), array( 'status' => 404 ) );
 		}
 
+<<<<<<< HEAD
 		$this->prime_options_cache_for_settings( $settings );
 
+=======
+>>>>>>> origin/main
 		$filtered_settings = array();
 		foreach ( $settings as $setting ) {
 			$option_key = $setting['option_key'];
@@ -209,6 +212,7 @@ class WC_REST_Setting_Options_V2_Controller extends WC_REST_Controller {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Primes options cache to reduce the number of SQLs towards options table.
 	 *
 	 * @param mixed[] $settings The settings to prefetch options for.
@@ -233,6 +237,8 @@ class WC_REST_Setting_Options_V2_Controller extends WC_REST_Controller {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Returns a list of countries and states for use in the base location setting.
 	 *
 	 * @since  3.0.7

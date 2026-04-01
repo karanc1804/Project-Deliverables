@@ -421,6 +421,10 @@ abstract class WC_Data {
 			}
 		}
 
+<<<<<<< HEAD
+=======
+		$this->maybe_read_meta_data();
+>>>>>>> origin/main
 		$meta_data  = $this->get_meta_data();
 		$array_keys = array_keys( wp_list_pluck( $meta_data, 'key' ), $key, true );
 		$value      = $single ? '' : array();
@@ -449,6 +453,10 @@ abstract class WC_Data {
 	 * @return boolean
 	 */
 	public function meta_exists( $key = '' ) {
+<<<<<<< HEAD
+=======
+		$this->maybe_read_meta_data();
+>>>>>>> origin/main
 		$array_keys = wp_list_pluck( $this->get_meta_data(), 'key' );
 		return in_array( $key, $array_keys, true );
 	}

@@ -265,14 +265,25 @@ class LookupDataStore {
 
 		$in_stock = $product->is_in_stock();
 
+<<<<<<< HEAD
 		$wpdb->query(
 			$wpdb->prepare(
 				'UPDATE %i SET in_stock = %d WHERE product_id = %d',
 				$this->lookup_table_name,
+=======
+		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared
+		$wpdb->query(
+			$wpdb->prepare(
+				'UPDATE ' . $this->lookup_table_name . ' SET in_stock = %d WHERE product_id = %d',
+>>>>>>> origin/main
 				$in_stock ? 1 : 0,
 				$product->get_id()
 			)
 		);
+<<<<<<< HEAD
+=======
+		// phpcs:enable WordPress.DB.PreparedSQL.NotPrepared
+>>>>>>> origin/main
 	}
 
 	/**
@@ -358,6 +369,7 @@ class LookupDataStore {
 	private function delete_data_for( int $product_id ) {
 		global $wpdb;
 
+<<<<<<< HEAD
 		// Single query handled with `index_merge` strategy, while separate with `range` (better performing) on available indexes.
 		$wpdb->query(
 			$wpdb->prepare(
@@ -373,6 +385,17 @@ class LookupDataStore {
 				$product_id
 			)
 		);
+=======
+		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared
+		$wpdb->query(
+			$wpdb->prepare(
+				'DELETE FROM ' . $this->lookup_table_name . ' WHERE product_id = %d OR product_or_parent_id = %d',
+				$product_id,
+				$product_id
+			)
+		);
+		// phpcs:enable WordPress.DB.PreparedSQL.NotPrepared
+>>>>>>> origin/main
 	}
 
 	/**
@@ -606,19 +629,35 @@ class LookupDataStore {
 	/**
 	 * Insert one entry in the lookup table.
 	 *
+<<<<<<< HEAD
 	 * @param int    $product_id             The product id.
 	 * @param int    $product_or_parent_id   The product id for non-variable products, the main/parent product id for variations.
 	 * @param string $taxonomy               Taxonomy name.
 	 * @param int    $term_id                Term id.
 	 * @param bool   $is_variation_attribute True if the taxonomy corresponds to an attribute used to define variations.
 	 * @param bool   $has_stock              True if the product is in stock.
+=======
+	 * @param int    $product_id The product id.
+	 * @param int    $product_or_parent_id The product id for non-variable products, the main/parent product id for variations.
+	 * @param string $taxonomy Taxonomy name.
+	 * @param int    $term_id Term id.
+	 * @param bool   $is_variation_attribute True if the taxonomy corresponds to an attribute used to define variations.
+	 * @param bool   $has_stock True if the product is in stock.
+>>>>>>> origin/main
 	 */
 	private function insert_lookup_table_data( int $product_id, int $product_or_parent_id, string $taxonomy, int $term_id, bool $is_variation_attribute, bool $has_stock ) {
 		global $wpdb;
 
+<<<<<<< HEAD
 		$wpdb->query(
 			$wpdb->prepare(
 				'INSERT INTO %i (
+=======
+		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared
+		$wpdb->query(
+			$wpdb->prepare(
+				'INSERT INTO ' . $this->lookup_table_name . ' (
+>>>>>>> origin/main
 					  product_id,
 					  product_or_parent_id,
 					  taxonomy,
@@ -627,7 +666,10 @@ class LookupDataStore {
 					  in_stock)
 					VALUES
 					  ( %d, %d, %s, %d, %d, %d )',
+<<<<<<< HEAD
 				$this->lookup_table_name,
+=======
+>>>>>>> origin/main
 				$product_id,
 				$product_or_parent_id,
 				$taxonomy,
@@ -636,6 +678,10 @@ class LookupDataStore {
 				$has_stock ? 1 : 0
 			)
 		);
+<<<<<<< HEAD
+=======
+		// phpcs:enable WordPress.DB.PreparedSQL.NotPrepared
+>>>>>>> origin/main
 	}
 
 	/**
@@ -847,6 +893,7 @@ class LookupDataStore {
 	private function create_data_for_product_cpt_core( int $product_id ) {
 		global $wpdb;
 
+<<<<<<< HEAD
 		$wpdb->query(
 			$wpdb->prepare(
 				'DELETE FROM %i WHERE product_or_parent_id = %d',
@@ -854,6 +901,15 @@ class LookupDataStore {
 				$product_id
 			)
 		);
+=======
+		// phpcs:disable WordPress.DB.PreparedSQL
+		$sql = $wpdb->prepare(
+			"delete from {$this->lookup_table_name} where product_or_parent_id=%d",
+			$product_id
+		);
+		$wpdb->query( $sql );
+		// phpcs:enable WordPress.DB.PreparedSQL
+>>>>>>> origin/main
 
 		// * Obtain list of product variations, together with stock statuses; also get the product type.
 		// For a variation this will return just one entry, with type 'variation'.

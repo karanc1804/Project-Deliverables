@@ -7,7 +7,10 @@ namespace Automattic\WooCommerce\Internal\PushNotifications;
 defined( 'ABSPATH' ) || exit;
 
 use Automattic\Jetpack\Connection\Manager as JetpackConnectionManager;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\PushNotifications\Controllers\PushTokenRestController;
+=======
+>>>>>>> origin/main
 use Automattic\WooCommerce\Internal\PushNotifications\Entities\PushToken;
 use Automattic\WooCommerce\Proxies\LegacyProxy;
 use Automattic\WooCommerce\Utilities\FeaturesUtil;
@@ -45,13 +48,18 @@ class PushNotifications {
 	private ?bool $enabled = null;
 
 	/**
+<<<<<<< HEAD
 	 * Registers initialisation tasks to the `init` hook.
+=======
+	 * Loads the push notifications class.
+>>>>>>> origin/main
 	 *
 	 * @return void
 	 *
 	 * @since 10.4.0
 	 */
 	public function register(): void {
+<<<<<<< HEAD
 		add_action( 'init', array( $this, 'on_init' ) );
 	}
 
@@ -63,13 +71,19 @@ class PushNotifications {
 	 * @since 10.6.0
 	 */
 	public function on_init(): void {
+=======
+>>>>>>> origin/main
 		if ( ! $this->should_be_enabled() ) {
 			return;
 		}
 
+<<<<<<< HEAD
 		$this->register_post_types();
 
 		wc_get_container()->get( PushTokenRestController::class )->register();
+=======
+		add_action( 'init', array( $this, 'register_post_types' ) );
+>>>>>>> origin/main
 
 		// Library endpoints and scheduled tasks will be registered here.
 	}

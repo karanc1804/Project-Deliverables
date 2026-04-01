@@ -942,12 +942,19 @@ p.demo_store,
 	}
 
 	table.shop_table {
+<<<<<<< HEAD
 		border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+=======
+		border: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> origin/main
 		margin: 0 -1px 24px 0;
 		text-align: left;
 		width: 100%;
 		border-collapse: separate;
+<<<<<<< HEAD
 		border-spacing: 0;
+=======
+>>>>>>> origin/main
 		border-radius: 5px;
 
 		th {
@@ -957,7 +964,11 @@ p.demo_store,
 		}
 
 		td {
+<<<<<<< HEAD
 			border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+=======
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> origin/main
 			padding: 9px 12px;
 			vertical-align: middle;
 			line-height: 1.5em;
@@ -982,7 +993,11 @@ p.demo_store,
 		tfoot th,
 		tbody th {
 			font-weight: 700;
+<<<<<<< HEAD
 			border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+=======
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+>>>>>>> origin/main
 		}
 	}
 
@@ -2084,6 +2099,7 @@ p.demo_store,
 				}
 			}
 
+<<<<<<< HEAD
 			// PayPal logo in payment methods list on classic checkout page, more specific selector for precedence over general theme styles.
 			li.payment_method_paypal {
 				img {
@@ -2094,6 +2110,8 @@ p.demo_store,
 				}
 			}
 
+=======
+>>>>>>> origin/main
 			li:not(.woocommerce-notice) {
 				@include clearfix;
 			}
@@ -2237,9 +2255,14 @@ p.demo_store,
 			}
 
 			img {
+<<<<<<< HEAD
 				max-height: 24px;
 				vertical-align: middle;
 				float: right;
+=======
+				max-height: 52px;
+				vertical-align: middle;
+>>>>>>> origin/main
 			}
 		}
 	}
@@ -2340,6 +2363,7 @@ body:not(.search-results) .twentysixteen .entry-summary {
 	background: inherit;
 	color: inherit;
 }
+<<<<<<< HEAD
 
 /**
  * Hides default button when a gateway with custom "place order" button is selected.
@@ -2350,3 +2374,5 @@ body:not(.search-results) .twentysixteen .entry-summary {
 form.has-custom-place-order-button #place_order {
 	display: none !important;
 }
+=======
+>>>>>>> origin/main

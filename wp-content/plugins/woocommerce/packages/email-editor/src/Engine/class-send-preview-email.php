@@ -147,8 +147,11 @@ class Send_Preview_Email {
 	 * @return bool Returns true if the email was sent successfully, false otherwise.
 	 */
 	public function send_email( string $to, string $subject, string $body ): bool {
+<<<<<<< HEAD
 		do_action( 'woocommerce_email_editor_send_preview_email_before_wp_mail', $to, $subject, $body );
 
+=======
+>>>>>>> origin/main
 		add_filter( 'wp_mail_content_type', array( $this, 'set_mail_content_type' ) );
 
 		$result = wp_mail( $to, $subject, $body );
@@ -156,8 +159,11 @@ class Send_Preview_Email {
 		// Reset content-type to avoid conflicts.
 		remove_filter( 'wp_mail_content_type', array( $this, 'set_mail_content_type' ) );
 
+<<<<<<< HEAD
 		do_action( 'woocommerce_email_editor_send_preview_email_after_wp_mail', $to, $subject, $body, $result );
 
+=======
+>>>>>>> origin/main
 		return $result;
 	}
 

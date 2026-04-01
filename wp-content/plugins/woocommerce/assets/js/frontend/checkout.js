@@ -7,6 +7,7 @@ jQuery( function ( $ ) {
 
 	$.blockUI.defaults.overlayCSS.cursor = 'default';
 
+<<<<<<< HEAD
 	/**
 	 * Create the API object passed to custom place order button render callbacks.
 	 * This is checkout-specific and includes form validation.
@@ -116,6 +117,8 @@ jQuery( function ( $ ) {
 		wc.customPlaceOrderButton.__maybeShow( gatewayId, createCheckoutPlaceOrderApi() );
 	} );
 
+=======
+>>>>>>> origin/main
 	var wc_checkout_form = {
 		updateTimer: false,
 		dirtyInput: false,
@@ -142,6 +145,7 @@ jQuery( function ( $ ) {
 				);
 				this.$order_review.on( 'submit', this.submitOrder );
 				this.$order_review.attr( 'novalidate', 'novalidate' );
+<<<<<<< HEAD
 
 				// Initialize the custom place order button for the "order-pay" page
 				var $orderPayMethod = this.$order_review.find( 'input[name="payment_method"]:checked' );
@@ -149,6 +153,8 @@ jQuery( function ( $ ) {
 					wc.customPlaceOrderButton.__maybeHideDefaultButtonOnInit( $orderPayMethod.val() );
 					$orderPayMethod.trigger( 'click' );
 				}
+=======
+>>>>>>> origin/main
 			}
 
 			// Prevent HTML5 validation which can conflict.
@@ -256,6 +262,7 @@ jQuery( function ( $ ) {
 					.slideUp( 0 );
 			}
 
+<<<<<<< HEAD
 			// Check if initially selected gateway has custom place order button (via server-side flag)
 			// This hides the default button immediately to prevent flash while the gateway JS loads
 			var $selectedMethod = $payment_methods.filter( ':checked' ).eq( 0 );
@@ -263,6 +270,8 @@ jQuery( function ( $ ) {
 				wc.customPlaceOrderButton.__maybeHideDefaultButtonOnInit( $selectedMethod.val() );
 			}
 
+=======
+>>>>>>> origin/main
 			// Trigger click event for selected method
 			$payment_methods.filter( ':checked' ).eq( 0 ).trigger( 'click' );
 		},
@@ -309,10 +318,13 @@ jQuery( function ( $ ) {
 				$( document.body ).trigger( 'payment_method_selected' );
 			}
 
+<<<<<<< HEAD
 			// Handle custom place order button
 			var gatewayId = $( this ).val();
 			wc.customPlaceOrderButton.__maybeShow( gatewayId, createCheckoutPlaceOrderApi() );
 
+=======
+>>>>>>> origin/main
 			wc_checkout_form.selectedPaymentMethod = selectedPaymentMethod;
 		},
 		toggle_create_account: function () {

@@ -184,7 +184,11 @@ class WC_Geolocation {
 		$geolocation = apply_filters(
 			'woocommerce_get_geolocation',
 			array(
+<<<<<<< HEAD
 				'country'  => $country_code ? $country_code : '',
+=======
+				'country'  => $country_code,
+>>>>>>> origin/main
 				'state'    => '',
 				'city'     => '',
 				'postcode' => '',

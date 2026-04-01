@@ -776,10 +776,14 @@ abstract class WC_REST_Terms_Controller extends WC_REST_Controller {
 		);
 		$params['slug']       = array(
 			'description'       => __( 'Limit result set to resources with a specific slug.', 'woocommerce' ),
+<<<<<<< HEAD
 			'type'              => array( 'string', 'array' ),
 			'items'             => array(
 				'type' => 'string',
 			),
+=======
+			'type'              => 'string',
+>>>>>>> origin/main
 			'validate_callback' => 'rest_validate_request_arg',
 		);
 

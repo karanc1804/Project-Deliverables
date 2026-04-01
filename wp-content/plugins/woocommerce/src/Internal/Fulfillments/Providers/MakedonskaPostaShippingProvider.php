@@ -40,6 +40,10 @@ class MakedonskaPostaShippingProvider extends AbstractShippingProvider {
 	 * @return string The tracking URL.
 	 */
 	public function get_tracking_url( string $tracking_number ): string {
+<<<<<<< HEAD
 		return 'https://www.posta.com.mk/api/api.php/shipment?code=' . $tracking_number;
+=======
+		return 'https://www.posta.gov.mk/track/' . $tracking_number;
+>>>>>>> origin/main
 	}
 }

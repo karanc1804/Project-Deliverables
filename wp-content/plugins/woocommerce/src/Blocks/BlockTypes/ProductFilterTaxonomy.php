@@ -88,6 +88,7 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 		parent::initialize();
 
 		add_filter( 'woocommerce_blocks_product_filters_selected_items', array( $this, 'prepare_selected_filters' ), 10, 2 );
+<<<<<<< HEAD
 
 		// Register REST field for menu_order on sortable taxonomies.
 		$this->register_taxonomy_menu_order_rest_field();
@@ -129,6 +130,8 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 				)
 			);
 		}
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -143,6 +146,7 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 
 		if ( is_admin() ) {
 			$this->asset_data_registry->add( 'filterableProductTaxonomies', $this->get_taxonomies() );
+<<<<<<< HEAD
 			// Expose sortable taxonomies so the editor can show/hide "Menu order" option.
 			$this->asset_data_registry->add(
 				'sortableTaxonomies',
@@ -159,6 +163,8 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 				 */
 				apply_filters( 'woocommerce_sortable_taxonomies', array( 'product_cat' ) )
 			);
+=======
+>>>>>>> origin/main
 		}
 	}
 
@@ -326,6 +332,7 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 				return array();
 			}
 
+<<<<<<< HEAD
 			// Add menu_order to flat terms for sorting.
 			if ( 'menu_order' === $orderby ) {
 				// Prime term meta cache in single query to avoid N+1.
@@ -341,6 +348,8 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 				);
 			}
 
+=======
+>>>>>>> origin/main
 			return $this->sort_terms_by_criteria( $terms, $orderby, $order, $taxonomy_counts );
 		}
 
@@ -521,7 +530,11 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Sort terms by the specified criteria (name, count, or menu_order).
+=======
+	 * Sort terms by the specified criteria (name or count).
+>>>>>>> origin/main
 	 *
 	 * @param array  $terms           Array of term objects to sort.
 	 * @param string $orderby         Sort field (name, count, menu_order).
@@ -544,6 +557,7 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 						$comparison = $count_a <=> $count_b;
 						break;
 
+<<<<<<< HEAD
 					case 'menu_order':
 						$order_a    = $a->menu_order ?? 0;
 						$order_b    = $b->menu_order ?? 0;
@@ -554,6 +568,8 @@ final class ProductFilterTaxonomy extends AbstractBlock {
 						}
 						break;
 
+=======
+>>>>>>> origin/main
 					case 'name':
 					default:
 						$comparison = strcasecmp( $a->name, $b->name );

@@ -71,6 +71,7 @@ class CartUpdateItem extends AbstractCartRoute {
 		$cart = $this->cart_controller->get_cart_instance();
 
 		if ( isset( $request['quantity'] ) ) {
+<<<<<<< HEAD
 			$cart_item    = $cart->get_cart_item( $request['key'] );
 			$old_quantity = $cart_item['quantity'] ?? 0;
 			$this->cart_controller->set_cart_item_quantity( $request['key'], $request['quantity'] );
@@ -88,6 +89,9 @@ class CartUpdateItem extends AbstractCartRoute {
 				 */
 				do_action( 'internal_woocommerce_cart_item_updated_from_user_request', $request['key'], (int) $request['quantity'], $old_quantity, $cart );
 			}
+=======
+			$this->cart_controller->set_cart_item_quantity( $request['key'], $request['quantity'] );
+>>>>>>> origin/main
 		}
 
 		return rest_ensure_response( $this->schema->get_item_response( $cart ) );

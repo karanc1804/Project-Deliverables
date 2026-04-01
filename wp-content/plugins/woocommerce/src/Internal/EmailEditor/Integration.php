@@ -52,6 +52,7 @@ class Integration {
 	private EmailApiController $email_api_controller;
 
 	/**
+<<<<<<< HEAD
 	 * The WC_Email instance.
 	 *
 	 * @var \WC_Email
@@ -59,6 +60,8 @@ class Integration {
 	private \WC_Email $wc_email_instance;
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -115,6 +118,7 @@ class Integration {
 		$this->editor_page_renderer    = $container->get( PageRenderer::class );
 		$this->template_api_controller = $container->get( TemplateApiController::class );
 		$this->email_api_controller    = $container->get( EmailApiController::class );
+<<<<<<< HEAD
 
 		// Using any email class to get the instance.
 		$registered_emails = \WC_Emails::instance()->get_emails();
@@ -124,6 +128,8 @@ class Integration {
 			$first_email_key         = array_key_first( $registered_emails );
 			$this->wc_email_instance = $registered_emails[ $first_email_key ];
 		}
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -137,8 +143,11 @@ class Integration {
 		add_filter( 'woocommerce_email_editor_send_preview_email_rendered_data', array( $this, 'update_send_preview_email_rendered_data' ), 10, 2 );
 		add_filter( 'woocommerce_email_editor_send_preview_email_personalizer_context', array( $this, 'update_send_preview_email_personalizer_context' ) );
 		add_filter( 'woocommerce_email_editor_preview_post_template_html', array( $this, 'update_preview_post_template_html_data' ), 100, 1 );
+<<<<<<< HEAD
 		add_action( 'woocommerce_email_editor_send_preview_email_before_wp_mail', array( $this, 'send_preview_email_before_wp_mail' ), 10 );
 		add_action( 'woocommerce_email_editor_send_preview_email_after_wp_mail', array( $this, 'send_preview_email_after_wp_mail' ), 10 );
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -393,6 +402,7 @@ class Integration {
 			)
 		);
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Action hook callback before sending the preview email via wp_mail
@@ -415,4 +425,6 @@ class Integration {
 		remove_filter( 'wp_mail_from', array( $this->wc_email_instance, 'get_from_address' ) );
 		remove_filter( 'wp_mail_from_name', array( $this->wc_email_instance, 'get_from_name' ) );
 	}
+=======
+>>>>>>> origin/main
 }

@@ -124,6 +124,7 @@ class CartAddItem extends AbstractCartRoute {
 			$request
 		);
 
+<<<<<<< HEAD
 		$item_id   = $this->cart_controller->add_to_cart( $add_to_cart_data );
 		$cart      = $this->cart_controller->get_cart_instance();
 		$cart_item = $cart->get_cart_item( $item_id );
@@ -142,6 +143,9 @@ class CartAddItem extends AbstractCartRoute {
 			 */
 			do_action( 'internal_woocommerce_cart_item_added_from_user_request', $product_id, $quantity );
 		}
+=======
+		$this->cart_controller->add_to_cart( $add_to_cart_data );
+>>>>>>> origin/main
 
 		$response = rest_ensure_response( $this->schema->get_item_response( $this->cart_controller->get_cart_for_response() ) );
 		$response->set_status( 201 );

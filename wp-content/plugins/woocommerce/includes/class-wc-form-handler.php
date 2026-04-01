@@ -654,6 +654,7 @@ class WC_Form_Handler {
 			$cart_item     = WC()->cart->get_cart_item( $cart_item_key );
 
 			if ( $cart_item ) {
+<<<<<<< HEAD
 				$removed = WC()->cart->remove_cart_item( $cart_item_key );
 
 				if ( $removed ) {
@@ -667,6 +668,9 @@ class WC_Form_Handler {
 					 */
 					do_action( 'internal_woocommerce_cart_item_removed_from_user_request', $cart_item_key, WC()->cart );
 				}
+=======
+				WC()->cart->remove_cart_item( $cart_item_key );
+>>>>>>> origin/main
 
 				$product = wc_get_product( $cart_item['product_id'] );
 
@@ -737,6 +741,7 @@ class WC_Form_Handler {
 					}
 
 					if ( $passed_validation ) {
+<<<<<<< HEAD
 						$old_quantity = $values['quantity'];
 						WC()->cart->set_quantity( $cart_item_key, $quantity, false );
 						$cart_updated = true;
@@ -752,6 +757,10 @@ class WC_Form_Handler {
 						 * @since 10.6.0
 						 */
 						do_action( 'internal_woocommerce_cart_item_updated_from_user_request', $cart_item_key, $quantity, $old_quantity, WC()->cart );
+=======
+						WC()->cart->set_quantity( $cart_item_key, $quantity, false );
+						$cart_updated = true;
+>>>>>>> origin/main
 					}
 				}
 			}
@@ -863,7 +872,10 @@ class WC_Form_Handler {
 
 		if ( ProductType::VARIABLE === $add_to_cart_handler || ProductType::VARIATION === $add_to_cart_handler ) {
 			$was_added_to_cart = self::add_to_cart_handler_variable( $product_id );
+<<<<<<< HEAD
 			$product_id        = ! empty( $_REQUEST['variation_id'] ) ? absint( wp_unslash( $_REQUEST['variation_id'] ) ) : $product_id; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+=======
+>>>>>>> origin/main
 		} elseif ( ProductType::GROUPED === $add_to_cart_handler ) {
 			$was_added_to_cart = self::add_to_cart_handler_grouped( $product_id );
 		} elseif ( has_action( 'woocommerce_add_to_cart_handler_' . $add_to_cart_handler ) ) {
@@ -874,6 +886,7 @@ class WC_Form_Handler {
 
 		// If we added the product to the cart we can now optionally do a redirect.
 		if ( $was_added_to_cart && 0 === wc_notice_count( 'error' ) ) {
+<<<<<<< HEAD
 			$quantity = empty( $_REQUEST['quantity'] ) ? 1 : wc_stock_amount( wp_unslash( $_REQUEST['quantity'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 			/**
@@ -886,6 +899,8 @@ class WC_Form_Handler {
 			 */
 			do_action( 'internal_woocommerce_cart_item_added_from_user_request', $product_id, $quantity );
 
+=======
+>>>>>>> origin/main
 			$url = apply_filters( 'woocommerce_add_to_cart_redirect', $url, $adding_to_cart );
 
 			if ( $url ) {

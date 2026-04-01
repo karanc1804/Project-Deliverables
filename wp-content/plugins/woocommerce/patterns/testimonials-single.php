@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * Title: Testimonial Single
+=======
+ * Title: Testimonials Single
+>>>>>>> origin/main
  * Slug: woocommerce-blocks/testimonials-single
  * Categories: WooCommerce, Reviews
  */

@@ -8,7 +8,10 @@ declare( strict_types=1 );
 namespace Automattic\WooCommerce\Internal\FraudProtection;
 
 use Automattic\WooCommerce\Internal\Features\FeaturesController;
+<<<<<<< HEAD
 use Automattic\WooCommerce\Internal\Jetpack\JetpackConnection;
+=======
+>>>>>>> origin/main
 use Automattic\WooCommerce\Internal\RegisterHooksInterface;
 
 defined( 'ABSPATH' ) || exit;
@@ -32,6 +35,16 @@ class FraudProtectionController implements RegisterHooksInterface {
 	private FeaturesController $features_controller;
 
 	/**
+<<<<<<< HEAD
+=======
+	 * Jetpack connection manager instance.
+	 *
+	 * @var JetpackConnectionManager
+	 */
+	private JetpackConnectionManager $connection_manager;
+
+	/**
+>>>>>>> origin/main
 	 * Blocked session notice instance.
 	 *
 	 * @var BlockedSessionNotice
@@ -39,6 +52,7 @@ class FraudProtectionController implements RegisterHooksInterface {
 	private BlockedSessionNotice $blocked_session_notice;
 
 	/**
+<<<<<<< HEAD
 	 * Blackbox script handler instance.
 	 *
 	 * @var BlackboxScriptHandler
@@ -46,12 +60,17 @@ class FraudProtectionController implements RegisterHooksInterface {
 	private BlackboxScriptHandler $blackbox_script_handler;
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Register hooks.
 	 */
 	public function register(): void {
 		add_action( 'init', array( $this, 'on_init' ) );
 		add_action( 'admin_notices', array( $this, 'on_admin_notices' ) );
+<<<<<<< HEAD
 		add_action( FeaturesController::FEATURE_ENABLED_CHANGED_ACTION, array( $this, 'maybe_register_jetpack_connection' ), 10, 2 );
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -59,6 +78,7 @@ class FraudProtectionController implements RegisterHooksInterface {
 	 *
 	 * @internal
 	 *
+<<<<<<< HEAD
 	 * @param FeaturesController    $features_controller      The instance of FeaturesController to use.
 	 * @param BlockedSessionNotice  $blocked_session_notice   The instance of BlockedSessionNotice to use.
 	 * @param BlackboxScriptHandler $blackbox_script_handler  The instance of BlackboxScriptHandler to use.
@@ -71,6 +91,20 @@ class FraudProtectionController implements RegisterHooksInterface {
 		$this->features_controller     = $features_controller;
 		$this->blocked_session_notice  = $blocked_session_notice;
 		$this->blackbox_script_handler = $blackbox_script_handler;
+=======
+	 * @param FeaturesController       $features_controller      The instance of FeaturesController to use.
+	 * @param JetpackConnectionManager $connection_manager       The instance of JetpackConnectionManager to use.
+	 * @param BlockedSessionNotice     $blocked_session_notice   The instance of BlockedSessionNotice to use.
+	 */
+	final public function init(
+		FeaturesController $features_controller,
+		JetpackConnectionManager $connection_manager,
+		BlockedSessionNotice $blocked_session_notice
+	): void {
+		$this->features_controller    = $features_controller;
+		$this->connection_manager     = $connection_manager;
+		$this->blocked_session_notice = $blocked_session_notice;
+>>>>>>> origin/main
 	}
 
 	/**
@@ -85,7 +119,10 @@ class FraudProtectionController implements RegisterHooksInterface {
 		}
 
 		$this->blocked_session_notice->register();
+<<<<<<< HEAD
 		$this->blackbox_script_handler->register();
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -95,17 +132,25 @@ class FraudProtectionController implements RegisterHooksInterface {
 	 */
 	public function on_admin_notices(): void {
 		// Only show if feature is enabled.
+<<<<<<< HEAD
 		if ( ! $this->feature_is_enabled() || JetpackConnection::get_manager()->is_connected() ) {
+=======
+		if ( ! $this->feature_is_enabled() ) {
+>>>>>>> origin/main
 			return;
 		}
 
 		// Only show on WooCommerce settings page.
 		$screen = get_current_screen();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 		if ( ! $screen || 'woocommerce_page_wc-settings' !== $screen->id ) {
 			return;
 		}
 
+<<<<<<< HEAD
 		?>
 		<div class="notice notice-warning is-dismissible">
 			<p>
@@ -114,6 +159,27 @@ class FraudProtectionController implements RegisterHooksInterface {
 					/* translators: %s: Getting Started with Jetpack documentation URL */
 					wp_kses_post( __( 'Your site failed to connect to Jetpack automatically. Fraud protection will fail open and allow all sessions until your site is connected to Jetpack. <a href="%s">How to connect to Jetpack</a>', 'woocommerce' ) ),
 					esc_url( 'https://jetpack.com/support/getting-started-with-jetpack/' )
+=======
+		$connection_status = $this->connection_manager->get_connection_status();
+		if ( $connection_status['connected'] ) {
+			return;
+		}
+
+		$settings_url = admin_url( 'admin.php?page=wc-settings&tab=advanced&section=features' );
+
+		?>
+		<div class="notice notice-warning is-dismissible">
+			<p>
+				<strong><?php esc_html_e( 'Fraud protection warning:', 'woocommerce' ); ?></strong>
+				<?php echo esc_html( $connection_status['error'] ); ?>
+			</p>
+			<p>
+				<?php
+				printf(
+					/* translators: %s: Settings page URL */
+					wp_kses_post( __( 'Fraud protection will fail open and allow all sessions until connected. <a href="%s">Connect to Jetpack</a>', 'woocommerce' ) ),
+					esc_url( $settings_url )
+>>>>>>> origin/main
 				);
 				?>
 			</p>
@@ -122,6 +188,7 @@ class FraudProtectionController implements RegisterHooksInterface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Maybe register Jetpack connection when fraud protection is enabled.
 	 *
 	 * Attempts to automatically register the site with Jetpack when the fraud protection
@@ -156,6 +223,8 @@ class FraudProtectionController implements RegisterHooksInterface {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Check if fraud protection feature is enabled.
 	 *
 	 * This method can be used by other fraud protection classes to check

@@ -20,6 +20,7 @@ final class StoreApi {
 	 * Init and hook in Store API functionality.
 	 */
 	public function init() {
+<<<<<<< HEAD
 		/**
 		 * Authentication instance.
 		 *
@@ -29,6 +30,8 @@ final class StoreApi {
 
 		add_filter( 'woocommerce_session_handler', array( $authentication, 'maybe_use_store_api_session_handler' ), 0 );
 
+=======
+>>>>>>> origin/main
 		add_action(
 			'rest_api_init',
 			function () {

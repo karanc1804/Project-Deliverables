@@ -13,8 +13,13 @@ defined( 'ABSPATH' ) || exit;
  * Tracks payment method events for fraud protection analysis.
  *
  * This class provides methods to track events for adding payment methods in My Account page
+<<<<<<< HEAD
  * for fraud protection. Event-specific data is passed to the SessionDataCollector which
  * handles session data storage internally.
+=======
+ * for fraud protection.
+ * Event-specific data is passed to the dispatcher which handles session data collection internally.
+>>>>>>> origin/main
  *
  * @since 10.5.0
  * @internal This class is part of the internal API and is subject to change without notice.
@@ -22,40 +27,68 @@ defined( 'ABSPATH' ) || exit;
 class PaymentMethodEventTracker {
 
 	/**
+<<<<<<< HEAD
 	 * Session data collector instance.
 	 *
 	 * @var SessionDataCollector
 	 */
 	private SessionDataCollector $session_data_collector;
+=======
+	 * Fraud protection dispatcher instance.
+	 *
+	 * @var FraudProtectionDispatcher
+	 */
+	private FraudProtectionDispatcher $dispatcher;
+>>>>>>> origin/main
 
 	/**
 	 * Initialize with dependencies.
 	 *
 	 * @internal
 	 *
+<<<<<<< HEAD
 	 * @param SessionDataCollector $session_data_collector The session data collector instance.
 	 */
 	final public function init( SessionDataCollector $session_data_collector ): void {
 		$this->session_data_collector = $session_data_collector;
+=======
+	 * @param FraudProtectionDispatcher $dispatcher The fraud protection dispatcher instance.
+	 */
+	final public function init( FraudProtectionDispatcher $dispatcher ): void {
+		$this->dispatcher = $dispatcher;
+>>>>>>> origin/main
 	}
 
 	/**
 	 * Track add payment method page loaded event.
 	 *
+<<<<<<< HEAD
 	 * Collects session data when the add payment method page is initially loaded.
+=======
+	 * Triggers fraud protection event dispatching when the add payment method page is initially loaded.
+>>>>>>> origin/main
 	 * This captures the initial session state before any user interactions.
 	 *
 	 * @internal
 	 * @return void
 	 */
 	public function track_add_payment_method_page_loaded(): void {
+<<<<<<< HEAD
 		$this->session_data_collector->collect( 'add_payment_method_page_loaded', array() );
+=======
+		// Track the page load event. Session data will be collected by the dispatcher.
+		$this->dispatcher->dispatch_event( 'add_payment_method_page_loaded', array() );
+>>>>>>> origin/main
 	}
 
 	/**
 	 * Track payment method added event.
 	 *
+<<<<<<< HEAD
 	 * Collects session data when a payment method is added.
+=======
+	 * Triggers fraud protection event tracking when a payment method is added.
+>>>>>>> origin/main
 	 *
 	 * @internal
 	 *
@@ -65,7 +98,12 @@ class PaymentMethodEventTracker {
 	public function track_payment_method_added( $token_id, $token ): void {
 		$event_data = $this->build_payment_method_event_data( 'added', $token );
 
+<<<<<<< HEAD
 		$this->session_data_collector->collect( 'payment_method_added', $event_data );
+=======
+		// Trigger event dispatching.
+		$this->dispatcher->dispatch_event( 'payment_method_added', $event_data );
+>>>>>>> origin/main
 	}
 
 	/**
@@ -73,7 +111,11 @@ class PaymentMethodEventTracker {
 	 *
 	 * Extracts relevant information from the payment token object including
 	 * token type, gateway ID, user ID, and card details for card tokens.
+<<<<<<< HEAD
 	 * This data will be merged with session data during collection.
+=======
+	 * This data will be merged with comprehensive session data during event tracking.
+>>>>>>> origin/main
 	 *
 	 * @param string            $action Action type (added, updated, set_default, deleted, add_failed).
 	 * @param \WC_Payment_Token $token  The payment token object.

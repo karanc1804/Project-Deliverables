@@ -299,6 +299,7 @@ wc_admin_connect_page(
 	)
 );
 
+<<<<<<< HEAD
 // WooCommerce > Products > Reviews.
 wc_admin_connect_page(
 	array(
@@ -309,6 +310,8 @@ wc_admin_connect_page(
 	)
 );
 
+=======
+>>>>>>> origin/main
 // WooCommerce > Products > Edit attribute.
 wc_admin_connect_page(
 	array(

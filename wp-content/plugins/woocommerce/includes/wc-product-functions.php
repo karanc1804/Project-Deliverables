@@ -27,7 +27,11 @@ defined( 'ABSPATH' ) || exit;
  * This function should be used for product retrieval so that we have a data agnostic
  * way to get a list of products.
  *
+<<<<<<< HEAD
  * Args and usage: https://developer.woocommerce.com/docs/extensions/core-concepts/wc-get-products/
+=======
+ * Args and usage: https://github.com/woocommerce/woocommerce/wiki/wc_get_products-and-WC_Product_Query
+>>>>>>> origin/main
  *
  * @since  3.0.0
  * @param  array $args Array of args (above).
@@ -268,6 +272,7 @@ function wc_product_post_type_link( $permalink, $post ) {
 		return $permalink;
 	}
 
+<<<<<<< HEAD
 	// Only process category if the permalink structure uses category placeholders.
 	$needs_category = strpos( $permalink, '%category%' ) !== false || strpos( $permalink, '%product_cat%' ) !== false;
 	$product_cat    = '';
@@ -346,6 +351,66 @@ function wc_product_post_type_link( $permalink, $post ) {
 			// If no terms are assigned to this post, use a string instead (can't leave the placeholder there).
 			$product_cat = _x( 'uncategorized', 'slug', 'woocommerce' );
 		}
+=======
+	// Get the custom taxonomy terms in use by this post.
+	$terms = get_the_terms( $post->ID, 'product_cat' );
+
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+		// Find the deepest category (most ancestors) for the permalink.
+		$deepest_term      = $terms[0];
+		$deepest_ancestors = $deepest_term->parent ? get_ancestors( $deepest_term->term_id, 'product_cat' ) : array();
+
+		foreach ( $terms as $term ) {
+			if ( $term->term_id === $deepest_term->term_id ) {
+				continue;
+			}
+			// Skip root categories - they can't be deeper than current.
+			if ( ! $term->parent ) {
+				continue;
+			}
+			$ancestors = get_ancestors( $term->term_id, 'product_cat' );
+			if ( count( $ancestors ) > count( $deepest_ancestors ) ) {
+				$deepest_ancestors = $ancestors;
+				$deepest_term      = $term;
+			}
+		}
+
+		/**
+		 * Filter the product category used for the product permalink.
+		 *
+		 * By default, the deepest category (most ancestors) is selected. Prior to 9.9.0,
+		 * categories were sorted by parent term ID descending, then term ID ascending.
+		 * This filter allows customization of which category is used in the product permalink.
+		 *
+		 * @since 2.4.0
+		 * @since 9.9.0 Selection algorithm changed to use deepest category instead of sort order.
+		 *
+		 * @param WP_Term   $deepest_term The selected category term object (deepest category since 9.9.0).
+		 * @param WP_Term[] $terms        All category terms assigned to the product.
+		 * @param WP_Post   $post         The product post object.
+		 */
+		$category_object = apply_filters( 'wc_product_post_type_link_product_cat', $deepest_term, $terms, $post );
+		$category_object = ! $category_object instanceof WP_Term ? $deepest_term : $category_object;
+		$product_cat     = $category_object->slug;
+
+		if ( $category_object->parent ) {
+			// Reuse cached ancestors if the filter didn't change the category, otherwise fetch them.
+			$ancestors = ( $category_object->term_id === $deepest_term->term_id )
+				? $deepest_ancestors
+				: get_ancestors( $category_object->term_id, 'product_cat' );
+			foreach ( $ancestors as $ancestor ) {
+				$ancestor_object = get_term( $ancestor, 'product_cat' );
+				if ( apply_filters( 'woocommerce_product_post_type_link_parent_category_only', false ) ) {
+					$product_cat = $ancestor_object->slug;
+				} else {
+					$product_cat = $ancestor_object->slug . '/' . $product_cat;
+				}
+			}
+		}
+	} else {
+		// If no terms are assigned to this post, use a string instead (can't leave the placeholder there).
+		$product_cat = _x( 'uncategorized', 'slug', 'woocommerce' );
+>>>>>>> origin/main
 	}
 
 	$find = array(
@@ -586,7 +651,11 @@ function wc_schedule_product_sale_events( WC_Product $product ): void {
 	if ( $date_from ) {
 		$start_ts = $date_from->getTimestamp();
 		if ( $start_ts > time() ) {
+<<<<<<< HEAD
 			as_schedule_single_action(
+=======
+			as_schedule_single_action( // @phpstan-ignore function.notFound
+>>>>>>> origin/main
 				$start_ts,
 				'wc_product_start_scheduled_sale',
 				array( 'product_id' => $product_id ),
@@ -598,7 +667,11 @@ function wc_schedule_product_sale_events( WC_Product $product ): void {
 	if ( $date_to ) {
 		$end_ts = $date_to->getTimestamp();
 		if ( $end_ts > time() ) {
+<<<<<<< HEAD
 			as_schedule_single_action(
+=======
+			as_schedule_single_action( // @phpstan-ignore function.notFound
+>>>>>>> origin/main
 				$end_ts,
 				'wc_product_end_scheduled_sale',
 				array( 'product_id' => $product_id ),
@@ -754,8 +827,13 @@ function wc_maybe_schedule_product_sale_events( $product_id, $product = null ): 
 	$product_id = $product->get_id();
 
 	// Always clear existing events first.
+<<<<<<< HEAD
 	as_unschedule_all_actions( 'wc_product_start_scheduled_sale', array( 'product_id' => $product_id ), 'woocommerce-sales' );
 	as_unschedule_all_actions( 'wc_product_end_scheduled_sale', array( 'product_id' => $product_id ), 'woocommerce-sales' );
+=======
+	as_unschedule_all_actions( 'wc_product_start_scheduled_sale', array( 'product_id' => $product_id ), 'woocommerce-sales' ); // @phpstan-ignore function.notFound
+	as_unschedule_all_actions( 'wc_product_end_scheduled_sale', array( 'product_id' => $product_id ), 'woocommerce-sales' ); // @phpstan-ignore function.notFound
+>>>>>>> origin/main
 
 	$date_from = $product->get_date_on_sale_from( 'edit' );
 	$date_to   = $product->get_date_on_sale_to( 'edit' );
@@ -1221,6 +1299,7 @@ function wc_get_product_attachment_props( $attachment_id = null, $product = fals
 		$alt_text     = array_filter( $alt_text );
 		$props['alt'] = $alt_text ? reset( $alt_text ) : '';
 
+<<<<<<< HEAD
 		/**
 		 * Filters the size for the full gallery image.
 		 *
@@ -1273,6 +1352,36 @@ function wc_get_product_attachment_props( $attachment_id = null, $product = fals
 		$props['src']    = $src[0] ?? null;
 		$props['src_w']  = $src[1] ?? null;
 		$props['src_h']  = $src[2] ?? null;
+=======
+		// Large version.
+		$full_size           = apply_filters( 'woocommerce_gallery_full_size', apply_filters( 'woocommerce_product_thumbnails_large_size', 'full' ) );
+		$src                 = wp_get_attachment_image_src( $attachment_id, $full_size );
+		$props['full_src']   = $src[0];
+		$props['full_src_w'] = $src[1];
+		$props['full_src_h'] = $src[2];
+
+		// Gallery thumbnail.
+		$gallery_thumbnail                = wc_get_image_size( 'gallery_thumbnail' );
+		$gallery_thumbnail_size           = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+		$src                              = wp_get_attachment_image_src( $attachment_id, $gallery_thumbnail_size );
+		$props['gallery_thumbnail_src']   = $src[0];
+		$props['gallery_thumbnail_src_w'] = $src[1];
+		$props['gallery_thumbnail_src_h'] = $src[2];
+
+		// Thumbnail version.
+		$thumbnail_size       = apply_filters( 'woocommerce_thumbnail_size', 'woocommerce_thumbnail' );
+		$src                  = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
+		$props['thumb_src']   = $src[0];
+		$props['thumb_src_w'] = $src[1];
+		$props['thumb_src_h'] = $src[2];
+
+		// Image source.
+		$image_size      = apply_filters( 'woocommerce_gallery_image_size', 'woocommerce_single' );
+		$src             = wp_get_attachment_image_src( $attachment_id, $image_size );
+		$props['src']    = $src[0];
+		$props['src_w']  = $src[1];
+		$props['src_h']  = $src[2];
+>>>>>>> origin/main
 		$props['srcset'] = function_exists( 'wp_get_attachment_image_srcset' ) ? wp_get_attachment_image_srcset( $attachment_id, $image_size ) : false;
 		$props['sizes']  = function_exists( 'wp_get_attachment_image_sizes' ) ? wp_get_attachment_image_sizes( $attachment_id, $image_size ) : false;
 	}

@@ -24,7 +24,11 @@ if ( class_exists( 'WC_Admin_Reports', false ) ) {
 class WC_Admin_Reports {
 
 	/**
+<<<<<<< HEAD
 	 * Register the hook handlers for integrating with admin.
+=======
+	 * Register the proper hook handlers.
+>>>>>>> origin/main
 	 */
 	public static function register_hook_handlers() {
 		add_filter( 'woocommerce_after_dashboard_status_widget_parameter', array( __CLASS__, 'get_report_instance' ) );
@@ -32,6 +36,7 @@ class WC_Admin_Reports {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Register the hook handlers for integrating with orders.
 	 *
 	 * @internal
@@ -76,6 +81,8 @@ class WC_Admin_Reports {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Get an instance of WC_Admin_Report.
 	 *
 	 * @return WC_Admin_Report

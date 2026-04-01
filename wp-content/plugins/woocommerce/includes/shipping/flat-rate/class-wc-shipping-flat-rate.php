@@ -139,9 +139,12 @@ class WC_Shipping_Flat_Rate extends WC_Shipping_Method {
 
 		if ( $atts['percent'] ) {
 			$calculated_fee = $this->fee_cost * ( floatval( $atts['percent'] ) / 100 );
+<<<<<<< HEAD
 			// Fix: Round to display decimals to prevent floating-point precision drift.
 			// @see https://github.com/woocommerce/woocommerce/issues/62692.
 			$calculated_fee = round( $calculated_fee, wc_get_price_decimals() );
+=======
+>>>>>>> origin/main
 		}
 
 		if ( $atts['min_fee'] && $calculated_fee < $atts['min_fee'] ) {
@@ -152,7 +155,11 @@ class WC_Shipping_Flat_Rate extends WC_Shipping_Method {
 			$calculated_fee = $atts['max_fee'];
 		}
 
+<<<<<<< HEAD
 		return (string) $calculated_fee;
+=======
+		return $calculated_fee;
+>>>>>>> origin/main
 	}
 
 	/**

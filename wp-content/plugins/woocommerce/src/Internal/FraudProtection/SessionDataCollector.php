@@ -51,6 +51,7 @@ class SessionDataCollector {
 	 * @since 10.5.0
 	 *
 	 * @param string|null $event_type Optional event type identifier (e.g., 'checkout_started', 'payment_attempt').
+<<<<<<< HEAD
 	 * @param array       $event_data Optional event-specific additional context data.
 	 */
 	public function collect( ?string $event_type = null, array $event_data = array() ): void {
@@ -124,6 +125,30 @@ class SessionDataCollector {
 		}
 
 		return $data;
+=======
+	 * @param array       $event_data Optional event-specific additional context data (may include 'order_id').
+	 * @return array Nested array containing all collected fraud protection data.
+	 */
+	public function collect( ?string $event_type = null, array $event_data = array() ): array {
+		// Ensure cart and session are loaded.
+		$this->session_clearance_manager->ensure_cart_loaded();
+
+		// Extract order ID from event_data if provided.
+		// There seem to be no universal way to get order id from session data, so we may start with passing it as a parameter when calling this method.
+		$order_id_from_event = $event_data['order_id'] ?? null;
+
+		return array(
+			'event_type'       => $event_type,
+			'timestamp'        => gmdate( 'Y-m-d H:i:s' ),
+			'wc_version'       => WC()->version,
+			'session'          => $this->get_session_data(),
+			'customer'         => $this->get_customer_data(),
+			'order'            => $this->get_order_data( $order_id_from_event ),
+			'shipping_address' => $this->get_shipping_address(),
+			'billing_address'  => $this->get_billing_address(),
+			'event_data'       => $event_data,
+		);
+>>>>>>> origin/main
 	}
 
 	/**
@@ -655,6 +680,7 @@ class SessionDataCollector {
 		);
 		return implode( ', ', $category_names );
 	}
+<<<<<<< HEAD
 
 	/**
 	 * Trim collected data array to ensure it stays within 1 MB size limit.
@@ -683,4 +709,6 @@ class SessionDataCollector {
 
 		return $data;
 	}
+=======
+>>>>>>> origin/main
 }

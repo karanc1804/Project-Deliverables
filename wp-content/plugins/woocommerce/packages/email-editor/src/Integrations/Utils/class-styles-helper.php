@@ -120,6 +120,7 @@ class Styles_Helper {
 	 * }
 	 */
 	public static function get_styles_from_block( array $block_styles, $skip_convert_vars = false ) {
+<<<<<<< HEAD
 		$unsupported_props = array(
 			'margin' => array( 'spacing', 'margin' ),
 		);
@@ -146,6 +147,8 @@ class Styles_Helper {
 				unset( $pointer[ $last_key ] );
 			}
 		}
+=======
+>>>>>>> origin/main
 		return wp_parse_args(
 			wp_style_engine_get_styles( $block_styles, array( 'convert_vars_to_classnames' => $skip_convert_vars ) ),
 			self::$empty_block_styles

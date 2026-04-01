@@ -754,7 +754,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $name Product name.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_name( $name ) {
 		$this->set_prop( 'name', $name );
@@ -765,7 +768,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $slug Product slug.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_slug( $slug ) {
 		$this->set_prop( 'slug', $slug );
@@ -776,7 +782,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string|integer|null $date UTC timestamp, or ISO 8601 DateTime. If the DateTime string has no timezone or offset, WordPress site timezone will be assumed. Null if their is no date.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_date_created( $date = null ) {
 		$this->set_date_prop( 'date_created', $date );
@@ -787,7 +796,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string|integer|null $date UTC timestamp, or ISO 8601 DateTime. If the DateTime string has no timezone or offset, WordPress site timezone will be assumed. Null if their is no date.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_date_modified( $date = null ) {
 		$this->set_date_prop( 'date_modified', $date );
@@ -798,7 +810,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $status Product status.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_status( $status ) {
 		$this->set_prop( 'status', $status );
@@ -809,7 +824,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param bool|string $featured Whether the product is featured or not.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_featured( $featured ) {
 		$this->set_prop( 'featured', wc_string_to_bool( $featured ) );
@@ -821,7 +839,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @since  3.0.0
 	 * @throws WC_Data_Exception Throws exception when invalid data is found.
 	 * @param  string $visibility Options: 'hidden', 'visible', 'search' and 'catalog'.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_catalog_visibility( $visibility ) {
 		$options    = array_keys( wc_get_product_visibility_options() );
@@ -838,7 +859,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $description Product description.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_description( $description ) {
 		$this->set_prop( 'description', $description );
@@ -849,7 +873,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $short_description Product short description.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_short_description( $short_description ) {
 		$this->set_prop( 'short_description', $short_description );
@@ -861,7 +888,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @since  3.0.0
 	 * @throws WC_Data_Exception Throws exception when invalid data is found.
 	 * @param  string $sku Product SKU.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_sku( $sku ) {
 		$sku = (string) $sku;
@@ -886,7 +916,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 9.1.0
 	 * @param string $global_unique_id Unique ID.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_global_unique_id( $global_unique_id ) {
 		$global_unique_id = preg_replace( '/[^0-9\-]/', '', (string) $global_unique_id );
@@ -909,7 +942,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * Set the product's active price.
 	 *
 	 * @param string $price Price.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_price( $price ) {
 		$this->set_prop( 'price', wc_format_decimal( $price ) );
@@ -920,7 +956,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $price Regular price.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_regular_price( $price ) {
 		$this->set_prop( 'regular_price', wc_format_decimal( $price ) );
@@ -931,7 +970,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $price sale price.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_sale_price( $price ) {
 		$this->set_prop( 'sale_price', wc_format_decimal( $price ) );
@@ -942,7 +984,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string|integer|null $date UTC timestamp, or ISO 8601 DateTime. If the DateTime string has no timezone or offset, WordPress site timezone will be assumed. Null if their is no date.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_date_on_sale_from( $date = null ) {
 		$this->set_date_prop( 'date_on_sale_from', $date );
@@ -953,7 +998,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string|integer|null $date UTC timestamp, or ISO 8601 DateTime. If the DateTime string has no timezone or offset, WordPress site timezone will be assumed. Null if their is no date.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_date_on_sale_to( $date = null ) {
 		$this->set_date_prop( 'date_on_sale_to', $date );
@@ -964,7 +1012,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int $total Total of sales.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_total_sales( $total ) {
 		$this->set_prop( 'total_sales', absint( $total ) );
@@ -976,7 +1027,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @since  3.0.0
 	 * @throws WC_Data_Exception Throws exception when invalid data is found.
 	 * @param  string $status Tax status.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_tax_status( $status ) {
 		$options = array(
@@ -1004,7 +1058,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $class Tax class.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_tax_class( $class ) {
 		$class         = sanitize_title( $class );
@@ -1032,7 +1089,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param bool $manage_stock Whether or not manage stock is enabled.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_manage_stock( $manage_stock ) {
 		$this->set_prop( 'manage_stock', wc_string_to_bool( $manage_stock ) );
@@ -1043,7 +1103,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param float|null $quantity Stock quantity.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_stock_quantity( $quantity ) {
 		$this->set_prop( 'stock_quantity', '' !== $quantity ? wc_stock_amount( $quantity ) : null );
@@ -1053,7 +1116,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * Set stock status.
 	 *
 	 * @param string $status New status.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_stock_status( $status = ProductStockStatus::IN_STOCK ) {
 		$valid_statuses = wc_get_product_stock_status_options();
@@ -1070,7 +1136,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $backorders Options: 'yes', 'no' or 'notify'.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_backorders( $backorders ) {
 		$this->set_prop( 'backorders', $backorders );
@@ -1081,7 +1150,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @param int|string $amount Empty string if value not set.
 	 * @since 3.5.0
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_low_stock_amount( $amount ) {
 		$this->set_prop( 'low_stock_amount', '' === $amount ? '' : absint( $amount ) );
@@ -1092,7 +1164,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param bool $sold_individually Whether or not product is sold individually.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_sold_individually( $sold_individually ) {
 		$this->set_prop( 'sold_individually', wc_string_to_bool( $sold_individually ) );
@@ -1103,7 +1178,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param float|string $weight Total weight.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_weight( $weight ) {
 		$this->set_prop( 'weight', '' === $weight ? '' : wc_format_decimal( $weight ) );
@@ -1114,7 +1192,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param float|string $length Total length.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_length( $length ) {
 		$this->set_prop( 'length', '' === $length ? '' : wc_format_decimal( $length ) );
@@ -1125,7 +1206,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param float|string $width Total width.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_width( $width ) {
 		$this->set_prop( 'width', '' === $width ? '' : wc_format_decimal( $width ) );
@@ -1136,7 +1220,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param float|string $height Total height.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_height( $height ) {
 		$this->set_prop( 'height', '' === $height ? '' : wc_format_decimal( $height ) );
@@ -1147,7 +1234,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $upsell_ids IDs from the up-sell products.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_upsell_ids( $upsell_ids ) {
 		$this->set_prop( 'upsell_ids', array_filter( (array) $upsell_ids ) );
@@ -1158,7 +1248,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $cross_sell_ids IDs from the cross-sell products.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_cross_sell_ids( $cross_sell_ids ) {
 		$this->set_prop( 'cross_sell_ids', array_filter( (array) $cross_sell_ids ) );
@@ -1169,7 +1262,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int $parent_id Product parent ID.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_parent_id( $parent_id ) {
 		$this->set_prop( 'parent_id', absint( $parent_id ) );
@@ -1180,7 +1276,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param bool $reviews_allowed Reviews allowed or not.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_reviews_allowed( $reviews_allowed ) {
 		$this->set_prop( 'reviews_allowed', wc_string_to_bool( $reviews_allowed ) );
@@ -1191,7 +1290,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param string $purchase_note Purchase note.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_purchase_note( $purchase_note ) {
 		$this->set_prop( 'purchase_note', $purchase_note );
@@ -1211,7 +1313,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $raw_attributes Array of WC_Product_Attribute objects.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_attributes( $raw_attributes ) {
 		$attributes = array_fill_keys( array_keys( $this->get_attributes( 'edit' ) ), null );
@@ -1230,7 +1335,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $default_attributes List of default attributes.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_default_attributes( $default_attributes ) {
 		$this->set_prop( 'default_attributes', array_map( 'strval', array_filter( (array) $default_attributes, 'wc_array_filter_default_attributes' ) ) );
@@ -1241,7 +1349,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int $menu_order Menu order.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_menu_order( $menu_order ) {
 		$this->set_prop( 'menu_order', intval( $menu_order ) );
@@ -1252,7 +1363,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.6.0
 	 * @param int $post_password Post password.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_post_password( $post_password ) {
 		$this->set_prop( 'post_password', $post_password );
@@ -1263,7 +1377,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $term_ids List of terms IDs.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_category_ids( $term_ids ) {
 		$this->set_prop( 'category_ids', array_unique( array_map( 'intval', $term_ids ) ) );
@@ -1274,7 +1391,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $term_ids List of terms IDs.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_tag_ids( $term_ids ) {
 		$this->set_prop( 'tag_ids', array_unique( array_map( 'intval', $term_ids ) ) );
@@ -1285,7 +1405,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 10.3.0
 	 * @param array $term_ids List of terms IDs.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_brand_ids( $term_ids ) {
 		$this->set_prop( 'brand_ids', array_unique( array_map( 'intval', $term_ids ) ) );
@@ -1296,7 +1419,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param bool|string $virtual Whether product is virtual or not.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_virtual( $virtual ) {
 		$this->set_prop( 'virtual', wc_string_to_bool( $virtual ) );
@@ -1307,7 +1433,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int $id Product shipping class id.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_shipping_class_id( $id ) {
 		$this->set_prop( 'shipping_class_id', absint( $id ) );
@@ -1318,7 +1447,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param bool|string $downloadable Whether product is downloadable or not.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_downloadable( $downloadable ) {
 		$this->set_prop( 'downloadable', wc_string_to_bool( $downloadable ) );
@@ -1332,7 +1464,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @param array $downloads_array Array of WC_Product_Download objects or arrays.
 	 *
 	 * @since 3.0.0
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_downloads( $downloads_array ) {
 		// When the object is first hydrated, only the previously persisted downloads will be passed in.
@@ -1420,7 +1555,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int|string $download_limit Product download limit.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_download_limit( $download_limit ) {
 		$this->set_prop( 'download_limit', -1 === (int) $download_limit || '' === $download_limit ? -1 : absint( $download_limit ) );
@@ -1431,7 +1569,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int|string $download_expiry Product download expiry.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_download_expiry( $download_expiry ) {
 		$this->set_prop( 'download_expiry', -1 === (int) $download_expiry || '' === $download_expiry ? -1 : absint( $download_expiry ) );
@@ -1442,7 +1583,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param array $image_ids List of image ids.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_gallery_image_ids( $image_ids ) {
 		$image_ids = wp_parse_id_list( $image_ids );
@@ -1455,7 +1599,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 *
 	 * @since 3.0.0
 	 * @param int|string $image_id Product image id.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_image_id( $image_id = '' ) {
 		$this->set_prop( 'image_id', $image_id );
@@ -1465,7 +1612,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * Set rating counts. Read only.
 	 *
 	 * @param array $counts Product rating counts.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_rating_counts( $counts ) {
 		$this->set_prop( 'rating_counts', array_filter( array_map( 'absint', (array) $counts ) ) );
@@ -1475,7 +1625,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * Set average rating. Read only.
 	 *
 	 * @param float $average Product average rating.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_average_rating( $average ) {
 		$this->set_prop( 'average_rating', wc_format_decimal( $average ) );
@@ -1485,7 +1638,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * Set review count. Read only.
 	 *
 	 * @param int $count Product review count.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function set_review_count( $count ) {
 		$this->set_prop( 'review_count', absint( $count ) );
@@ -1501,7 +1657,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * Ensure properties are set correctly before save.
 	 *
 	 * @since 3.0.0
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	public function validate_props() {
 		// Before updating, ensure stock props are all aligned. Qty, backorders and low stock amount are not needed if not stock managed.
@@ -1582,7 +1741,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return mixed A state value that will be passed to after_data_store_save_or_update.
 	 */
 	protected function before_data_store_save_or_update() {
+<<<<<<< HEAD
 		return null;
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -1590,7 +1752,10 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * (but before triggering the 'woocommerce_after_..._object_save' action)
 	 *
 	 * @param mixed $state The state object that was returned by before_data_store_save_or_update.
+<<<<<<< HEAD
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	protected function after_data_store_save_or_update( $state ) {
 		$this->maybe_defer_product_sync();
@@ -1616,8 +1781,11 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 
 	/**
 	 * If this is a child product, queue its parent for syncing at the end of the request.
+<<<<<<< HEAD
 	 *
 	 * @return void
+=======
+>>>>>>> origin/main
 	 */
 	protected function maybe_defer_product_sync() {
 		$parent_id = $this->get_parent_id();
@@ -1996,7 +2164,11 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	/**
 	 * Returns the children IDs if applicable. Overridden by child classes.
 	 *
+<<<<<<< HEAD
 	 * @return int[] of IDs
+=======
+	 * @return array of IDs
+>>>>>>> origin/main
 	 */
 	public function get_children() {
 		return array();

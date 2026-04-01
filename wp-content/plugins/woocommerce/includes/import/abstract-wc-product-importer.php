@@ -414,6 +414,7 @@ abstract class WC_Product_Importer implements WC_Importer_Interface {
 						$attribute_object->set_position( $position );
 						$attribute_object->set_visible( $is_visible );
 						$attribute_object->set_variation( $is_variation );
+<<<<<<< HEAD
 
 						/**
 						 * Filter product attribute after initialization.
@@ -425,6 +426,9 @@ abstract class WC_Product_Importer implements WC_Importer_Interface {
 						 * @param WC_Product           $product           The product object.
 						 */
 						$attributes[] = apply_filters( 'woocommerce_product_importer_read_attribute', $attribute_object, $attribute, $product );
+=======
+						$attributes[] = $attribute_object;
+>>>>>>> origin/main
 					}
 				} elseif ( isset( $attribute['value'] ) ) {
 					// Check for default attributes and set "is_variation".
@@ -439,9 +443,13 @@ abstract class WC_Product_Importer implements WC_Importer_Interface {
 					$attribute_object->set_position( $position );
 					$attribute_object->set_visible( $is_visible );
 					$attribute_object->set_variation( $is_variation );
+<<<<<<< HEAD
 
 					// phpcs:ignore WooCommerce.Commenting.CommentHooks.MissingHookComment -- see same filter in the 'if' block.
 					$attributes[] = apply_filters( 'woocommerce_product_importer_read_attribute', $attribute_object, $attribute, $product );
+=======
+					$attributes[] = $attribute_object;
+>>>>>>> origin/main
 				}
 			}
 

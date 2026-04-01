@@ -12,7 +12,11 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails\Block
+<<<<<<< HEAD
  * @version 10.6.0
+=======
+ * @version 10.2.0
+>>>>>>> origin/main
  */
 
 use Automattic\WooCommerce\Internal\EmailEditor\BlockEmailRenderer;
@@ -75,7 +79,12 @@ echo wp_kses( sprintf( __( 'Username: <b>%s</b>', 'woocommerce' ), '<!--[woocomm
 	?></p>
 <!-- /wp:paragraph -->
 
+<<<<<<< HEAD
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center"> <?php echo esc_html__( 'We look forward to seeing you soon.', 'woocommerce' ); ?> </p>
+=======
+<!-- wp:paragraph -->
+<p> <?php echo esc_html__( 'We look forward to seeing you soon.', 'woocommerce' ); ?> </p>
+>>>>>>> origin/main
 <!-- /wp:paragraph -->
 

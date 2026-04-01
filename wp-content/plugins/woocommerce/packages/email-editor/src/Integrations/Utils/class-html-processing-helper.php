@@ -575,6 +575,7 @@ class Html_Processing_Helper {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Extract the first HTTP/HTTPS URL from a text string.
 	 *
 	 * @param string $text Text to search for URLs.
@@ -589,6 +590,8 @@ class Html_Processing_Helper {
 	}
 
 	/**
+=======
+>>>>>>> origin/main
 	 * Sanitize inline styles for image elements - only allow safe properties for email rendering.
 	 *
 	 * @param string $style_value Raw style value.

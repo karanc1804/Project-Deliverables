@@ -12,7 +12,11 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails\Block
+<<<<<<< HEAD
  * @version 10.6.0
+=======
+ * @version 10.5.0
+>>>>>>> origin/main
  */
 
 use Automattic\WooCommerce\Internal\EmailEditor\BlockEmailRenderer;
@@ -37,8 +41,13 @@ defined( 'ABSPATH' ) || exit;
 <div class="wp-block-woocommerce-email-content"> <?php echo esc_html( BlockEmailRenderer::WOO_EMAIL_CONTENT_PLACEHOLDER ); ?> </div>
 <!-- /wp:woocommerce/email-content -->
 
+<<<<<<< HEAD
 <!-- wp:paragraph {"align":"center"} -->
 <p class="has-text-align-center"><?php
+=======
+<!-- wp:paragraph -->
+<p><?php
+>>>>>>> origin/main
 echo esc_html__( 'Please note that couriers may need some time to provide the latest shipping information.', 'woocommerce' );
 ?></p>
 <!-- /wp:paragraph -->

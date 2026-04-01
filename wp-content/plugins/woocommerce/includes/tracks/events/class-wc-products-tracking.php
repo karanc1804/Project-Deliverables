@@ -20,6 +20,7 @@ class WC_Products_Tracking {
 	/**
 	 * Tracks source.
 	 */
+<<<<<<< HEAD
 	public const TRACKS_SOURCE = 'product-legacy-editor';
 
 	/**
@@ -29,6 +30,9 @@ class WC_Products_Tracking {
 	 * @since 10.6.0
 	 */
 	public const TRACK_PRODUCT_PUBLISHED_CALLBACK = 'track_product_published';
+=======
+	const TRACKS_SOURCE = 'product-legacy-editor';
+>>>>>>> origin/main
 
 	/**
 	 * Init tracking.
@@ -45,7 +49,10 @@ class WC_Products_Tracking {
 		add_action( 'admin_enqueue_scripts', array( $this, 'possibly_add_product_import_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'possibly_add_attribute_tracking_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'possibly_add_tag_tracking_scripts' ) );
+<<<<<<< HEAD
 		add_action( self::TRACK_PRODUCT_PUBLISHED_CALLBACK, array( $this, 'track_product_published_maybe_defer' ), 10, 3 );
+=======
+>>>>>>> origin/main
 	}
 
 	/**
@@ -340,8 +347,12 @@ class WC_Products_Tracking {
 		$product_type_options        = self::get_product_type_options( $post_id );
 		$product_type_options_string = self::get_product_type_options_string( $product_type_options );
 
+<<<<<<< HEAD
 		$is_importing = self::is_importing();
 		$properties   = array(
+=======
+		$properties = array(
+>>>>>>> origin/main
 			'attributes'           => count( $product->get_attributes() ),
 			'categories'           => count( $product->get_category_ids() ),
 			'cross_sells'          => ! empty( $product->get_cross_sell_ids() ) ? 'yes' : 'no',
@@ -359,7 +370,11 @@ class WC_Products_Tracking {
 			'product_type_options' => $product_type_options_string,
 			'purchase_note'        => $product->get_purchase_note() ? 'yes' : 'no',
 			'sale_price'           => $product->get_sale_price() ? 'yes' : 'no',
+<<<<<<< HEAD
 			'source'               => apply_filters( 'woocommerce_product_source', $is_importing ? 'import' : self::TRACKS_SOURCE ),
+=======
+			'source'               => apply_filters( 'woocommerce_product_source', self::is_importing() ? 'import' : self::TRACKS_SOURCE ),
+>>>>>>> origin/main
 			'short_description'    => $product->get_short_description() ? 'yes' : 'no',
 			'tags'                 => count( $product->get_tag_ids() ),
 			'upsells'              => ! empty( $product->get_upsell_ids() ) ? 'yes' : 'no',
@@ -367,6 +382,7 @@ class WC_Products_Tracking {
 			'global_unique_id'     => $product->get_global_unique_id() ? 'yes' : 'no',
 		);
 
+<<<<<<< HEAD
 		$this->track_product_published_maybe_defer( 'product_add_publish', $properties, $is_importing );
 	}
 
@@ -392,6 +408,9 @@ class WC_Products_Tracking {
 		} else {
 			WC_Tracks::record_event( $event_name, $event_properties );
 		}
+=======
+		WC_Tracks::record_event( 'product_add_publish', $properties );
+>>>>>>> origin/main
 	}
 
 	/**
