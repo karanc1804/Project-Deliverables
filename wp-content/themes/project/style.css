@@ -2006,3 +2006,67 @@ body.single-product .wp-block-woocommerce-product-meta {
         text-align: center;
     }
 }
+
+
+/* main cover container cleanup */
+.wp-block-cover__inner-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* background overlay refinement */
+.wp-block-cover__background {
+    background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+/* heading text styling */
+.wp-block-cover__inner-container p {
+    color: #ffffff !important;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* button wrapper spacing */
+.wp-block-buttons {
+    margin-top: 10px;
+}
+
+/* button base */
+.wp-block-button__link {
+    background: linear-gradient(135deg, #ffffff, #e6e6e6);
+    color: #000 !important;
+    padding: 14px 34px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+/* button hover effect */
+.wp-block-button__link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+    background: #ffffff;
+}
+
+/* mobile responsiveness */
+@media (max-width: 768px) {
+    .wp-block-cover__inner-container p {
+        font-size: 28px;
+    }
+
+    .wp-block-button__link {
+        padding: 12px 26px;
+        font-size: 13px;
+    }
+}
