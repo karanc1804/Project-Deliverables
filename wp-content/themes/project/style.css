@@ -239,7 +239,7 @@ Generated on fullsiteediting.com. No code version.
 /* aligning account and cart icons */
 .wp-block-woocommerce-customer-account,
 .wp-block-woocommerce-mini-cart {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   margin-left: 18px;
 }
@@ -277,6 +277,29 @@ Generated on fullsiteediting.com. No code version.
   background: none;
   border: none;
   cursor: pointer;
+}
+
+/* make navigation + icons act as one group */
+.wp-block-navigation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* wrap account + cart closer to nav */
+.wp-block-woocommerce-customer-account,
+.wp-block-woocommerce-mini-cart {
+  margin-left: 0; /* remove large spacing */
+}
+
+/* push everything right as one unit */
+.wp-block-navigation {
+  margin-left: auto;
+}
+
+/* tighten spacing between icons */
+.wp-block-woocommerce-customer-account + .wp-block-woocommerce-mini-cart {
+  margin-left: 12px;
 }
 
 /* making header responsive */
@@ -680,8 +703,9 @@ Generated on fullsiteediting.com. No code version.
 
 /* making cart responsive */
 @media (max-width: 700px) {
+
   .wp-block-woocommerce-cart {
-    max-width: 500px;
+    max-width: 400px;
     padding: 20px 20px;
   }
 
@@ -2227,7 +2251,6 @@ body.single-product .wp-block-woocommerce-product-meta {
 
 
 /* doing changes for the end banner */
-/* target ONLY this exact banner using its unique container class */
 .wp-container-core-group-is-layout-df757ecc .wp-block-cover {
     position: relative;
     overflow: hidden;
@@ -2350,4 +2373,191 @@ body.single-product .wp-block-woocommerce-product-meta {
     .wp-container-core-group-is-layout-df757ecc p {
         font-size: 14px;
     }
+}
+
+
+/* Product Card Container */
+.product-card {
+    width: 280px; /* fixed card size */
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Product Title */
+.product-card .product-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines before ... */
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Product Description */
+.product-card .product-description {
+    font-size: 14px;
+    color: #666;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Price or single-line text */
+.product-card .product-price {
+    font-size: 15px;
+    font-weight: 500;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-card .product-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    /* REQUIRED for clamp to work properly */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    /* CRITICAL FIX */
+    max-height: calc(1.4em * 2); /* lock to exactly 2 lines */
+}
+
+.product-card {
+    min-width: 0; /* prevents overflow expansion */
+}
+
+.product-card * {
+    min-width: 0;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .product-card {
+        width: 240px; /* optional: slightly smaller */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 200px;
+    }
+}
+
+
+
+
+/* === TARGET ONLY INNER TEXT BLOCKS === */
+.wp-block-cover .wp-block-columns {
+  gap: 28px;
+}
+
+.wp-block-cover .wp-block-column {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 18px;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover for premium feel */
+.wp-block-cover .wp-block-column:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* === TEXT STYLING === */
+.wp-block-cover .is-service-name {
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.wp-block-cover .is-service-description {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Improve readability on darker image */
+.wp-block-cover .wp-block-column::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+
+  /* subtle gradient overlay for text contrast */
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.35)
+  );
+
+  z-index: 0;
+}
+
+.wp-block-cover .wp-block-column > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* === DARK GRADIENT OVER BACKGROUND IMAGE === */
+.wp-block-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  /* Bottom-heavy black gradient */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.45) 30%,
+    rgba(0, 0, 0, 0.2) 55%,
+    rgba(0, 0, 0, 0) 80%
+  );
+}
+
+/* Make sure content stays above gradient */
+.wp-block-cover__inner-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .wp-block-cover .wp-block-columns {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .wp-block-cover .wp-block-column {
+    padding: 22px 18px;
+  }
 }
