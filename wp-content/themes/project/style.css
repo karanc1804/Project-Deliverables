@@ -2463,7 +2463,7 @@ body.single-product .wp-block-woocommerce-product-meta {
 
 
 
-/* === TARGET ONLY INNER TEXT BLOCKS === */
+/* styling home page first main cover image block */
 .wp-block-cover .wp-block-columns {
   gap: 28px;
 }
@@ -2491,7 +2491,7 @@ body.single-product .wp-block-woocommerce-product-meta {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* === TEXT STYLING === */
+/* text styling */
 .wp-block-cover .is-service-name {
   color: #ffffff;
   margin-bottom: 10px;
@@ -2526,7 +2526,7 @@ body.single-product .wp-block-woocommerce-product-meta {
   z-index: 1;
 }
 
-/* === DARK GRADIENT OVER BACKGROUND IMAGE === */
+/* dark gradient for home page cover image */
 .wp-block-cover::after {
   content: "";
   position: absolute;
@@ -2559,5 +2559,132 @@ body.single-product .wp-block-woocommerce-product-meta {
 
   .wp-block-cover .wp-block-column {
     padding: 22px 18px;
+  }
+}
+
+
+/* === FORM CONTAINER === */
+.wpcf7-form {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Remove default spacing */
+.wpcf7-form p {
+  margin-bottom: 18px;
+}
+
+/* Labels */
+.wpcf7-form label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* === INPUT FIELDS === */
+.wpcf7-form input,
+.wpcf7-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 10px 4px;
+  font-size: 14px;
+  color: #000000;
+
+  transition: all 0.3s ease;
+}
+
+/* Shorter fields */
+.wpcf7-form input {
+  height: 38px;
+}
+
+/* === SMALLER TEXTAREA === */
+.wpcf7-form textarea {
+  max-height: 40px !important;   /* reduced height */
+  padding: 8px 4px;
+  resize: none;
+}
+
+/* === BUTTON (SOLID BLACK) === */
+.wpcf7-submit {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px 0;
+
+  background: #000 !important;
+  color: #fff !important;
+  border: 1px solid #000;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Subtle premium hover */
+.wpcf7-submit:hover {
+  background: #111;
+  border-color: #111;
+}
+
+/* Message box */
+.wpcf7-form textarea {
+  min-height: 40px;
+  resize: none;
+}
+
+/* Placeholder */
+.wpcf7-form input::placeholder,
+.wpcf7-form textarea::placeholder {
+  color: #666;
+}
+
+/* Focus effect */
+.wpcf7-form input:focus,
+.wpcf7-form textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+
+/* === BUTTON === */
+.wpcf7-submit {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px 0;
+
+  background: transparent;
+  color: #000000;
+  border: 1px solid #fff;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Elegant hover */
+.wpcf7-submit:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Remove spinner spacing issues */
+.wpcf7-spinner {
+  display: none;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .wpcf7-form {
+    max-width: 100%;
   }
 }
